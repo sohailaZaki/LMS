@@ -1,0 +1,25 @@
+.Categories{
+  display: flex;
+  padding-left: 30px;
+  flex-direction: row;
+}
+.content{
+  padding: 20px;
+  padding-left: 220px;
+ overflow-x: auto; overflow-y: hidden;
+   white-space: nowrap;
+   scroll-behavior: smooth
+}
+.content .card{
+  border: bottom 1px gray;
+
+}
+
+.content h1 ,p{
+  padding-left: 70px;
+}
+.scroll-container{
+  display: flex;
+  overflow-x: auto;
+overflow-y: hidden;
+}
