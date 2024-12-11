@@ -1,6 +1,6 @@
 .my-courses-container {
-  padding: 20px;
-  padding-left: 260px;
+  /* padding-top: 20px; */
+  /* padding-left: 100px; */
   background-color: #eef4ff; /* A light background similar to your design */
   overflow-y: auto;
   scroll-behavior: smooth;
@@ -11,18 +11,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 5px;
   margin-left: 20px;
 }
 .header h1 {
   margin: 0;
   color: #0f266c;
   font-weight: bold;
-  
+
 }
 .my-courses-container p {
   color: #7575;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   margin-left: 20px;
 }
 
@@ -44,7 +45,7 @@
 
 /* .nav-item a:hover {
   color: #218838; /* Optional hover effect */
-/* } */ 
+/* } */
 .nav-item a:hover::after {
   background-color: rgba(40, 167, 69, 0.5); /* Light green color */
   opacity: 0.7; /* Slightly transparent for a light effect */
@@ -90,8 +91,10 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: row; /* استخدام flex لعرض الصورة والنص بجانب بعض */
-  height: 100px; /* تحديد ارتفاع ثابت للبطاقة */
-  overflow: hidden; /* التأكد من أن المحتوى داخل البطاقة لا يخرج */
+  height: 68px; /* تحديد ارتفاع ثابت للبطاقة */
+   /* التأكد من أن المحتوى داخل البطاقة لا يخرج */
+width: 380px;
+height: 107px;
 }
 
 .course-image {
@@ -157,4 +160,27 @@
 .view-btn-container:hover .arrow-icon {
   background-color: #043B5C; /* Add background color on hover */
   color: white; /* Change button text and icon color on hover */
+}
+.course-info span{
+  font-size: 14px;
+  color: #0F266C;
+  font-weight: 500;
+
+}
+.course-info {
+  padding: 0px 10px;
+  padding-top: 20px;
+}
+.course-image img{
+  width: 91px;
+  height: 65px;
+  position: relative;
+  top: 15px;
+  border-radius: 20px;
+  padding-left: 7px;
+}
+.course-info p {
+  position: relative;
+  right: 20px;
+  white-space: pre-wrap;
 }

@@ -1,18 +1,22 @@
 .create-course-container {
-  padding: 20px;
-  padding-left: 270px;
+  padding-top: 20px;
+
+  /* padding-left: 270px; */
   background-color: #eef4ff; /* A light background similar to your design */
+position: relative;
+right: 25px;
+margin-bottom: 45px;
 }
 .header {
   align-items: center;
   margin-bottom: 20px;
-  margin-left: 20px;
+  margin-left: 50px;
 }
 .header h1 {
   margin: 0px;
 }
 .header p {
-  color: #7575;
+  color: #757575;
   margin-bottom: 20px;
  margin-top: 10px;
 }
@@ -45,6 +49,10 @@
 .input-container {
   position: relative;
   margin: 20px 0;
+}
+.input-container  textarea{
+  border: 1px solid #ccc;
+  border-radius: 15px;
 }
 .floating-label {
   position: absolute;

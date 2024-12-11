@@ -1,11 +1,11 @@
-.content {
+/* .content {
   background-size: cover;
   width: 90%;
   height: 300px;
   background-color: #EEF4FF;
   padding-left: 100px;
   position: relative;
-}
+} */
 
 .content h1, .content p {
   padding-left: 70px;
@@ -108,16 +108,18 @@
 }
 /* Main container */
 .clipped-frame {
-  width: 100%; /* Full width of the container */
+  width: 100%;
+  /* Full width of the container */
 
   white-space: nowrap; /* Prevent wrapping of child elements */
   background-color: #eef4ff; /* Set background color */
-  padding: 20px 50;
+  padding-top: 7px ;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   position: relative;
-  left: 220px; /* Vertically center items if needed */
+  left: 20px;
+   /* Vertically center items if needed */
   top: 20px;
   border: none; /* Fixed height for each card */
 
@@ -143,11 +145,11 @@
 }
 .text{
   position: relative;
-  left: 270px;
+  left: 80px;
   padding-top: 20px;
 
 }
 .page-content{
-  overflow-y: initial;
+  overflow-y: hidden;
 scrollbar-width: 0;
 }
