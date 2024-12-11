@@ -15,7 +15,7 @@
       </a>
     </li>
     <li class="nav-item">
-      <a routerLink="/Instructor/Courses/New">
+      <a routerLink="/Instructor/Courses/AddNew">
         <i class="material-icons">my_library_add</i> Create Course
       </a>
     </li>
@@ -32,10 +32,9 @@
         <i class="material-icons arrow-icon" [ngClass]="{'rotate': isDropdownOpen}">keyboard_arrow_down</i>
       </a>
       <ul class="nav-submenu" *ngIf="isDropdownOpen">
-        @for (item of courses; track $index) {
-
-          <li class="nav-subitem"><a routerLink="Instructor/Courses/:id">{{item.title}}</a></li>
-        }
+        <li class="nav-subitem"><a routerLink="/course1">Course 1</a></li>
+        <li class="nav-subitem"><a routerLink="/course2">Course 2</a></li>
+        <li class="nav-subitem"><a routerLink="/course3">Course 3</a></li>
       </ul>
     </li>
 

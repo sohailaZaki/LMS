@@ -1,7 +1,6 @@
 .my-courses-container {
-  /* padding: 20px;
-  padding-left: 260px; */
-padding-left: 38px;
+  /* padding-top: 20px; */
+  /* padding-left: 100px; */
   background-color: #eef4ff; /* A light background similar to your design */
   overflow-y: auto;
   scroll-behavior: smooth;
@@ -23,7 +22,7 @@ padding-left: 38px;
 
 }
 .my-courses-container p {
-  color: #757575;
+  color: #7575;
   margin-bottom: 5px;
   margin-left: 20px;
 }

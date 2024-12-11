@@ -18,20 +18,20 @@ export class InstructorDashBoardComponent implements OnInit {
 
   ngOnInit() {
   }
-elements:{ elementName: string; Desc: string;img:string;route:string}[]=[{
+elements:{ elementName: string; Desc: string;img:string}[]=[{
   elementName: 'Courses',
-  Desc: 'view all the courses you created before and manage them',img:"../../../../assets/courses.webp",route:"Courses"},{
-    elementName:'Assigments',
+  Desc: 'view all the courses you created before and manage them',img:"../../../../assets/courses.webp"},{
+    elementName:'Assignments',
     Desc:'view all the assignments in each course you created before and manage them ',
-    img:"../../../../assets/assessment.webp",route:"Assigments"
+    img:"../../../../assets/assessment.webp"
     },
  { elementName:'Grades',
   Desc:'view all the assignments in each course you created before and manage them ',
-img:"../../../../assets/grades.webp",route:"Grades"
+img:"../../../../assets/grades.webp"
 },
  { elementName:'Student Monitiring',
   Desc:'have a monitior on each studen and their progress in your courses'
-  ,img:"../../../../assets/Monitoring.webp",route:"Courses"}
+  ,img:"../../../../assets/Monitoring.webp"}
 
 ]
 
