@@ -1,25 +1,153 @@
-.Categories{
+.content {
+  background-size: cover;
+  width: 90%;
+  height: 300px;
+  background-color: #EEF4FF;
+  padding-left: 100px;
+  position: relative;
+}
+
+.content h1, .content p {
+  padding-left: 70px;
+}
+
+.content .card {
+  border: none;
+}
+
+.content ul {
+  scrollbar-width: none; /* Hide scrollbar */
+}
+
+.content ul::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for supported browsers */
+}
+
+.content span {
+  padding-left: 80px;
+}
+
+.text h1 {
+  color: #0F266C;
+  font-weight: 500;
+}
+
+.text .description {
+  color: #757575;
+}
+
+.text .cta {
+  color: #0F266C;
+  font-size: 15px;
+  font-weight: 480;
+}
+
+.categories-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.Categories {
   display: flex;
   padding-left: 30px;
   flex-direction: row;
 }
-.content{
-  padding: 20px;
-  padding-left: 220px;
- overflow-x: auto; overflow-y: hidden;
-   white-space: nowrap;
-   scroll-behavior: smooth
-}
-.content .card{
-  /* border: bottom 1px gray; */
-border: none;
+
+.card-wrapper {
+  width: 347px;
+  height: 470px;
+  border-radius: 14px;
 }
 
-.content h1 ,p{
-  padding-left: 70px;
+.card-meta {
+  white-space: normal;
+  text-align: left;
+  border-bottom: 1px solid #D5D5D5;
+  padding-bottom: 15px;
 }
-.scroll-container{
+
+.view-button {
+  width: 100px;
+  background-color: #043B5C;
+  text-align: center;
+  padding: 10px;
+  margin: 35px auto 0;
+  border-radius: 15px;
+}
+
+.view-button a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cover-image {
+  width: 250px;
+  height: 250px;
+  border-top-right-radius: 14px;
+  border-top-left-radius: 14px;
+}
+
+.ant-card {
+  height: 90% !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.ant-card-body {
+  max-height: 100%;
+  position: absolute;
+  overflow: auto;
+}
+/* Main container */
+.clipped-frame {
+  width: 100%; /* Full width of the container */
+
+  white-space: nowrap; /* Prevent wrapping of child elements */
+  background-color: #eef4ff; /* Set background color */
+  padding: 20px 50;
+  box-sizing: border-box;
   display: flex;
-  overflow-x: auto;
-overflow-y: hidden;
+  align-items: center;
+  position: relative;
+  left: 220px; /* Vertically center items if needed */
+  top: 20px;
+  border: none; /* Fixed height for each card */
+
+}
+
+/* Wrapper for horizontal content */
+.content-wrapper {
+  display: flex; /* Flex for horizontal alignment */
+  flex-direction: row; /* Ensure items align in a row */
+  gap: 20px; /* Space between items */
+
+}
+
+/* Individual card items */
+.item {
+  flex: 0 0 auto; /* Prevent items from shrinking */
+  width: 300px; /* Fixed width for each card */
+  height: 550px;
+  margin-left:50px ;
+}
+.card{
+  border: none;
+}
+.text{
+  position: relative;
+  left: 270px;
+  padding-top: 20px;
+
+}
+.page-content{
+  overflow-y: initial;
+scrollbar-width: 0;
 }
