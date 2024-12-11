@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
 import { SideBarComponent } from './Components/Sondos/SideBar/SideBar.component';
 import { CoursesComponent } from './Components/Sondos/Courses/Courses.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 const routes: Routes=[{
   path:'InstructorDashBoard',component:InstructorDashBoardComponent},
   {path:'Instructor/Courses',component:CoursesComponent }
@@ -28,12 +29,16 @@ const routes: Routes=[{
 registerLocaleData(en);
 @NgModule({
   declarations: [
-    AppComponent,InstructorDashBoardComponent,SideBarComponent,
+    AppComponent,
+    InstructorDashBoardComponent,
+    SideBarComponent,
+    CoursesComponent,
   ],
   imports: [
     BrowserModule,
     MatCardModule, IconsProviderModule, NzLayoutModule, NzMenuModule, FormsModule,NzCardModule,MatListModule,NzListItemComponent,NzListComponent,NzButtonComponent,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    NgbModule
   ],
 
   providers: [
@@ -46,4 +51,6 @@ exports:[
   RouterModule
 ]
 })
-export class AppModule { }
+export class AppModule { 
+ 
+}

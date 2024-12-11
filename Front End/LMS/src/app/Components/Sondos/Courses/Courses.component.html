@@ -1,3 +1,32 @@
-<p>
-  Courses works!
-</p>
+<div class="my-courses-container">
+  <div class="header">
+    <h1>Select Course</h1>
+    <div class="nav-item">
+      <a routerLink="/create-course">
+        <!-- Replace with your desired route -->
+        <button class="btn">
+          Create
+          <i class="material-icons create-icon">add_circle_outline</i>
+        </button>
+      </a>
+    </div>
+  </div>
+  <p>Organize your work and improve your performance with us</p>
+
+  <div class="courses-container">
+    <div class="course-card" *ngFor="let course of courses">
+      <div class="course-image">
+        <img [src]="course.image" alt="course image" />
+      </div>
+      <div class="course-info">
+        <h3>{{ course.title }}</h3>
+        <p>{{ course.description }}</p>
+      </div>
+      <div class="view-btn-container">
+        <button (click)="navigateToCourse(course)" class="view-btn">
+          View
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
