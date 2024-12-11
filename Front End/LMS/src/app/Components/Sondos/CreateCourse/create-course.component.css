@@ -20,6 +20,7 @@
   background-color: white;
   width: 1150px;
   border-radius: 20px;
+  padding-bottom: 40px;
   margin-left: 40px ; /* Add padding to the top */
 }
 .form-container h3{
@@ -86,7 +87,7 @@ label {
   font-weight: bold;
   margin-bottom: 5px;
 }
-input{
+input,textarea{
   width: 100%;
   padding: 20px 15px;
   margin-bottom: 15px;
@@ -117,6 +118,7 @@ input{
   cursor: pointer;
   transition: 0.3s ease-in-out;
   padding-left: 7px;
+  margin-left: 470px;
 }
 
 
