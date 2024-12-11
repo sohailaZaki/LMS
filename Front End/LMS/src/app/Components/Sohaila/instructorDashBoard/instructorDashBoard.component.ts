@@ -8,7 +8,13 @@ import { Component, OnInit, ViewChild ,ElementRef } from '@angular/core';
 export class InstructorDashBoardComponent implements OnInit {
 
 
-  constructor() { }
+  items: number[] = [];
+
+  constructor() {
+    for (let index = 0; index < 4; index++) {
+      this.items.push(index);
+    }
+  }
 
   ngOnInit() {
   }
@@ -29,5 +35,25 @@ img:"../../../../assets/grades.webp"
 
 ]
 
+@ViewChild('scrollContainer', { static: false }) scrollContainer!: ElementRef;
+
+scrollHorizontally(): void {
+  console.log("clicked");
+  if (this.scrollContainer) {
+  console.log(this.scrollContainer);
+    this.scrollContainer.nativeElement.scrollBy({
+      left: 300, // مقدار التمرير
+      behavior: 'smooth' // تمرير انسيابي
+    });
+    console.log("scrolled")
+  }
+}
+scrollLeft(): void {
+  this.scrollContainer.nativeElement.scrollBy({ left: -300, behavior: 'smooth' });
+}
+
+scrollRight(): void {
+  this.scrollContainer.nativeElement.scrollBy({ left: 300, behavior: 'smooth' });
+}
 }
 

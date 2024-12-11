@@ -1,0 +1,54 @@
+<div class="content">
+<div class="side-course-details">
+<div class="image-container">
+<img src="../../../../assets/angular.webp" alt="">
+</div>
+<div class="text-header">
+  <p style="color: #043B5C; font-weight: 500;">{{angularCourse.courseName}}</p>
+  <span>In  course, you will learn how to :</span>
+<p>{{angularCourse.cousreDec}}</p>
+</div>
+<span class="text-header">Material</span>
+<div class="material">
+ @for (item of Categories; track $index) {
+   <div class="material-fields">
+
+    <button class="btn-style" nz-button nz-dropdown [nzDropdownMenu]="menu4">
+      <mat-icon class="class-icon">class</mat-icon>
+      <span  class="material-labels">
+       {{item.filedName}}
+     </span>
+     <!-- <span nz-icon nzType="down"></span> -->
+     <mat-icon class="down-icon">keyboard_arrow_down</mat-icon>
+   </button>
+   <nz-dropdown-menu #menu4="nzDropdownMenu">
+     <ul nz-menu>
+       <li nz-menu-item>{{item.fieldElements[0]}}</li>
+       <li nz-menu-item>{{item.fieldElements[1]}}</li>
+       <li nz-menu-item>{{item.fieldElements[2]}}</li>
+     </ul>
+   </nz-dropdown-menu>
+
+  </div>
+  }
+
+
+  <!-- <nz-dropdown-menu #menu4="nzDropdownMenu">
+    <ul nz-menu>
+      <li nz-menu-item>Lec 1</li>
+      <li nz-menu-item>Lec 2</li>
+      <li nz-menu-item>Lec 3</li>
+    </ul>
+  </nz-dropdown-menu>
+ </div>
+  -->
+
+  <!-- <nz-dropdown-menu #menu4="nzDropdownMenu">
+    <ul nz-menu>
+      <li nz-menu-item>Lec 1</li>
+      <li nz-menu-item>Lec 2</li>
+      <li nz-menu-item>Lec 3</li>
+    </ul>
+  </nz-dropdown-menu> -->
+</div>
+</div>
