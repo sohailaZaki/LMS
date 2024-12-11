@@ -1,0 +1,33 @@
+<div class="my-courses-container">
+  <div class="header">
+    <h1 style="color: #0F266C; font-weight: 500;">Select Course</h1>
+    <div class="nav-item">
+      <a class="btn btn-outline-success p-1" routerLink="/Instructor/Courses/New" >
+        <!-- Replace with your desired route -->
+          Create
+          <i class="material-icons create-icon p-1">add_circle_outline</i>
+      </a>
+    </div>
+  </div>
+  <p>Organize your work and improve your performance with us</p>
+
+  <div class="courses-container">
+    <div class="course-card" *ngFor="let course of courses ">
+      <div class="course-image">
+        <img src="{{course.image}}" alt="course " />
+      </div>
+      <div class="course-info">
+        <span>{{ course.title }}</span>
+        <p>{{ course.description }}</p>
+      </div>
+      <div class="view-btn-container">
+       <a routerLink="/Instructor/Courses/:id">
+
+         <button (click)="navigateToCourse(course)" class="view-btn">
+           View
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+.side-course-details{
+  width: 375px;
+  height: 670px;
+  border-radius:15px ;
+  background-color: #FFFFFF;
+position: absolute;
+right: 0;
+margin: 20px;
+}
+.content{
+
+}
+.image-container img{
+  border-top-left-radius:17px ;
+  border-top-right-radius:20px ;
+  width: 381px;
+  height: 205px;
+}
+.text-header{
+  margin-left:10px ;
+  margin-top: 10px;
+  color: #043B5C;
+  font-weight: 500;
+  font-size: 13px;
+}
+.text-header p{
+color: #757575;
+font-weight: 400;
+margin-top: 4px;
+font-size: 12px;
+}
+.material{
+  border: solid;
+  border-color:#ECE8E8 ;
+  border-radius: 6px;
+  border-width:1px ;
+margin: 4px;
+}
+.btn-style{
+  width: 237px;
+  height: 44px;
+margin: 10px;
+color: #043B5C;
+}
+.down-icon{
+  position: absolute;
+  right: 0;
+  bottom: 8px;
+}
+.material-labels{
+  position: absolute;
+  left: 35px;
+  bottom: 13px;
+}
+.class-icon{
+  position: absolute;
+  left: 5px;
+  bottom: 13px;
+}
