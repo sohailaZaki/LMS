@@ -8,25 +8,11 @@ import { filter } from 'rxjs';
 @Component({
   selector: 'app-Layout',
   templateUrl: './Layout.component.html',
-  styleUrls: ['./Layout.component.css'],
+  styleUrls: ['./Layout.component.css']
 })
 export class LayoutComponent implements OnInit {
 
-  currentRoute: string = '';
-  showSidebar: boolean = true;
-  /**
-   *
-   */
-  constructor(private route: Router) {
-    this.currentRoute = route.url;
-
-this.route.events.pipe(filter(event=>event instanceof NavigationEnd)).subscribe((event:any)=>{
-  this.currentRoute=event.url;
-  this.updateSidebarVisability();
-})
-
-
-  }
+  constructor() { }
 
   ngOnInit() {
     this.currentRoute = this.route.url;
@@ -42,4 +28,5 @@ this.route.events.pipe(filter(event=>event instanceof NavigationEnd)).subscribe(
       this.showSidebar = true;
     }
   }
+
 }

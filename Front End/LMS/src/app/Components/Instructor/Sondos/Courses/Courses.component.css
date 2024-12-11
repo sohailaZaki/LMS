@@ -1,6 +1,7 @@
 .my-courses-container {
-  /* padding-top: 20px; */
-  /* padding-left: 100px; */
+  /* padding: 20px;
+  padding-left: 260px; */
+padding-left: 38px;
   background-color: #eef4ff; /* A light background similar to your design */
   overflow-y: auto;
   scroll-behavior: smooth;

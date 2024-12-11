@@ -1,15 +1,21 @@
-
-import { NgModule } from '@angular/core';
+import { InstructorDashBoardComponent } from './Components/Sohaila/instructorDashBoard/instructorDashBoard.component';
+import { Router, RouterLink, RouterModule, Routes,RouterOutlet } from '@angular/router';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, RouterOutlet, Routes } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-
-// Ng-Zorro Modules
-import { NZ_I18N, en_US } from 'ng-zorro-antd/i18n';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatIcon } from '@angular/material/icon';
+import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzListComponent, NzListItemComponent } from 'ng-zorro-antd/list';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonComponent ,NzButtonModule} from 'ng-zorro-antd/button';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { registerLocaleData } from '@angular/common';
@@ -22,16 +28,17 @@ import { CreateCourseComponent } from './Components/Sondos/CreateCourse/create-c
 import { AssignmentsComponent } from './Components/Sondos/assignments/assignments.component';
 import { CreateAssignmentsComponent } from './Components/Sondos/create-assignments/create-assignments.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CourseViewComponent } from './Components/Sohaila/courseView/courseView.component';
+import { LayoutComponent } from './Components/Layout/Layout.component';
+import { NzBackTopModule } from 'ng-zorro-antd/back-top';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+const routes: Routes=[
 
-// Components
-import { AppComponent } from './app.component';
-import { SignupComponent } from './Components/Login & Reg/Rahma/signup/signup.component';
-import { LoginComponent } from './Components/Login & Reg/Rahma/Login/Login.component';
-import { InstructorDashBoardComponent } from './Components/Instructor/Sohaila/instructorDashBoard/instructorDashBoard.component';
-import { SideBarComponent } from './Components/Instructor/Sondos/SideBar/SideBar.component';
-import { CoursesComponent } from './Components/Instructor/Sondos/Courses/Courses.component';
-import { CreateCourseComponent } from './Components/Instructor/Sondos/CreateCourse/create-course.component';
-import { GradesComponent } from './Components/Instructor/Sondos/Grades/Grades.component';
+  {path:'',component:LayoutComponent,children:[
+{path:'InstructorDashBoard',component:InstructorDashBoardComponent},
+{path:'Instructor/Courses',component:CoursesComponent },
+{path:'Instructor/Courses/:id',component:CoursesComponent },
+  ] }
 
 import { CreateAssignmentComponent } from './Components/Instructor/Sondos/createAssignment/createAssignment.component';
 import { CourseViewComponent } from './Components/Instructor/Sohaila/courseView/courseView.component';
@@ -92,26 +99,14 @@ const routes: Routes = [
     InstructorDashBoardComponent,
     SideBarComponent,
     CoursesComponent,
-    CreateCourseComponent,
-    AssignmentsComponent,
-    CreateAssignmentsComponent
+    CourseViewComponent,LayoutComponent
   ],
   imports: [
     BrowserModule,
-    CommonModule, // تم إضافته لتوفير التوجيهات الأساسية مثل ngIf و ngSwitch
-    FormsModule,
-    ReactiveFormsModule,
-    RouterModule.forRoot(routes),
-    MatCardModule,
-    MatListModule,
-    NzLayoutModule,
-    NzMenuModule,
-    NzCardModule,
-    NzButtonModule,
-    NzIconModule,
-    NzDropDownModule,
-    NzBackTopModule,
-    NgbModule,MatIcon,
+    MatCardModule, IconsProviderModule, NzLayoutModule, NzMenuModule, FormsModule,NzCardModule,MatListModule,NzListItemComponent,NzListComponent,NzButtonComponent,
+    NgbModule,NzDropDownModule,NzIconModule,NzButtonModule,MatIcon,
+    RouterOutlet,NzBackTopModule,ScrollingModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [
     provideAnimationsAsync(),

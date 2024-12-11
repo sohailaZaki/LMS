@@ -1,16 +1,69 @@
-.container1 {
-
+.content {
+  width: 100%;
+  height: auto;
+  background-color: #EEF4FF;
+  padding-left: 100px;
+  padding-right: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.al-left {
-  width: 180px; /* sidebar عرض */
-  height: 100vh; /* ارتفاعها ثابت */
-
-  top: 0; /* من أعلى الشاشة */
-  left: 0; /* من يسار الشاشة */
-
+.text {
+  margin-bottom: 20px;
 }
 
-.al-right {
+.categories-container {
+  display: flex;
+  gap: 20px; /* Adds spacing between the cards */
+  flex-wrap: wrap; /* Ensures cards wrap to the next row if space is insufficient */
+  justify-content: flex-start; /* Align cards to the start of the container */
+  width: 100%;
+  padding-top: 20px;
+}
 
+.Categories {
+  border-radius: 14px;
+  flex: 0 1 calc(25% - 20px); /* Four cards per row with spacing */
+  max-width: calc(25% - 20px); /* Ensures the max width matches the calculation */
+  box-sizing: border-box;
+}
+
+.card {
+  border: none;
+}
+
+.categories-container nz-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+nz-card-meta {
+  margin-bottom: 20px;
+}
+
+.categories-container img {
+  border-radius: 14px;
+}
+
+.categories-container a {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background-color: #043B5C;
+  color: white;
+  border-radius: 15px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.categories-container a:hover {
+  background-color: #065a85;
+}
+
+.categories-container nz-card {
+  border-radius: 14px;
 }
