@@ -23,7 +23,9 @@ import { FormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
 import { SideBarComponent } from './Components/Sondos/SideBar/SideBar.component';
 import { CoursesComponent } from './Components/Sondos/Courses/Courses.component';
+import { CreateCourseComponent } from './Components/Sondos/CreateCourse/create-course.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { CourseViewComponent } from './Components/Sohaila/courseView/courseView.component';
 import { LayoutComponent } from './Components/Layout/Layout.component';
 import { NzBackTopModule } from 'ng-zorro-antd/back-top';
@@ -34,7 +36,11 @@ const routes: Routes=[
 {path:'InstructorDashBoard',component:InstructorDashBoardComponent},
 {path:'Instructor/Courses',component:CoursesComponent },
 {path:'Instructor/Courses/:id',component:CoursesComponent },
+ {path:'Instructor/Courses/Add',component:CreateCourseComponent},
+    
   ] }
+
+
 
 ]
 registerLocaleData(en);
@@ -43,8 +49,7 @@ registerLocaleData(en);
     AppComponent,
     InstructorDashBoardComponent,
     SideBarComponent,
-    CoursesComponent,
-    CourseViewComponent,LayoutComponent
+    CoursesComponent, CourseViewComponent,LayoutComponent,CreateCourseComponent
   ],
   imports: [
     BrowserModule,
