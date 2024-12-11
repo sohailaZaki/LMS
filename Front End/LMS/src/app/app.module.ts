@@ -12,17 +12,15 @@ import { NZ_I18N, en_US } from 'ng-zorro-antd/i18n';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzCardModule } from 'ng-zorro-antd/card';
-import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
-import { NzBackTopModule } from 'ng-zorro-antd/back-top';
-
-// Angular Material Modules
-import { MatCardModule } from '@angular/material/card';
-import { MatListModule } from '@angular/material/list';
-import { MatIcon } from '@angular/material/icon';
-
-// Bootstrap
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+import { FormsModule } from '@angular/forms';
+import { provideHttpClient } from '@angular/common/http';
+import { SideBarComponent } from './Components/Sondos/SideBar/SideBar.component';
+import { CoursesComponent } from './Components/Sondos/Courses/Courses.component';
+import { CreateCourseComponent } from './Components/Sondos/CreateCourse/create-course.component';
+import { AssignmentsComponent } from './Components/Sondos/assignments/assignments.component';
+import { CreateAssignmentsComponent } from './Components/Sondos/create-assignments/create-assignments.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Components
@@ -95,19 +93,8 @@ const routes: Routes = [
     SideBarComponent,
     CoursesComponent,
     CreateCourseComponent,
-    GradesComponent,
-    AssigmentsComponent,
-    CreateAssignmentComponent,
-    CourseViewComponent,
-
-    LayoutComponent,
-    CourseMaterialsComponent,
-    SubmissionAssignmentComponent,
-    HomeComponent,
-    CourseDetailsComponent,
-    studentDashboardComponent,
-    FirstKeyPipe, // التأكد من وجود الأنابيب هنا
-
+    AssignmentsComponent,
+    CreateAssignmentsComponent
   ],
   imports: [
     BrowserModule,
