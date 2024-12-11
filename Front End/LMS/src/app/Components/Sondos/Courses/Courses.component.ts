@@ -24,62 +24,62 @@ export class CoursesComponent implements OnInit {
     {
       title: 'Angular Course',
       description: 'Front-end Course',
-      image: "../../../assets/images/download.jpg"
+      image: "../../../../assets/angular.webp"
     },
     {
       title: 'Angular Course',
       description: 'Front-end Course',
-      image: "../../../assets/images/download.jpg"
+      image: "../../../../assets/angular.webp"
     },
     {
       title: 'Node.js Course',
       description: 'Little description about Node.js course',
-      image:"../../../assets/images/download.jpg"
+      image: "../../../../assets/angular.webp"
     },
     {
       title: 'Node.js Course',
       description: 'Little description about Node.js course',
-      image: "../../../assets/images/download.jpg"
+      image: "../../../../assets/angular.webp"
     },
     {
       title: 'Node.js Course',
       description: 'Little description about Node.js course',
-      image:'../../assets/images/download.jpg',
+      image: "../../../../assets/angular.webp"
     },
     {
       title: 'React.js Course',
       description: 'Little description about React course',
-      image:"../../../assets/images/download.jpg"
+      image: "../../../../assets/angular.webp"
     },
     {
       title: 'React.js Course',
       description: 'Little description about React course',
-      image:"../../../assets/images/download.jpg"
+      image: "../../../../assets/angular.webp"
     },
     {
       title: 'React.js Course',
       description: 'Little description about React course',
-      image: "../../../assets/images/download.jpg"
+      image: "../../../../assets/angular.webp"
     },
     {
       title: 'ASP.NET MVC Core',
       description: 'Little description about .NET course',
-      image: "../../../assets/images/download.jpg"
+      image: "../../../../assets/angular.webp"
     },
     {
       title: 'ASP.NET MVC Core',
       description: 'Little description about .NET course',
-      image:"../../../assets/images/download.jpg"
+      image: "../../../../assets/angular.webp"
     },
     {
       title: 'ASP.NET MVC Core',
       description: 'Little description about .NET course',
-      image: "../../../assets/images/download.jpg"
+      image: "../../../../assets/angular.webp"
     },
     {
       title: 'ASP.NET MVC Core',
       description: 'Little description about .NET course',
-      image: '../../../assets/images/download.jpg',
+      image: "../../../../assets/angular.webp"
     },
   ];
 
