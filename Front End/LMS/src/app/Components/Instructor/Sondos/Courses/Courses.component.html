@@ -2,7 +2,7 @@
   <div class="header">
     <h1 style="color: #0F266C; font-weight: 500;">Select Course</h1>
     <div class="nav-item">
-      <a class="btn btn-outline-success p-1" routerLink="/Instructor/Courses/AddNew" >
+      <a class="btn btn-outline-success p-1" routerLink="/Instructor/Courses/New" >
         <!-- Replace with your desired route -->
           Create
           <i class="material-icons create-icon p-1">add_circle_outline</i>
@@ -12,7 +12,7 @@
   <p>Organize your work and improve your performance with us</p>
 
   <div class="courses-container">
-    <div class="course-card" *ngFor="let course of courses">
+    <div class="course-card" *ngFor="let course of courses ">
       <div class="course-image">
         <img src="{{course.image}}" alt="course " />
       </div>

@@ -21,7 +21,7 @@ export class InstructorDashBoardComponent implements OnInit {
 elements:{ elementName: string; Desc: string;img:string}[]=[{
   elementName: 'Courses',
   Desc: 'view all the courses you created before and manage them',img:"../../../../assets/courses.webp"},{
-    elementName:'Assignments',
+    elementName:'Assigments',
     Desc:'view all the assignments in each course you created before and manage them ',
     img:"../../../../assets/assessment.webp"
     },

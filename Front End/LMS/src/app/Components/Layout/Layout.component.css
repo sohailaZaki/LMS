@@ -3,7 +3,7 @@
 }
 
 .al-left {
-  width: 190px; /* sidebar عرض */
+  width: 180px; /* sidebar عرض */
   height: 100vh; /* ارتفاعها ثابت */
 
   top: 0; /* من أعلى الشاشة */

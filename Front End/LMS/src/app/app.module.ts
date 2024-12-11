@@ -1,8 +1,8 @@
 import { InstructorDashBoardComponent } from './Components/Instructor/Sohaila/instructorDashBoard/instructorDashBoard.component';
 import { SideBarComponent } from './Components/Instructor/Sondos/SideBar/SideBar.component';
 import { CoursesComponent } from './Components/Instructor/Sondos/Courses/Courses.component';
-import { CreateCourseComponent } from './Components/Instructor/Sondos/CreateCourse/create-course.component';
-import { CourseViewComponent } from './Components/Instructor/Sohaila/courseView/courseView.component';
+import { CreateCourseComponent } from './Components/Instructor/Sondos/createCourse/create-course.component';
+// import { CourseViewComponent } from './Components/Instructor/Sohaila/courseView/courseView.component';
 import { Router, RouterLink, RouterModule, Routes,RouterOutlet } from '@angular/router';
 import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -36,6 +36,8 @@ import { LoginComponent } from './Components/Login & Reg/Rahma/Login/Login.compo
 import { GradesComponent } from './Components/Instructor/Sondos/Grades/Grades.component';
 import { AssigmentsComponent } from './Components/Instructor/Sondos/Assigments/Assigments.component';
 import { CreateAssignmentComponent } from './Components/Instructor/Sondos/createAssignment/createAssignment.component';
+import { CourseViewComponent } from './Components/Instructor/Sohaila/courseView/courseView.component';
+
 const routes: Routes=[
 
 {path:'',component:LayoutComponent,children:[
@@ -46,7 +48,8 @@ const routes: Routes=[
 {path:'Instructor/Grades',component:GradesComponent},
 {path:'Instructor/Assigments',component:AssigmentsComponent},
 {path:'Instructor/Assigments/AddNew',component:CreateAssignmentComponent},
-{path:'Instructor/Courses/AddNew',component:CreateCourseComponent}
+{path:'Instructor/Courses/New',component:CreateCourseComponent},
+{path:'Instructor/Student Monitiring',component:CourseViewComponent},
 
 
   ] }
@@ -60,7 +63,7 @@ registerLocaleData(en);
     AppComponent,
     InstructorDashBoardComponent,
     SideBarComponent,
-    CoursesComponent, CourseViewComponent,LayoutComponent,CreateCourseComponent,StudentDashboardComponent,LoginComponent,
+    CoursesComponent,LayoutComponent,CreateCourseComponent,StudentDashboardComponent,LoginComponent,CourseViewComponent
   ],
   imports: [
     BrowserModule,
