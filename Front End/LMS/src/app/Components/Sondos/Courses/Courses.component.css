@@ -1,7 +1,6 @@
 .my-courses-container {
   padding: 20px;
   padding-left: 260px;
-
   background-color: #eef4ff; /* A light background similar to your design */
 }
 .header {
@@ -14,6 +13,8 @@
 .header h1 {
   margin: 0;
   color: #0f266c;
+  font-weight: bold;
+  
 }
 .my-courses-container p {
   color: #7575;
@@ -39,7 +40,7 @@
 
 /* .nav-item a:hover {
   color: #218838; /* Optional hover effect */
-} */
+/* } */ 
 .nav-item a:hover::after {
   background-color: rgba(40, 167, 69, 0.5); /* Light green color */
   opacity: 0.7; /* Slightly transparent for a light effect */

@@ -20,10 +20,13 @@ import { FormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
 import { SideBarComponent } from './Components/Sondos/SideBar/SideBar.component';
 import { CoursesComponent } from './Components/Sondos/Courses/Courses.component';
+import { CreateCourseComponent } from './Components/Sondos/CreateCourse/create-course.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 const routes: Routes=[{
   path:'InstructorDashBoard',component:InstructorDashBoardComponent},
-  {path:'Instructor/Courses',component:CoursesComponent }
+  {path:'Courses',component:CoursesComponent },
+  {path:'create-course',component:CreateCourseComponent}
+
 
 ]
 registerLocaleData(en);
@@ -33,6 +36,7 @@ registerLocaleData(en);
     InstructorDashBoardComponent,
     SideBarComponent,
     CoursesComponent,
+    CreateCourseComponent
   ],
   imports: [
     BrowserModule,
