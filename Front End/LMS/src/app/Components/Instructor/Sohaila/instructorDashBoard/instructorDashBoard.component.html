@@ -1,35 +1,4 @@
 
-  <!-- <div class="content">
-    <div class="text">
-      <h1>Welcome to our e-learning platform!</h1>
-      <p class="description">Organize your work and improve your performance with us there.</p>
-      <p class="cta">Try things out</p>
-    </div>
-    <div class="categories-container">
-      @for (item of elements; track $index) {
-      <div class="Categories">
-        <nz-card nzHoverable class="card-wrapper" [nzCover]="coverTemplate">
-          <div class="card">
-            <nz-card-meta
-              nzTitle="{{item.elementName}}"
-              nzDescription="{{item.Desc}}"
-              class="card-meta">
-            </nz-card-meta>
-            <div class="view-button">
-              <a routerLink="">View</a>
-            </div>
-          </div>
-        </nz-card>
-        <ng-template #coverTemplate>
-          <img
-            alt="example"
-            src="{{item.img}}"
-            class="cover-image" />
-        </ng-template>
-      </div>
-      }
-    </div>
-  </div> -->
  <div class="page-content">
    <div class="text">
      <h1>Welcome to our e-learning platform!</h1>
@@ -47,7 +16,7 @@
               style="white-space: normal; text-align: left; border-bottom: #D5D5D5 1px solid; padding-bottom: 15px;">
             </nz-card-meta>
             <div style="width: 100px; background-color: #043B5C; text-align: center; padding: 10px; margin-top: 35px; margin-left: auto; margin-right: auto; border-radius: 15px;">
-              <a routerLink="" style="color: white; padding-top: 10px; text-decoration: none; cursor: pointer;">View</a>
+              <a routerLink="/Instructor/{{element.elementName}}" style="color: white; padding-top: 10px; text-decoration: none; cursor: pointer;">View</a>
             </div>
           </div>
         </nz-card>

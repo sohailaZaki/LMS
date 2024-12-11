@@ -15,38 +15,39 @@
       </a>
     </li>
     <li class="nav-item">
-      <a routerLink="/create-course">
+      <a routerLink="/Instructor/Courses/New">
         <i class="material-icons">my_library_add</i> Create Course
       </a>
     </li>
     <li class="nav-item">
-      <a routerLink="/create-assignment">
+      <a routerLink="/Instructor/Assigments/AddNew">
         <i class="material-icons">assignment</i> Create Assignment
       </a>
     </li>
     <li class="nav-item dropdown">
       <a href="javascript:void(0)" (click)="toggleDropdown()">
-        <a routerLink="/Courses" >
+        <a routerLink="Instructor/Courses" >
         <i class="material-icons">folder</i> My Courses
       </a>
         <i class="material-icons arrow-icon" [ngClass]="{'rotate': isDropdownOpen}">keyboard_arrow_down</i>
       </a>
       <ul class="nav-submenu" *ngIf="isDropdownOpen">
-        <li class="nav-subitem"><a routerLink="/course1">Course 1</a></li>
-        <li class="nav-subitem"><a routerLink="/course2">Course 2</a></li>
-        <li class="nav-subitem"><a routerLink="/course3">Course 3</a></li>
+        @for (item of courses; track $index) {
+
+          <li class="nav-subitem"><a routerLink="Instructor/Courses/:id">{{item.title}}</a></li>
+        }
       </ul>
     </li>
 
 
 
     <li class="nav-item">
-      <a routerLink="/assignments">
+      <a routerLink="/Instructor/Assigments">
         <i class="material-icons">list</i> Assignments
       </a>
     </li>
     <li class="nav-item">
-      <a routerLink="/grades">
+      <a routerLink="/Instructor/Grades">
         <i class="material-icons">grading</i> Grades
       </a>
     </li>

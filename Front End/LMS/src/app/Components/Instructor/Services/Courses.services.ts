@@ -1,21 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-@Component({
-  selector: 'app-Courses',
-  templateUrl: './Courses.component.html',
-  styleUrls: ['./Courses.component.css']
+import { inject, Injectable } from "@angular/core";
+
+@Injectable({
+  providedIn:'root'
 })
-export class CoursesComponent implements OnInit {
-  constructor(private router: Router) {}
-  navigateToCourse(course: any) {
-    this.router.navigate(['/dashboard/course-detail', course.id], { state: { courseDetails: course } });
-  }
-
-
-
-  ngOnInit() {
-  }
-  courses = [
+export class CoursesServices{
+ private courses = [
     {
       title: 'Angular Course',
       description: 'Front-end Course',
@@ -82,5 +71,7 @@ export class CoursesComponent implements OnInit {
       image: "../../../../assets/angular.webp"
     },
   ];
-
+ public getCourses(){
+  return this.courses;
+}
 }

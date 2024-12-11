@@ -1,3 +1,4 @@
+import { CoursesServices } from './../../Services/Courses.services';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./SideBar.component.css']
 })
 export class SideBarComponent implements OnInit {
-
+courses:{title:string}[]=[];
+courseServices:CoursesServices =new CoursesServices();
   constructor() { }
 
   ngOnInit() {
+    this.courses = this.courseServices.getCourses();
   }
   isDropdownOpen = false; // Tracks dropdown state
   currentComponent: string = 'to-do'; // Default component
