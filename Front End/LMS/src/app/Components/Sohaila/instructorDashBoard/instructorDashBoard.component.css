@@ -11,8 +11,8 @@
    scroll-behavior: smooth
 }
 .content .card{
-  border: bottom 1px gray;
-
+  /* border: bottom 1px gray; */
+border: none;
 }
 
 .content h1 ,p{

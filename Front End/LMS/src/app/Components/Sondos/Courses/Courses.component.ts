@@ -9,9 +9,9 @@ export class CoursesComponent implements OnInit {
   constructor(private router: Router) {}
   navigateToCourse(course: any) {
     this.router.navigate(['/dashboard/course-detail', course.id], { state: { courseDetails: course } });
-  } 
+  }
 
-  
+
 
   ngOnInit() {
   }
@@ -19,7 +19,7 @@ export class CoursesComponent implements OnInit {
     {
       title: 'Angular Course',
       description: 'Front-end Course',
-      image: "../../../assets/images/download.jpg"
+      image: "../../../../assets/angular.webp"
     },
     {
       title: 'Angular Course',

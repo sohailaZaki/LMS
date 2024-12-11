@@ -24,7 +24,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 const routes: Routes=[{
   path:'InstructorDashBoard',component:InstructorDashBoardComponent},
   {path:'Instructor/Courses',component:CoursesComponent }
-  
+
 ]
 registerLocaleData(en);
 @NgModule({
@@ -51,6 +51,6 @@ exports:[
   RouterModule
 ]
 })
-export class AppModule { 
- 
+export class AppModule {
+
 }
