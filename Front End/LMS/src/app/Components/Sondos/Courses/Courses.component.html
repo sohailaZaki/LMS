@@ -2,12 +2,10 @@
   <div class="header">
     <h1>Select Course</h1>
     <div class="nav-item">
-      <a routerLink="/create-course">
+      <a class="btn btn-outline-success p-1" routerLink="/create-course" >
         <!-- Replace with your desired route -->
-        <button class="btn">
           Create
-          <i class="material-icons create-icon">add_circle_outline</i>
-        </button>
+          <i class="material-icons create-icon p-1">add_circle_outline</i>
       </a>
     </div>
   </div>
@@ -16,7 +14,7 @@
   <div class="courses-container">
     <div class="course-card" *ngFor="let course of courses">
       <div class="course-image">
-        <img [src]="course.image" alt="course image" />
+        <img src="{{course.image}}" alt="course " />
       </div>
       <div class="course-info">
         <h3>{{ course.title }}</h3>
