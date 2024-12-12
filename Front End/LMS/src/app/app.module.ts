@@ -20,15 +20,32 @@ import { FormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
 import { SideBarComponent } from './Components/Sondos/SideBar/SideBar.component';
 import { CoursesComponent } from './Components/Sondos/Courses/Courses.component';
+import { DashboardComponent } from './Components/nada/dashboard/dashboard.component';
+import { CourseDetailsComponent } from './Components/nada/course-detail/course-detail.component';
+import { SubmissionAssignmentComponent } from './Components/nada/submission-assignment/submission-assignment.component';
+import { HomeComponent } from './Components/nada/home/home.component';
+import { CourseMaterialsComponent } from './Components/nada/course-materials/course-materials.component';
 const routes: Routes=[{
   path:'InstructorDashBoard',component:InstructorDashBoardComponent},
-  {path:'Instructor/Courses',component:CoursesComponent }
-  
+  {path:'Instructor/Courses',component:CoursesComponent },
+
+
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    children: [
+      { path: 'courses', component: CourseMaterialsComponent },
+      { path: 'assignments', component: SubmissionAssignmentComponent },
+      { path: 'home', component: HomeComponent },
+      { path: 'course-detail/:id', component: CourseDetailsComponent }
+    ],
+  },
 ]
 registerLocaleData(en);
 @NgModule({
   declarations: [
-    AppComponent,InstructorDashBoardComponent,SideBarComponent,
+    AppComponent,InstructorDashBoardComponent,SideBarComponent, DashboardComponent, CourseDetailsComponent, SubmissionAssignmentComponent, HomeComponent, CourseMaterialsComponent,
   ],
   imports: [
     BrowserModule,
