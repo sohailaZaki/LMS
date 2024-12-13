@@ -1,77 +1,22 @@
+import { CoursesServices } from './../../Services/Courses.services';
 import { inject, Injectable } from "@angular/core";
-
-@Injectable({
-  providedIn:'root'
+import { Component } from '@angular/core';
+@Component({
+  selector: 'app-courses',
+  templateUrl: './courses.component.html',
+  styleUrls: ['./courses.component.css']
 })
-export class CoursesServices{
- private courses = [
-    {
-      title: 'Angular Course',
-      description: 'Front-end Course',
-      image: "../../../../assets/angular.webp"
-    },
-    {
-      title: 'Angular Course',
-      description: 'Front-end Course',
-      image: "../../../../assets/angular.webp"
-    },
-    {
-      title: 'Angular Course',
-      description: 'Front-end Course',
-      image: "../../../../assets/angular.webp"
-    },
-    {
-      title: 'Node.js Course',
-      description: 'Little description about Node.js course',
-      image: "../../../../assets/angular.webp"
-    },
-    {
-      title: 'Node.js Course',
-      description: 'Little description about Node.js course',
-      image: "../../../../assets/angular.webp"
-    },
-    {
-      title: 'Node.js Course',
-      description: 'Little description about Node.js course',
-      image: "../../../../assets/angular.webp"
-    },
-    {
-      title: 'React.js Course',
-      description: 'Little description about React course',
-      image: "../../../../assets/angular.webp"
-    },
-    {
-      title: 'React.js Course',
-      description: 'Little description about React course',
-      image: "../../../../assets/angular.webp"
-    },
-    {
-      title: 'React.js Course',
-      description: 'Little description about React course',
-      image: "../../../../assets/angular.webp"
-    },
-    {
-      title: 'ASP.NET MVC Core',
-      description: 'Little description about .NET course',
-      image: "../../../../assets/angular.webp"
-    },
-    {
-      title: 'ASP.NET MVC Core',
-      description: 'Little description about .NET course',
-      image: "../../../../assets/angular.webp"
-    },
-    {
-      title: 'ASP.NET MVC Core',
-      description: 'Little description about .NET course',
-      image: "../../../../assets/angular.webp"
-    },
-    {
-      title: 'ASP.NET MVC Core',
-      description: 'Little description about .NET course',
-      image: "../../../../assets/angular.webp"
-    },
-  ];
- public getCourses(){
-  return this.courses;
+export class CoursesComponent{
+ private courses:  {
+  title: string,
+  description: string,
+  image: string
+}[] =[];
+/**
+ *
+ */
+constructor(courseService:CoursesServices) {
+ this.courses = courseService.getCourses()
+
 }
 }

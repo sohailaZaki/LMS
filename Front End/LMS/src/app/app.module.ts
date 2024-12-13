@@ -31,7 +31,7 @@ import { SignupComponent } from './Components/Login & Reg/Rahma/signup/signup.co
 import { LoginComponent } from './Components/Login & Reg/Rahma/Login/Login.component';
 import { InstructorDashBoardComponent } from './Components/Instructor/Sohaila/instructorDashBoard/instructorDashBoard.component';
 import { SideBarComponent } from './Components/Instructor/Sondos/SideBar/SideBar.component';
-import { CoursesComponent } from './Components/Instructor/Sondos/Courses/Courses.component';
+
 import { CreateCourseComponent } from './Components/Instructor/Sondos/CreateCourse/create-course.component';
 import { GradesComponent } from './Components/Instructor/Sondos/Grades/Grades.component';
 
@@ -52,6 +52,7 @@ import { FirstKeyPipe } from './Components/Login & Reg/Rahma/pipes/firstKey.pipe
 
 // Locale
 import en from '@angular/common/locales/en';
+import { CoursesComponent } from './Components/Instructor/Sondos/Courses/Courses.component';
 registerLocaleData(en);
 
 // Routes
