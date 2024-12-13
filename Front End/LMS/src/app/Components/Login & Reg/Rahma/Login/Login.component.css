@@ -1,12 +1,11 @@
 .container {
+
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  /* background-color: #f0f2f5; */
   margin-left: 90px;
-  /* background-image: url("../../../../../assets/Login.png");
-  background-size: cover; */
+
 }
 
 .form-box {
@@ -94,3 +93,4 @@ label {
   right: 20px;
   bottom: 20px;
 }
+
