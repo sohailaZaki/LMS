@@ -99,6 +99,7 @@ const routes: Routes = [
     AssigmentsComponent,
     CreateAssignmentComponent,
     CourseViewComponent,
+
     LayoutComponent,
     CourseMaterialsComponent,
     SubmissionAssignmentComponent,
@@ -106,6 +107,7 @@ const routes: Routes = [
     CourseDetailsComponent,
     studentDashboardComponent,
     FirstKeyPipe, // التأكد من وجود الأنابيب هنا
+
   ],
   imports: [
     BrowserModule,
