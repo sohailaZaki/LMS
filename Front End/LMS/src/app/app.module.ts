@@ -33,63 +33,50 @@ import { InstructorDashBoardComponent } from './Components/Instructor/Sohaila/in
 import { SideBarComponent } from './Components/Instructor/Sondos/SideBar/SideBar.component';
 import { CoursesComponent } from './Components/Instructor/Sondos/Courses/Courses.component';
 import { CreateCourseComponent } from './Components/Instructor/Sondos/CreateCourse/create-course.component';
-// import { CourseViewComponent } from './Components/Instructor/Sohaila/courseView/courseView.component';
-import { Router, RouterLink, RouterModule, Routes,RouterOutlet } from '@angular/router';
-import { NgModule, Component } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { MatCardModule } from '@angular/material/card';
-import { NzLayoutModule } from 'ng-zorro-antd/layout';
-import { NzMenuModule } from 'ng-zorro-antd/menu';
-=======
-import { MatCardModule } from '@angular/material/card';
-import { NzLayoutModule } from 'ng-zorro-antd/layout';
-import { NzMenuModule } from 'ng-zorro-antd/menu';
-import { NZ_I18N } from 'ng-zorro-antd/i18n';
-import { en_US } from 'ng-zorro-antd/i18n';
-import { NzCardModule } from 'ng-zorro-antd/card';
-import { registerLocaleData } from '@angular/common';
-import en from '@angular/common/locales/en';
-registerLocaleData(en);
-
-
-import { LayoutComponent } from './Components/Layout/Layout.component';
-import { NzBackTopModule } from 'ng-zorro-antd/back-top';
-import { ScrollingModule } from '@angular/cdk/scrolling';
-import { studentDashboardComponent } from './Components/Student/Nada/studentDashboard/studentDashboard.component';
-import { LoginComponent } from './Components/Login & Reg/Rahma/Login/Login.component';
 import { GradesComponent } from './Components/Instructor/Sondos/Grades/Grades.component';
 import { AssigmentsComponent } from './Components/Instructor/Sondos/Assigments/Assigments.component';
 import { CreateAssignmentComponent } from './Components/Instructor/Sondos/createAssignment/createAssignment.component';
 import { CourseViewComponent } from './Components/Instructor/Sohaila/courseView/courseView.component';
+import { LayoutComponent } from './Components/Layout/Layout.component';
+import { CourseMaterialsComponent } from './Components/Student/Nada/course-materials/course-materials.component';
+import { SubmissionAssignmentComponent } from './Components/Student/Nada/submission-assignment/submission-assignment.component';
+import { HomeComponent } from './Components/Student/Nada/home/home.component';
+import { CourseDetailsComponent } from './Components/Student/Nada/course-detail/course-detail.component';
+import { studentDashboardComponent } from './Components/Student/Nada/studentDashboard/studentDashboard.component';
 
+// Pipes
+import { FirstKeyPipe } from './Components/Login & Reg/Rahma/pipes/firstKey.pipe';
 
-import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzCardModule } from 'ng-zorro-antd/card';  // إضافة هذه الوحدة
-import { NzDropDownModule } from 'ng-zorro-antd/dropdown';  // إضافة هذه الوحدة
-import { MatIconModule } from '@angular/material/icon';  // إضافة هذه الوحدة الخاصة بـ Material Icons
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SignupComponent } from './Components/Login & Reg/Rahma/SignUp/signup/signup.component';
-import { FirstKeyPipe } from './Components/Login & Reg/Rahma/pipes/first-key.pipe';
+// Locale
+import en from '@angular/common/locales/en';
+registerLocaleData(en);
 
+// Routes
 const routes: Routes = [
-  { path: '', component: LayoutComponent, children: [
-    { path: 'InstructorDashBoard', component: InstructorDashBoardComponent },
-    { path: 'Instructor/Courses', component: CoursesComponent },
-    { path: 'Instructor/Courses/:id', component: CourseViewComponent },
-    { path: 'Instructor/Grades', component: CoursesComponent },
-    { path: 'Instructor/Assigments', component: CoursesComponent },
-    { path: 'Instructor/Assigments/AddNew', component: CreateCourseComponent },
-    { path: 'Instructor/Courses/New', component: CreateCourseComponent },
-
-    { path: '', redirectTo: '/Login', pathMatch: 'full' },
-
-    { path: '', redirectTo: '/signin', pathMatch: 'full' },
-
-    { path: 'Login', component: LoginComponent },
-    { path: 'signup', component: SignupComponent }
-  ] }
+  {
+    path: '',
+    component: LayoutComponent,
+    children: [
+      { path: 'InstructorDashBoard', component: InstructorDashBoardComponent },
+      { path: 'Instructor/Courses', component: CoursesComponent },
+      { path: 'Instructor/Courses/:id', component: CourseViewComponent },
+      { path: 'Instructor/Grades', component: GradesComponent },
+      { path: 'Instructor/Assigments', component: AssigmentsComponent },
+      {
+        path: 'Instructor/Assigments/AddNew',
+        component: CreateAssignmentComponent,
+      },
+      { path: 'Instructor/Courses/New', component: CreateCourseComponent },
+      { path: 'Instructor/Student Monitiring', component: CourseViewComponent },
+      { path: 'courses', component: CourseMaterialsComponent },
+      { path: 'assignments', component: SubmissionAssignmentComponent },
+      { path: 'home', component: HomeComponent },
+      { path: 'course-detail/:id', component: CourseDetailsComponent },
+      { path: 'signup', component: SignupComponent },
+      { path: 'Login', component: LoginComponent },
+      { path: '', redirectTo: '/signup', pathMatch: 'full' },
+    ],
+  },
 ];
 
 @NgModule({
@@ -99,11 +86,23 @@ const routes: Routes = [
     LoginComponent,
     InstructorDashBoardComponent,
     SideBarComponent,
-    CoursesComponent,LayoutComponent,CreateCourseComponent,studentDashboardComponent,LoginComponent,CourseViewComponent
+    CoursesComponent,
+    CreateCourseComponent,
+    GradesComponent,
+    AssigmentsComponent,
+    CreateAssignmentComponent,
+    CourseViewComponent,
+    LayoutComponent,
+    CourseMaterialsComponent,
+    SubmissionAssignmentComponent,
+    HomeComponent,
+    CourseDetailsComponent,
+    studentDashboardComponent,
+    FirstKeyPipe, // التأكد من وجود الأنابيب هنا
   ],
   imports: [
     BrowserModule,
-    CommonModule, // تم إضافته لتوفير التوجيهات الأساسية مثل ngIf و ngSwitch
+    CommonModule, // ØªÙ… Ø¥Ø¶Ø§ÙØªÙ‡ Ù„ØªÙˆÙÙŠØ± Ø§Ù„ØªÙˆØ¬ÙŠÙ‡Ø§Øª Ø§Ù„Ø£Ø³Ø§Ø³ÙŠØ© Ù…Ø«Ù„ ngIf Ùˆ ngSwitch
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
@@ -116,7 +115,8 @@ const routes: Routes = [
     NzIconModule,
     NzDropDownModule,
     NzBackTopModule,
-    NgbModule,MatIcon,
+    NgbModule,
+    MatIcon,
   ],
   providers: [
     provideAnimationsAsync(),
