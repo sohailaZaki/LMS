@@ -1,3 +1,37 @@
-<p>
-  Login works!
-</p>
+
+<div class="container" style="width: 5800px;">
+  <div class="form-box">
+   <div class="loginBack">
+     <img src="../../../../../assets/Login.png" alt="Logo"/>
+     <h2 style="position: relative;bottom: 135px;font-size: 23px;">Sign in Your Account</h2>
+   </div>
+    <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email" class="input-field" formControlName="email" required />
+
+        <div class="error" *ngIf="hasDisplayableError('email') && signinForm.controls['email'].hasError('required')">Email is required .</div>
+
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Password" class="input-field" formControlName="password" required />
+
+        <div class="error" *ngIf="hasDisplayableError('password') && signinForm.controls['password'].hasError('required')">Password is required .</div>
+
+      </div>
+
+      <div class="form-group">
+        <input type="checkbox" id="remember" />
+        <label for="remember">Remember my preference</label>
+      </div>
+      <button class="btn" [disabled]="signinForm.invalid">LogIn</button>
+      <p>
+        Don't have an account? <a routerLink="/signup" >Sign up</a>
+      </p>
+
+    </form>
+  </div>
+</div>
