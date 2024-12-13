@@ -31,7 +31,7 @@ const routes: Routes = [
     { path: 'Instructor/Assigments', component: CoursesComponent },
     { path: 'Instructor/Assigments/AddNew', component: CreateCourseComponent },
     { path: 'Instructor/Courses/New', component: CreateCourseComponent },
-    { path: '', redirectTo: '/signin', pathMatch: 'full' },
+    { path: '', redirectTo: '/Login', pathMatch: 'full' },
     { path: 'Login', component: LoginComponent },
     { path: 'signup', component: SignupComponent }
   ] }
