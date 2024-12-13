@@ -1,0 +1,118 @@
+.dashboard-container {
+    display: flex;
+    min-height: 98vh;
+    background-color: #f0f4f8;
+  }
+  
+  .sidebar {
+    position: fixed; /* يجعل السايد بار ثابتًا */
+    top: 0;
+    left: 0; 
+    background-color: #043B5C;
+    color: #fff;
+    width: 220px; /* زيادة العرض */
+    height: 100%;
+    padding: 25px; /* زيادة التباعد الداخلي */
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+  
+  .welcome-section {
+    text-align: left; 
+    margin-bottom: 1px; 
+    padding: 0px 10px; 
+  }
+  h6{
+    padding: 0px 10px; 
+  }
+  
+  .welcome-section h3 {
+    margin: 5px 0;
+    font-size: 15px; 
+    color: #ffcc00;
+  }
+  
+  .welcome-section p {
+    margin: 0;
+    font-size: 15px; 
+    color: #ffffff;
+  }
+  
+  .menu {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu li  {
+    margin: 18px 0; /* تقليل المسافة بين العناصر */
+  }
+  
+  
+  .menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 10px; 
+    transition: background-color 0.3s, color 0.3s; /* فقط تغيير اللون والخلفية */
+  }
+  
+  .menu a.active,
+  .menu a:hover {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border-radius: 8px;
+  }
+  
+  
+  .extra-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px; /* زيادة حجم الخط */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.3s;
+    margin-bottom: 4px; /* زيادة المسافة بين روابط extra-menu */
+    padding: 10px 10px; 
+  }
+  
+  .extra-menu a.help {
+    color: #b8b8b8;
+  }
+  
+  .extra-menu a.logout {
+    color: #ff3333;
+  }
+  
+  .extra-menu a:hover {
+    color: #000000;
+  }
+  
+  
+  hr {
+    border: none;
+    height: 1px;
+    background-color: #ffffff;
+    margin: 15px 0; /* تقليل المسافة بين الأقسام */
+  }
+  
+  .content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 110px; /* تعديل المسافة لتتناسب مع عرض السايد بار */
+    margin-top: 10px;
+  }
+  
+  .fa {
+    font-size: 18px; /* زيادة حجم الأيقونات */
+  }
+  
