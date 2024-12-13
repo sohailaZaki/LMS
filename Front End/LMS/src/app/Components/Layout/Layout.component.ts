@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
@@ -11,8 +12,19 @@ import { filter } from 'rxjs';
   styleUrls: ['./Layout.component.css']
 })
 export class LayoutComponent implements OnInit {
+  showSidebar:boolean=true;
+  /**
+   *
+   */
+  constructor(private route:Router) {
+    if(route.url.includes('Login' || route.url.includes('signup'))){
+      this.showSidebar=false;
+    }
+    else{
+      this.showSidebar=true;
+    }
+  }
 
-  constructor() { }
 
   ngOnInit() {
     this.currentRoute = this.route.url;

@@ -1,7 +1,10 @@
 <div class="d-flex container1">
-  <div class="al-left">
+
+  <div class="al-left" *ngIf="showSidebar">
     <!-- هنا الـ Sidebar ثابت -->
-    <app-SideBar></app-SideBar>
+    <app-SideBar>
+
+    </app-SideBar>
   </div>
   <div class="al-right">
     <!-- هنا هيظهر المحتوى بناءً على الـ Router -->
