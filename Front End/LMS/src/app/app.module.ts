@@ -101,6 +101,7 @@ const routes: Routes = [
     CourseDetailsComponent,
     studentDashboardComponent,
     FirstKeyPipe, // التأكد من وجود الأنابيب هنا
+
   ],
   imports: [
     BrowserModule,
