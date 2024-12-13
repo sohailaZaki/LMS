@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./courses.component.css']
 })
 export class CoursesComponent{
- private courses:  {
+  courses:  {
   title: string,
   description: string,
   image: string

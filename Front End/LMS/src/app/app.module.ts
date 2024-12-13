@@ -45,6 +45,7 @@ import { CourseDetailsComponent } from './Components/Student/Nada/course-detail/
 import { studentDashboardComponent } from './Components/Student/Nada/studentDashboard/studentDashboard.component';
 import { AssigmentsComponent } from './Components/Instructor/Sondos/Assigments/Assigments.component';
 import { AssignmentDetailsComponent } from './Components/Instructor/Sohaila/AssignmentDetails/AssignmentDetails.component';
+import { CoursesComponent } from './Components/Instructor/Sondos/Courses/Courses.component';
 
 
 // Pipes
