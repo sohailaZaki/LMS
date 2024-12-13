@@ -1,7 +1,6 @@
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { CommonModule, registerLocaleData } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, RouterOutlet, Routes } from '@angular/router';
@@ -35,7 +34,7 @@ import { SideBarComponent } from './Components/Instructor/Sondos/SideBar/SideBar
 import { CoursesComponent } from './Components/Instructor/Sondos/Courses/Courses.component';
 import { CreateCourseComponent } from './Components/Instructor/Sondos/CreateCourse/create-course.component';
 import { GradesComponent } from './Components/Instructor/Sondos/Grades/Grades.component';
-import { AssigmentsComponent } from './Components/Instructor/Sondos/Assigments/Assigments.component';
+
 import { CreateAssignmentComponent } from './Components/Instructor/Sondos/createAssignment/createAssignment.component';
 import { CourseViewComponent } from './Components/Instructor/Sohaila/courseView/courseView.component';
 import { LayoutComponent } from './Components/Layout/Layout.component';
@@ -44,13 +43,15 @@ import { SubmissionAssignmentComponent } from './Components/Student/Nada/submiss
 import { HomeComponent } from './Components/Student/Nada/home/home.component';
 import { CourseDetailsComponent } from './Components/Student/Nada/course-detail/course-detail.component';
 import { studentDashboardComponent } from './Components/Student/Nada/studentDashboard/studentDashboard.component';
+import { AssigmentsComponent } from './Components/Instructor/Sondos/Assigments/Assigments.component';
+import { AssignmentDetailsComponent } from './Components/Instructor/Sohaila/AssignmentDetails/AssignmentDetails.component';
+
 
 // Pipes
 import { FirstKeyPipe } from './Components/Login & Reg/Rahma/pipes/firstKey.pipe';
 
 // Locale
 import en from '@angular/common/locales/en';
-
 registerLocaleData(en);
 
 // Routes
@@ -61,15 +62,19 @@ const routes: Routes = [
     children: [
       { path: 'InstructorDashBoard', component: InstructorDashBoardComponent },
       { path: 'Instructor/Courses', component: CoursesComponent },
-      { path: 'Instructor/Courses/:id', component: CourseViewComponent },
+      // { path: 'Instructor/Courses/:id', component: CourseViewComponent },
       { path: 'Instructor/Grades', component: GradesComponent },
       { path: 'Instructor/Assigments', component: AssigmentsComponent },
       {
         path: 'Instructor/Assigments/AddNew',
         component: CreateAssignmentComponent,
       },
+      {
+        path: 'Instructor/Assigment/:id',
+        component: AssignmentDetailsComponent,
+      },
       { path: 'Instructor/Courses/New', component: CreateCourseComponent },
-      { path: 'Instructor/Student Monitiring', component: CourseViewComponent },
+      { path: 'Instructor/Course/:id', component: CourseViewComponent },
       { path: 'courses', component: CourseMaterialsComponent },
       { path: 'assignments', component: SubmissionAssignmentComponent },
       { path: 'home', component: HomeComponent },
@@ -80,7 +85,6 @@ const routes: Routes = [
     ],
   },
 ];
-
 
 @NgModule({
   declarations: [
@@ -118,8 +122,7 @@ const routes: Routes = [
     NzIconModule,
     NzDropDownModule,
     NzBackTopModule,
-    NgbModule,
-    MatIcon,
+    NgbModule,MatIcon,
   ],
   providers: [
     provideAnimationsAsync(),
@@ -130,4 +133,3 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppModule {}
-
