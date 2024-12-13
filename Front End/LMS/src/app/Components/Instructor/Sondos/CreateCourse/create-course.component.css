@@ -1,0 +1,134 @@
+.create-course-container {
+  padding-top: 20px;
+
+  /* padding-left: 270px; */
+  background-color: #eef4ff; /* A light background similar to your design */
+position: relative;
+right: 25px;
+margin-bottom: 45px;
+}
+.header {
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: 50px;
+}
+.header h1 {
+  margin: 0px;
+}
+.header p {
+  color: #757575;
+  margin-bottom: 20px;
+ margin-top: 10px;
+}
+.form-container {
+  background-color: white;
+  width: 1150px;
+  border-radius: 20px;
+  margin-left: 40px ; /* Add padding to the top */
+}
+.form-container h3{
+  text-align: center;
+  font-size: x-large;
+  padding-top: 30px ;
+  }
+.sections{
+  display: flex;
+  justify-content: space-between ;
+  padding: 0px 35px 0px 30px;
+}
+.left-section,
+.right-section {
+  width: 48%;
+}
+.left-section{
+  padding-top: 60px;
+}
+.right-section{
+  padding-top: 1px;
+}
+.input-container {
+  position: relative;
+  margin: 20px 0;
+}
+.input-container  textarea{
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+.floating-label {
+  position: absolute;
+  left: 15px;
+  transform: translateY(-50%);
+  background-color: white;
+  padding: 0 5px;
+  color: #0F266C;
+  font-size: 14px;
+  transition: 0.3s ease-in-out;
+  pointer-events: none; /* Prevent clicking on the label */
+}
+.input-container input {
+  width: 100%;
+  padding: 15px 15px;
+  padding-top: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s ease-in-out;
+}
+input:focus {
+  border-color: #0F266C;
+}
+input:focus + .floating-label,
+input:not(:placeholder-shown) + .floating-label {
+  top: 5px;
+  font-size: 12px;
+  color: #0F266C;
+}
+.right-section h3 {
+  font-size: 30px;
+  color: #004c8c;
+  margin-bottom: 20px;
+}
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+input{
+  width: 100%;
+  padding: 20px 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  text-align: left; /* Aligns text to the left */
+  vertical-align: top; /* Ensures the text starts from the top */
+}
+.course-image {
+  margin-top: 5px;
+  text-align: center;
+}
+.course-image img {
+  width: 306px;
+  height: 258px;
+}
+
+.create-btn {
+  background-color: #2CC669;
+  color: white;
+  width: 121px;
+  height: 48px;
+  border: 2px solid #2CC669;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  padding-left: 7px;
+}
+
+
+.create-btn:hover {
+  background-color: white;
+  color: #2CC669;
+}

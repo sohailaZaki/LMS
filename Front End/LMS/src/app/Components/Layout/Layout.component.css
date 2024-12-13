@@ -1,0 +1,16 @@
+.container1 {
+
+}
+
+.al-left {
+  width: 180px; /* sidebar عرض */
+  height: 100vh; /* ارتفاعها ثابت */
+
+  top: 0; /* من أعلى الشاشة */
+  left: 0; /* من يسار الشاشة */
+
+}
+
+.al-right {
+
+}

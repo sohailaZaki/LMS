@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="form-box">
+    <img src="Front End\LMS\src\assets\logolms.jpg" alt="Logo" class="logo" />
+    <h2>Sign in Your Account</h2>
+    <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email" class="input-field" formControlName="email" required />
+
+        <div class="error" *ngIf="hasDisplayableError('email') && signinForm.controls['email'].hasError('required')">Email is required .</div>
+
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Password" class="input-field" formControlName="password" required />
+
+        <div class="error" *ngIf="hasDisplayableError('password') && signinForm.controls['password'].hasError('required')">Password is required .</div>
+
+      </div>
+
+      <div class="form-group">
+        <input type="checkbox" id="remember" />
+        <label for="remember">Remember my preference</label>
+      </div>
+      <button class="btn" [disabled]="signinForm.invalid">LogIn</button>
+      <p>
+        Don't have an account? <a routerLink="/signup" >Sign up</a>
+      </p>
+
+    </form>
+  </div>
+</div>
+
