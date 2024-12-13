@@ -1,0 +1,80 @@
+
+    <h1>Assignments</h1>
+<div class="my-courses-container">
+
+    <div class="content-wrapper">
+      <div class="course-modules">
+        <table>
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Deadline</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let assignment of assignments">
+              <td>{{ assignment.subject }}</td>
+              <td>{{ assignment.deadline }}</td>
+              <td>
+                <span [ngClass]="{
+                  'status-pending': assignment.status === 'Pending',
+                  'status-submitted': assignment.status === 'Submitted'
+                }">
+                  {{ assignment.status }}
+                </span>
+              </td>
+              <td>
+                <!-- Disable button if assignment is already submitted -->
+                <button 
+                  class="view-btn" 
+                  [disabled]="assignment.status === 'Submitted'" 
+                  (click)="openModal(assignment)">
+                  {{ assignment.status === 'Submitted' ? 'Already Submitted' : 'View / Submit' }}
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+      <!-- Modal -->
+      <div class="modal" *ngIf="showModal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Submit Assignment</h3>
+            <span class="close" (click)="closeModal()">&times;</span>
+          </div>
+          <div class="modal-body">
+            <div class="assignment-details">
+              <h4><strong>Subject:</strong></h4>
+              <p class="subject-name">{{ selectedAssignment?.subject }}</p>
+              
+              
+            
+            <div class="attachments">
+              <h4>Attachments</h4>
+              <ul> 
+                <li class="atta" *ngFor="let attachment of selectedAssignment?.attachments">
+                  <a [href]="attachment.url" download><img src="assets/file.png"  class="university-logo"> {{ attachment.name }}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+            <div class="submission-section">
+              
+              <label for="fileUpload">Upload Assignment:</label>
+              <input class="upload" type="file" id="fileUpload" (change)="handleFileUpload($event)" />
+              <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+            </div>
+          </div>
+          
+          <div class="modal-footer">
+            <button class="btn-submit" (click)="submitAssignment()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
