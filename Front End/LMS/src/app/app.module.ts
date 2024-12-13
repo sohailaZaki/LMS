@@ -10,6 +10,12 @@ import { CreateCourseComponent } from './Components/Instructor/Sondos/CreateCour
 import { StudentDashboardComponent } from './Components/Student/Nada/studentDashboard/studentDashboard.component';
 import { LoginComponent } from './Components/Login & Reg/Rahma/Login/Login.component';
 import { CourseViewComponent } from './Components/Instructor/Sohaila/courseView/courseView.component';
+
+
+import { MatCardModule } from '@angular/material/card';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+=======
 import { MatCardModule } from '@angular/material/card';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
@@ -48,7 +54,8 @@ registerLocaleData(en);
 @NgModule({
   declarations: [
     AppComponent,InstructorDashBoardComponent,SideBarComponent, DashboardComponent, CourseDetailsComponent, SubmissionAssignmentComponent, HomeComponent, CourseMaterialsComponent,
-=======
+
+
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCardModule } from 'ng-zorro-antd/card';  // إضافة هذه الوحدة
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';  // إضافة هذه الوحدة
@@ -66,7 +73,11 @@ const routes: Routes = [
     { path: 'Instructor/Assigments', component: CoursesComponent },
     { path: 'Instructor/Assigments/AddNew', component: CreateCourseComponent },
     { path: 'Instructor/Courses/New', component: CreateCourseComponent },
+
+    { path: '', redirectTo: '/Login', pathMatch: 'full' },
+
     { path: '', redirectTo: '/signin', pathMatch: 'full' },
+
     { path: 'Login', component: LoginComponent },
     { path: 'signup', component: SignupComponent }
   ] }
@@ -85,6 +96,9 @@ const routes: Routes = [
     CourseViewComponent,
     LoginComponent,
     FirstKeyPipe,
+
+
+
 
   ],
   imports: [
