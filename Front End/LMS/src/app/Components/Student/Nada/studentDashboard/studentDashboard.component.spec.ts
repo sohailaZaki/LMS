@@ -1,23 +1,18 @@
-/* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StudentDashboardComponent } from './studentDashboard.component';
+import { studentDashboardComponent } from './studentDashboard.component';
 
-describe('StudentDashboardComponent', () => {
-  let component: StudentDashboardComponent;
-  let fixture: ComponentFixture<StudentDashboardComponent>;
+describe('studentDashboardComponent', () => {
+  let component: studentDashboardComponent;
+  let fixture: ComponentFixture<studentDashboardComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ StudentDashboardComponent ]
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [studentDashboardComponent]
     })
     .compileComponents();
-  }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(StudentDashboardComponent);
+    fixture = TestBed.createComponent(studentDashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
