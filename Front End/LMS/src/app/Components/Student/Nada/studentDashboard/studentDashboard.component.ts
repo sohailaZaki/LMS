@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { DashboardComponent } from './../../../nada/dashboard/dashboard.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-@Component({
-  selector: 'app-studentDashboard',
-  templateUrl: './studentDashboard.component.html',
-  styleUrls: ['./studentDashboard.component.css']
-})
-export class StudentDashboardComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit() {
-  }
+describe('DashboardComponent', () => {
+  let component: DashboardComponent;
+  let fixture: ComponentFixture<DashboardComponent>;
 
-}
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [DashboardComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(DashboardComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
