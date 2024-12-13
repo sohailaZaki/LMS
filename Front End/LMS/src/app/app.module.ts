@@ -52,7 +52,6 @@ import { FirstKeyPipe } from './Components/Login & Reg/Rahma/pipes/firstKey.pipe
 
 // Locale
 import en from '@angular/common/locales/en';
-import { CoursesComponent } from './Components/Instructor/Sondos/Courses/Courses.component';
 registerLocaleData(en);
 
 // Routes
@@ -100,6 +99,7 @@ const routes: Routes = [
     AssigmentsComponent,
     CreateAssignmentComponent,
     CourseViewComponent,
+
     LayoutComponent,
     CourseMaterialsComponent,
     SubmissionAssignmentComponent,
@@ -107,6 +107,7 @@ const routes: Routes = [
     CourseDetailsComponent,
     studentDashboardComponent,
     FirstKeyPipe, // التأكد من وجود الأنابيب هنا
+
   ],
   imports: [
     BrowserModule,
