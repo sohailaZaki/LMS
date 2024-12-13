@@ -1,3 +1,50 @@
-<p>
-  createAssignment works!
-</p>
+<div class="create-course-container">
+  <div class="header">
+    <h1 style="color: #0f266c; font-weight: 500">Create Assignment</h1>
+    <p>Organize your work and improve your performance with us there</p>
+  </div>
+  <div class="form-container">
+    <h3 style="color: #0f266c; font-weight: 800">New Assignment</h3>
+    <div class="sections">
+      <div class="left-section">
+        <div class="input-container">
+          <label for="course-name" class="floating-label">Assignment Name</label>
+          <input type="text" id="course-name" placeholder="Enter Assignment name" />
+        </div>
+        <div class="input-container">
+          <label for="description" class="floating-label">DeadLine</label>
+          <input  type="Data" id="description" placeholder="Enter deadline" />
+        </div>
+      <!-- ------------------------------------------------------------------- -->
+     <div class="dropDown" style="width: 100px;">
+
+       <button class="btn-style" nz-button nz-dropdown [nzDropdownMenu]="menu4">
+         <mat-icon class="class-icon">class</mat-icon>
+         <span  class="material-labels">
+           Courses
+          </span>
+          <!-- <span nz-icon nzType="down"></span> -->
+          <mat-icon class="down-icon">keyboard_arrow_down</mat-icon>
+        </button>
+        <nz-dropdown-menu #menu4="nzDropdownMenu" >
+          <ul nz-menu >
+            @for (item of listofCourses; track $index) {
+
+              <li nz-menu-item>{{item.title}}</li>
+
+            }
+          </ul>
+        </nz-dropdown-menu>
+      </div>
+
+      </div>
+      <div class="right-section">
+          <div class="course-image">
+              <img src="../../../../assets/assigment.webp" alt="Course Image" />
+          </div>
+      </div>
+
+    </div>
+    <button class="create-btn">Create</button>
+  </div>
+</div>
