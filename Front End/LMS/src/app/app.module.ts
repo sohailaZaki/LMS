@@ -11,9 +11,51 @@ import { StudentDashboardComponent } from './Components/Student/Nada/studentDash
 import { LoginComponent } from './Components/Login & Reg/Rahma/Login/Login.component';
 import { CourseViewComponent } from './Components/Instructor/Sohaila/courseView/courseView.component';
 
+
 import { MatCardModule } from '@angular/material/card';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+=======
+import { MatCardModule } from '@angular/material/card';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { en_US } from 'ng-zorro-antd/i18n';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+import { FormsModule } from '@angular/forms';
+import { provideHttpClient } from '@angular/common/http';
+import { SideBarComponent } from './Components/Sondos/SideBar/SideBar.component';
+import { CoursesComponent } from './Components/Sondos/Courses/Courses.component';
+import { DashboardComponent } from './Components/nada/dashboard/dashboard.component';
+import { CourseDetailsComponent } from './Components/nada/course-detail/course-detail.component';
+import { SubmissionAssignmentComponent } from './Components/nada/submission-assignment/submission-assignment.component';
+import { HomeComponent } from './Components/nada/home/home.component';
+import { CourseMaterialsComponent } from './Components/nada/course-materials/course-materials.component';
+const routes: Routes=[{
+  path:'InstructorDashBoard',component:InstructorDashBoardComponent},
+  {path:'Instructor/Courses',component:CoursesComponent },
+
+
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    children: [
+      { path: 'courses', component: CourseMaterialsComponent },
+      { path: 'assignments', component: SubmissionAssignmentComponent },
+      { path: 'home', component: HomeComponent },
+      { path: 'course-detail/:id', component: CourseDetailsComponent }
+    ],
+  },
+]
+registerLocaleData(en);
+@NgModule({
+  declarations: [
+    AppComponent,InstructorDashBoardComponent,SideBarComponent, DashboardComponent, CourseDetailsComponent, SubmissionAssignmentComponent, HomeComponent, CourseMaterialsComponent,
+
+
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCardModule } from 'ng-zorro-antd/card';  // إضافة هذه الوحدة
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';  // إضافة هذه الوحدة
@@ -31,7 +73,11 @@ const routes: Routes = [
     { path: 'Instructor/Assigments', component: CoursesComponent },
     { path: 'Instructor/Assigments/AddNew', component: CreateCourseComponent },
     { path: 'Instructor/Courses/New', component: CreateCourseComponent },
+
     { path: '', redirectTo: '/Login', pathMatch: 'full' },
+
+    { path: '', redirectTo: '/signin', pathMatch: 'full' },
+
     { path: 'Login', component: LoginComponent },
     { path: 'signup', component: SignupComponent }
   ] }
@@ -50,6 +96,10 @@ const routes: Routes = [
     CourseViewComponent,
     LoginComponent,
     FirstKeyPipe,
+
+
+
+
   ],
   imports: [
     BrowserModule,
