@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { CommonModule, registerLocaleData } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, RouterOutlet, Routes } from '@angular/router';
@@ -48,6 +49,7 @@ import { FirstKeyPipe } from './Components/Login & Reg/Rahma/pipes/firstKey.pipe
 
 // Locale
 import en from '@angular/common/locales/en';
+
 registerLocaleData(en);
 
 // Routes
@@ -77,6 +79,7 @@ const routes: Routes = [
     ],
   },
 ];
+
 
 @NgModule({
   declarations: [
@@ -126,3 +129,4 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppModule {}
+
