@@ -1,0 +1,48 @@
+<div class="personal-data-container">
+  <h2>Welcome Back to Your Account</h2>
+  <p>Here you can manage your payments. You can also request many available services and easily update and modify your details.</p>
+
+  <div class="personal-info">
+    <h3>Personal Information</h3>
+    <table class="personal-info-table">
+      <tr>
+        <td><strong>Student Name:</strong></td>
+        <td>{{ studentName }}</td>
+      </tr>
+
+      <tr>
+        <td><strong>Email:</strong></td>
+        <td>{{ Email }}</td>
+      </tr>
+      <tr>
+        <td><strong>Phone Number:</strong></td>
+        <td>{{ phoneNumber }}</td>
+      </tr>
+    </table>
+  </div>
+
+
+  <div class="container">
+      <div class="info-box" (click)="navigateTo('dashboard/courses')">
+        <div class="info-image">
+          <img src="assets/Icon.png" alt="Courses Image" />
+        </div>
+        <div class="info-text">
+          <h3  style="cursor: active;" >Courses</h3>
+          <p>Manage your course registrations</p>
+        </div>
+      </div>
+
+      <div  class="info-box" (click)="navigateTo('dashboard/assignments')">
+        <div class="info-image">
+          <img src="assets/iconn.png" alt="Assignments Image" />
+        </div>
+        <div  class="info-text">
+          <h3 style="cursor: active;" >Assignments</h3>
+          <p>View your assignments</p>
+        </div>
+      </div>
+    </div>
+
+
+</div>
