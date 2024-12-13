@@ -94,13 +94,11 @@ const routes: Routes = [
     AssigmentsComponent,
     CreateAssignmentComponent,
     CourseViewComponent,
-    LayoutComponent,
-    CourseMaterialsComponent,
-    SubmissionAssignmentComponent,
-    HomeComponent,
-    CourseDetailsComponent,
-    studentDashboardComponent,
-    FirstKeyPipe, // التأكد من وجود الأنابيب هنا
+    LoginComponent,
+    FirstKeyPipe,
+
+
+
 
   ],
   imports: [
