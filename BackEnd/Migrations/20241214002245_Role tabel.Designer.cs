@@ -4,6 +4,7 @@ using LMS.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LMS.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241214002245_Role tabel")]
+    partial class Roletabel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -237,9 +240,6 @@ namespace LMS.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CourseID")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -310,7 +310,7 @@ namespace LMS.Migrations
             modelBuilder.Entity("LMS.Models.Course", b =>
                 {
                     b.HasOne("LMS.Models.User", "Instructor")
-                        .WithMany("RegisteredCourses")
+                        .WithMany()
                         .HasForeignKey("InstructorID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -372,11 +372,6 @@ namespace LMS.Migrations
             modelBuilder.Entity("LMS.Models.Role", b =>
                 {
                     b.Navigation("Users");
-                });
-
-            modelBuilder.Entity("LMS.Models.User", b =>
-                {
-                    b.Navigation("RegisteredCourses");
                 });
 #pragma warning restore 612, 618
         }
