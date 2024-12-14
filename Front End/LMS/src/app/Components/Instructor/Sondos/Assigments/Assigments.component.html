@@ -18,10 +18,10 @@
       </div>
       <div class="assignments-info">
         <span>{{ assignment.title }}</span>
-        <p>{{ assignment.description }}</p>
+        <p>{{ assignment.course }}</p>
       </div>
       <div class="view-btn-container">
-        <a routerLink="/Instructor/Assigment/:id">
+        <a routerLink="/Instructor/Assigments/:id">
 
           <button (click)="navigateToAssignment(assignment)" class="view-btn">
             View

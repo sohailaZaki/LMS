@@ -49,6 +49,7 @@ import { CourseDetailsComponent } from './Components/Student/Nada/course-detail/
 import { studentDashboardComponent } from './Components/Student/Nada/studentDashboard/studentDashboard.component';
 import { AssigmentsComponent } from './Components/Instructor/Sondos/Assigments/Assigments.component';
 import { AssignmentDetailsComponent } from './Components/Instructor/Sohaila/AssignmentDetails/AssignmentDetails.component';
+import { AssigmentSubmessionComponent } from './Components/Instructor/Sondos/AssigmentSubmession/AssigmentSubmessionComponent';
 
 
 // Pipes
@@ -73,10 +74,13 @@ const routes: Routes = [
         path: 'Instructor/Assigments/AddNew',
         component: CreateAssignmentComponent,
       },
-      {
-        path: 'Instructor/Assigment/:id',
-        component: AssignmentDetailsComponent,
-      },
+      // {
+      //   path: 'Instructor/Assigment/:id',
+      //   component: AssignmentDetailsComponent,
+      // },
+    {
+      path:'Instructor/Assigments/:id',component:AssigmentSubmessionComponent
+    },
       { path: 'Instructor/Courses/New', component: CreateCourseComponent },
       { path: 'Instructor/Course/:id', component: CourseViewComponent },
       { path: 'courses', component: CourseMaterialsComponent },
@@ -108,6 +112,7 @@ const routes: Routes = [
     SubmissionAssignmentComponent,
     HomeComponent,
     CourseDetailsComponent,
+    AssigmentSubmessionComponent,
     studentDashboardComponent,
     FirstKeyPipe, // التأكد من وجود الأنابيب هنا
 
@@ -138,6 +143,7 @@ const routes: Routes = [
     { provide: NZ_I18N, useValue: en_US },
     provideHttpClient(),
   ],
+
   bootstrap: [AppComponent],
   exports: [RouterModule],
 })
