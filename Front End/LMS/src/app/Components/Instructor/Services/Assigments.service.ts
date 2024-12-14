@@ -9,30 +9,40 @@ constructor() { }
 private Assignments = [
   {
     title: 'Assignment 1',
-    description: 'Front-end Course',
-    image: "../../../../assets/assigment.webp"
+    course: 'Front-end Course',
+    image: "../../../../assets/assigment.webp",
+    DeadLine: 2024-1-1,
   },
   {
     title: 'Assignment 2',
-    description: 'Front-end Course',
-    image: "../../../../assets/assigment.webp"
+    course: 'Front-end Course',
+    image: "../../../../assets/assigment.webp",
+    DeadLine: 2024-12-1,
   },
   {
     title: 'Assignment 3',
-    description: 'Front-end Course',
-    image: "../../../../assets/assigment.webp"
+    course: 'Front-end Course',
+    image: "../../../../assets/assigment.webp",
+    DeadLine: 2024-3-1,
+
   }, {
     title: 'Assignment 4',
-    description: 'Front-end Course',
-    image: "../../../../assets/assigment.webp"
+    course: 'Front-end Course',
+    image: "../../../../assets/assigment.webp",
+    DeadLine: 2024-11-17,
+
   }, {
     title: 'Assignment 5',
-    description: 'Front-end Course',
-    image: "../../../../assets/assigment.webp"
+    course: 'Front-end Course',
+    image: "../../../../assets/assigment.webp",
+    DeadLine: 2024-1-5,
+
   }, {
     title: 'Assignment 6',
-    description: 'Front-end Course',
-    image: "../../../../assets/assigment.webp"
+    course: 'Front-end Course',
+    image: "../../../../assets/assigment.webp",
+    DeadLine: 2024-1-7,
+
   },
 ]; public getAssignments(){
 return this.Assignments;

@@ -1,0 +1,70 @@
+<div class="AssigmentsSubmissions-container">
+  <div class="header">
+    <h1 style="color: #043B5C; font-weight: 500">{{courseAssignments[1].title}}</h1>
+    <p>Take a look over students Submissions and Evaluate Them.</p>
+  </div>
+  <div class="tabel-container" style="width: 760px;">
+    <nz-table #assignmentsTable nzBordered [nzData]="assignments" [nzBordered]="true">
+      <thead>
+        <tr>
+          <th style="color: #043B5C;">ID</th>
+          <th style="color: #043B5C;">Student</th>
+          <th style="color: #043B5C;">Status</th>
+          <th style="color: #043B5C;">Submitted File</th>
+          <th style="color: #043B5C;">Evaluate</th>
+        </tr>
+      </thead>
+      <tbody style="color: #043B5C;">
+        <tr *ngFor="let assignment of assignments">
+          <td>{{assignment.studentID}}</td>
+          <td>{{ assignment.studentName }}</td>
+          <td>
+            <nz-badge
+              [nzStatus]="assignment.submitted ? 'success' : 'default'"
+              [nzText]="assignment.submitted ? 'Submitted' : 'Not Submitted'"
+            ></nz-badge>
+          </td>
+          <td>
+            <a *ngIf="assignment.file" [href]="assignment.file" target="_blank">{{ assignment.file }}</a>
+            <span *ngIf="!assignment.file">-</span>
+          </td>
+          <td>
+            <span *ngIf="!assignment.isEditing">
+              <span style="margin: 40px;">{{ assignment.grade !== null ? assignment.grade : '_' }}</span>
+              <div style="display: flex; flex-direction: column; align-items: flex-start; margin-left: 70px;position: relative;bottom: 15px;left: 25px">
+                <a class="ml-2" (click)="editGrade(assignment)">
+                  <i class="bi bi-pencil-square" style="color: #043B5C;"></i>
+                </a>
+              </div>
+            </span>
+            <span *ngIf="assignment.isEditing">
+              <input [(ngModel)]="assignment.grade" type="number" style="width: 60px; height:35px;border: 1px #c0c0c0 solid;border-radius: 8px; " />
+              <div class="mt-2"style="display: flex; flex-direction: column; align-items: flex-start; margin-left: 70px;position: relative;bottom: 32px;left: 25px">
+                <a class="ml-2" (click)="saveGrade(assignment)">
+                  <span nz-icon nzType="check-circle" nzTheme="twotone" nzTwotoneColor="#52c41a"></span>
+                </a>
+              </div>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+  <div class="assignment-details">
+    <img src="../../../../../assets/assigment.webp" alt="Assignment Icon" />
+
+    <div >
+    <span >{{courseAssignments[1].title}}:
+    </span>
+    <p>
+      {{courseAssignments[1].course}}<br /> DeadLind: {{courseAssignments[1].DeadLine}}
+
+    </p>
+   <div class="download">
+     <a href="Assignment1.pdf" download class="download-link">
+       Download Assignment
+       <span nz-icon nzType="download" nzTheme="outline" class="download-icon"></span>
+     </a>
+
+   </div>
+</div>

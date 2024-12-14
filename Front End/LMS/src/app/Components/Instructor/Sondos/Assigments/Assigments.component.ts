@@ -18,7 +18,7 @@ export class AssigmentsComponent implements OnInit {
       state: { assignment: assignment },
     });
   }
-  assignments: { title: string; description: string; image: string }[] = [];
+  assignments: { title: string; course: string; image: string }[] = [];
   ngOnInit() {
     this.assignments = this.assignmentsService.getAssignments();
   }
