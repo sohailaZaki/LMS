@@ -18,6 +18,7 @@ namespace LMS.Data
         DbSet<Course> Courses { get; set; }
         DbSet<AssignmentSubmission> AssignmentSubmissions { get; set; }
         DbSet<StudentProgress> StudentProgresses { get; set; }
+        DbSet<Role> Roles { get; set; }
         
 
 

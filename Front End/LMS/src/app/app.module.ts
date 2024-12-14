@@ -16,7 +16,11 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzBackTopModule } from 'ng-zorro-antd/back-top';
-
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzTableModule } from 'ng-zorro-antd/table';
 // Angular Material Modules
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
@@ -99,7 +103,6 @@ const routes: Routes = [
     AssigmentsComponent,
     CreateAssignmentComponent,
     CourseViewComponent,
-
     LayoutComponent,
     CourseMaterialsComponent,
     SubmissionAssignmentComponent,
@@ -124,7 +127,11 @@ const routes: Routes = [
     NzIconModule,
     NzDropDownModule,
     NzBackTopModule,
-    NgbModule,MatIcon,
+    NgbModule,MatIcon,NzInputModule,
+    NzPopconfirmModule,
+    NzTableModule,
+    NzBadgeModule,
+    NzDividerModule,
   ],
   providers: [
     provideAnimationsAsync(),
