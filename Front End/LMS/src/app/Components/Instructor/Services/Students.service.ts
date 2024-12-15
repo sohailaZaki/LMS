@@ -109,9 +109,11 @@ export class StudentsServices{
         // { id: 2021170224, name: 'Sara', grades: [{ course:3,grade:  93},{ course:3,grade:  96 } ]},
       ],
     },
-  ];
-  public getStudents() {
-    return this.students;
+];
+
+public getStudents() {
+
+  return this.students;
   }
   getAssignmentsByCourse(courseId: number) {
     const assignments: any[] = [];
