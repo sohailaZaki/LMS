@@ -171,6 +171,7 @@ studentid:number=0;
         value: 0,
         isEditing:true
       });
+
       this.availableAttributes.splice(0, 1);
     }
   }
