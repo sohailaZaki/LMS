@@ -2,16 +2,16 @@
 
 namespace LMS.Models
 {
-    public class StudentProgress
+    public class StudentProgresses
     {
         [Key]
         public int ID { get; set; }
 
         [Required]
-        public int ?StudentID { get; set; }
+        public int? StudentID { get; set; }
 
         [Required]
-        public int ?CourseID { get; set; }
+        public int? CourseID { get; set; }
 
         public bool IsCompleted { get; set; }
 
@@ -21,6 +21,5 @@ namespace LMS.Models
         public User Student { get; set; } // Navigation property
 
         public Course Course { get; set; } // Navigation property
-
     }
 }
