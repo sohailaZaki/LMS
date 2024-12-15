@@ -1,14 +1,33 @@
 .side-course-details{
   width: 375px;
-  height: 670px;
+  height: auto;
+  overflow: visible;
   border-radius:15px ;
   background-color: #FFFFFF;
 position: absolute;
 right: 0;
 margin: 20px;
+top: 0px;
 }
 .content{
-
+scrollbar-width: 0px;
+}
+.header {
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  right: 35px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+    margin-left: 30px;
+}
+.header h1 {
+  margin: 0px;
+}
+.header p {
+  color: #757575;
+  margin-bottom: 20px;
+ margin-top: 10px;
 }
 .image-container img{
   border-top-left-radius:17px ;
@@ -22,6 +41,7 @@ margin: 20px;
   color: #043B5C;
   font-weight: 500;
   font-size: 13px;
+
 }
 .text-header p{
 color: #757575;
@@ -56,4 +76,114 @@ color: #043B5C;
   position: absolute;
   left: 5px;
   bottom: 13px;
+}
+.search-box {
+  padding: 8px;
+}
+
+.search-box input {
+  width: 188px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.search-box button {
+  width: 90px;
+}
+
+.search-button {
+  margin-right: 8px;
+}
+.tabel-progress{
+  width: 800px;
+  margin-right: 380px;
+  margin-top: 20px;
+}
+.pagination{
+  margin-top: 20px;
+  margin-left: 260px;
+  margin-bottom: 25px;
+}
+.assesment-fields a:hover span {
+  color: #1c9eef;
+
+   /* Ensures width and background-color work properly */
+  border-radius: 10px;
+  /* transition: ease-out; */
+}
+.assesment{
+  border: solid;
+    border-color: #ECE8E8;
+    border-radius: 6px;
+    border-width: 1px;
+    margin: 4px;
+}
+.upload-assesment{
+  width: 416px;
+  height: 300px;
+  margin-bottom: 20px;
+  margin-top:15px
+
+}
+.editable-cell {
+  position: relative;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+
+.editable-row:hover .editable-cell {
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  padding: 4px 11px;
+}
+.container {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+nz-table {
+  margin-top: 10px;
+}
+
+button {
+  margin-bottom: 10px;
+}
+.action-buttons {
+  white-space: nowrap;
+}
+
+.action-buttons button {
+  margin: 0 4px;
+}
+
+/* Style for read-only text */
+td span {
+  padding: 0 8px;
+  display: inline-block;
+}
+.success-button {
+  background-color: #52c41a; /* Green background (success color) */
+  border-color: #52c41a;     /* Green border */
+  color: white;              /* Text color inside button */
+}
+
+.success-button .ant-btn-icon {
+  color: white; /* White color for the icon */
+}
+
+.success-button:hover {
+  background-color: #4CAF50; /* Darker green background on hover */
+  border-color: #4CAF50;     /* Darker green border on hover */
+}
+
+.success-button:hover .ant-btn-icon {
+  color: white; /* White icon color on hover */
+}
+.grades-container{
+margin-left: 20px;
+width: 32%;
+height: 200px;
+position: relative;
+bottom: 18px;
 }
