@@ -21,6 +21,11 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzProgressModule } from 'ng-zorro-antd/progress';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 // Angular Material Modules
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
@@ -137,6 +142,12 @@ const routes: Routes = [
     NzTableModule,
     NzBadgeModule,
     NzDividerModule,
+    NzProgressModule,
+    NzPaginationModule,
+    NzUploadModule,
+    NzSelectModule,
+    NzInputNumberModule,
+
   ],
   providers: [
     provideAnimationsAsync(),

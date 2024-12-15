@@ -1,4 +1,8 @@
 <div class="content">
+  <div class="header">
+    <h1 style="color: #043B5C; font-weight: 500">{{courses[1].title}}</h1>
+    <p>Take a look over students Submissions and Evaluate Them.</p>
+  </div>
 <div class="side-course-details">
 <div class="image-container">
 <img src="../../../../assets/angular.webp" alt="">
@@ -30,25 +34,181 @@
    </nz-dropdown-menu>
 
   </div>
-  }
+}
+</div>
+<span class="text-header" style="margin-top:10px" >Assesments</span>
 
+<div class="assesment">
+  @for (item of courseAssigments; track $index) {
 
-  <!-- <nz-dropdown-menu #menu4="nzDropdownMenu">
-    <ul nz-menu>
-      <li nz-menu-item>Lec 1</li>
-      <li nz-menu-item>Lec 2</li>
-      <li nz-menu-item>Lec 3</li>
-    </ul>
-  </nz-dropdown-menu>
+    <div class="assesment-fields" style="display: inline!important; margin: 10px;">
+<a href="{{item.filePath}}" download style="color: #043B5C;"><img src="../../../../../assets/pdf.webp" style="width: 16.26px;height: 20px; margin: 14px;" alt="">
+  <span>
+
+    {{item.title}}
+  </span>
+  </a>
+   </div>
+ }
  </div>
-  -->
+</div>
 
-  <!-- <nz-dropdown-menu #menu4="nzDropdownMenu">
-    <ul nz-menu>
-      <li nz-menu-item>Lec 1</li>
-      <li nz-menu-item>Lec 2</li>
-      <li nz-menu-item>Lec 3</li>
-    </ul>
-  </nz-dropdown-menu> -->
+<div class="tabel-progress">
+  <!-- Student Table -->
+  <nz-table #nzTable [nzData]="displayedStudents" [nzBordered]="true" nzTableLayout="fixed" nzShowPagination="false">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Progress</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of displayedStudents">
+        <td>{{ student.id }}</td>
+        <td>{{ student.name }}</td>
+        <td>
+          <nz-progress [nzPercent]="calcProgress(assigmentSubmissionsService.getActualStudentSubmissions(1,student.id), courseAssigments?.length)"></nz-progress>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+
+  <!-- Pagination -->
+  <div class="pagination">
+
+    <nz-pagination
+    [nzPageIndex]="currentPage"
+    [nzTotal]="students.length"
+    [nzPageSize]="itemsPerPage"
+    (nzPageIndexChange)="onPageIndexChange($event)"
+    nzShowQuickJumper
+    >
+
+  </nz-pagination>
+</div>
+<span class="text-header">Assesments</span>
+
+</div>
+<div style="display: flex;">
+
+  <div class="upload-assesment">
+
+    <nz-upload
+    nzType="drag"
+    [nzMultiple]="true"
+    nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+    (nzChange)="handleChange($event)"
+    >
+    <p class="ant-upload-drag-icon">
+      <span nz-icon nzType="inbox"></span>
+    </p>
+    <p class="ant-upload-text">Click or drag file to this area to upload</p>
+    <p class="ant-upload-hint">
+      Support for a single or bulk upload. Strictly prohibit from uploading company data or other band files
+    </p>
+  </nz-upload>
+
+
+</div>
+<div class="grades-container">
+  <span class="text-header"style="position: relative;;top:5px">Assisment Criteria</span>
+
+
+  <nz-table [nzData]="rows"
+  [nzBordered]="true"
+  [nzShowPagination]="false"
+  [nzNoResult]="'  '"
+  class="grades-table" style="position: relative;;top:5px">
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Value</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+<tbody>
+  <tr *ngFor="let row of rows">
+    <td>
+      <ng-container *ngIf="row.isEditing; else readOnlyAttribute">
+
+        <nz-select [(ngModel)]="row.attribute">
+          <nz-option
+          *ngFor="let attr of getAvailableAttributes(row.attribute)"
+          [nzValue]="attr"
+          [nzLabel]="attr"
+          ></nz-option>
+        </nz-select>
+      </ng-container>
+      <ng-template #readOnlyAttribute>
+        <span>{{ row.attribute }}</span>
+      </ng-template>
+    </td>
+    <td>
+      <ng-container *ngIf="row.isEditing; else readOnlyValue">
+
+        <nz-input-number
+        [(ngModel)]="row.value"
+        [nzMin]="0"
+        [nzMax]="maxValue"
+        (ngModelChange)="updateValue(row)"
+        ></nz-input-number>
+      </ng-container>
+      <ng-template #readOnlyValue>
+        <span>{{ row.value }}</span>
+      </ng-template>
+    </td>
+    <td class="action-buttons">
+      <!-- Toggle between Submit and Edit buttons -->
+      <ng-container *ngIf="row.isEditing; else editButton">
+        <button nz-button
+        nzType="primary"
+        nzSize="small"
+        (click)="submitRow(row)"
+        nz-tooltip="Submit"
+        class="success-button">
+        <i nz-icon  nzType="check"></i>
+      </button>
+    </ng-container>
+    <ng-template #editButton>
+      <button nz-button
+      nzType="default"
+      nzSize="small"
+      (click)="toggleEdit(row)"
+      nz-tooltip="Edit"
+
+      >
+      <i nz-icon nzType="edit"    nzTheme="twotone"
+      nzTwotoneColor="#24769c"></i>
+    </button>
+  </ng-template>
+  <button nz-button
+  nzType="default"
+  nzDanger
+  nzSize="small"
+  (click)="deleteRow(row.id)"
+  nz-tooltip="Delete">
+  <i nz-icon nzType="delete"></i>
+</button>
+</td>
+</tr>
+</tbody>
+</nz-table>
+<div class="header" style="display: flex;justify-content: space-between;color: #043B5C;">
+  <button nz-button
+  nzType="link"
+  (click)="addRow()"
+  [disabled]="isAddDisabled()">
+  <div>
+    <span nz-icon nzType="plus-square" nzTheme="fill"></span>
+    <span style="padding-left: 7px;" >Criteria</span>
+
+  </div>
+</button>
+<div class="total-display" >
+  Total: {{ totalValue }}/{{ maxValue }}
+</div>
+</div>
+</div>
 </div>
 </div>
