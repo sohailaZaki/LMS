@@ -1,3 +1,34 @@
-<p>
-  Assigments works!
-</p>
+<div class="my-Assignments-container">
+  <div class="header">
+    <h1 style="color: #0F266C; font-weight: 500;">Select Assignments</h1>
+    <div class="nav-item">
+      <a class="btn btn-outline-success p-1" routerLink="/Instructor/Assigments/AddNew" >
+
+          Create
+          <i class="material-icons create-icon p-1">add_circle_outline</i>
+      </a>
+    </div>
+  </div>
+  <p>Organize your work and improve your performance with us</p>
+
+  <div class="assignments-container">
+    <div class="assignments-card" *ngFor="let assignment of assignments">
+      <div class="assignments-image">
+        <img src="{{assignment.image}}" alt="assignments" />
+      </div>
+      <div class="assignments-info">
+        <span>{{ assignment.title }}</span>
+        <p>{{ assignment.course }}</p>
+      </div>
+      <div class="view-btn-container">
+        <a routerLink="/Instructor/Assigments/:id">
+
+          <button (click)="navigateToAssignment(assignment)" class="view-btn">
+            View
+          </button>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
