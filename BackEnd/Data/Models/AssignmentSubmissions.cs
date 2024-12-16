@@ -1,11 +1,6 @@
-<<<<<<<< HEAD:BackEnd/Data/Models/AssignmentSubmissions.cs
-﻿namespace LMS.Data.Models
-========
-﻿using LMS.Data.Models;
 
-namespace LMS.Models
->>>>>>>> b7c2a7b6618d4884c01822398c91893cba74eefc:BackEnd/Models/AssignmentSubmissions.cs
-{
+﻿namespace LMS.Data.Models;
+
     public class AssignmentSubmissions
     {
         public int Id { get; set; }
