@@ -20,6 +20,7 @@ namespace LMS.Controllers.Instructor
             var courses = await _db.Courses.ToListAsync();
             return Ok(courses);
         }
+
         [HttpPost]
         public async Task<IActionResult> createCourse(Course course,int CreatorId)
         {
@@ -38,7 +39,7 @@ namespace LMS.Controllers.Instructor
             return Ok();
         }
 
-        
+
         private readonly AppDbContext _db;
     }
 }
