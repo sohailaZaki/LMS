@@ -133,6 +133,44 @@ namespace LMS.Migrations
 
             modelBuilder.Entity("LMS.Data.Models.Course", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AssignmentId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("AssignmnetID")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CourseID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FilePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("StudentID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("SubmittedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AssignmentId");
+
+                    b.HasIndex("CourseID");
+
+                    b.HasIndex("StudentID");
+
+                    b.ToTable("AssignmentSubmissions");
+                });
+
+            modelBuilder.Entity("LMS.Data.Models.Course", b =>
+                {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
