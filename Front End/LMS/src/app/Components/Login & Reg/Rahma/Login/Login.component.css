@@ -1,86 +1,96 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f2f5;
-    margin-left: 230px;
-  }
 
-  .form-box {
-    background-color: white;
-    width: 500px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* margin-left: 90px; */
 
-  .logo {
-    width: 100px;
-    margin-bottom: 20px;
-  }
+}
 
-  h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    color: #043B5C;
-  }
+.form-box {
+  background-color: white;
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding-bottom: 50px;
+}
 
-  .form-group {
-    margin-bottom: 30px;
-    text-align: left;
-  }
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #043B5C;
+}
+
+.form-group {
+  margin-bottom: 30px;
+  text-align: left;
+}
 
 
 
-  .input-field {
-    width: 95%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 1em;
-    background-color: #f0f0f0;
-  }
+.input-field {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  background-color: #f0f0f0;
+}
 
-  .btn {
-    width: 20%;
-    padding: 10px;
-    background-color: #043B5C;
-    color: white;
-    border: none;
-    border-radius: 15px;
-    font-size: 1em;
-    cursor: pointer;
-  }
+.btn {
+  width: 20%;
+  padding: 10px;
+  background-color: #043B5C;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 1em;
+  cursor: pointer;
+}
 
-  .btn:hover {
-    background-color: #2e5888;
-  }
+.btn:hover {
+  background-color: #2e5888;
+}
 
-  a {
-    color: #007bff;
-    text-decoration: none;
-  }
+a {
+  color: #007bff;
+  text-decoration: none;
+}
 
-  a:hover {
-    text-decoration: underline;
-  }
+a:hover {
+  text-decoration: underline;
+}
 
-  p {
-    margin-top: 10px;
-    font-size: 0.9em;
-    color: #043B5C;
-  }
+p {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #043B5C;
+}
 
-  label {
-    font-size: 1em;
-    color: #043B5C;
-  }
+label {
+  font-size: 1em;
+  color: #043B5C;
+}
 
-  .error {
-    color: red;
-    font-size: 15px;
-    margin-top: 5px;
-    text-align: left;
-  }
+.error {
+  color: red;
+  font-size: 15px;
+  margin-top: 5px;
+  text-align: left;
+}
+.loginBack img {
+  width: 400px;
+  height: 220px;
+  position: relative;
+  right: 20px;
+  bottom: 20px;
+}
+

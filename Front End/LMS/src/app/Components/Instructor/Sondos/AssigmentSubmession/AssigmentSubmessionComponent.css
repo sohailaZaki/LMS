@@ -1,0 +1,119 @@
+.AssigmentsSubmissions-container{
+  padding-top: 20px;
+margin-left: 10%;
+  background-color: #eef4ff;
+
+}
+.header {
+  align-items: center;
+  margin-bottom: 5%;
+  position: relative;
+  right: 7%;
+}
+.header h1 {
+  margin: 0px;
+}
+.header p {
+  color: #757575;
+  margin-bottom: 20px;
+ margin-top: 10px;
+}
+.tabel-container{
+  background-color: white;
+  width: 797px;
+  height: 752;
+  border-radius: 20px;
+  margin-top: 38px;
+  padding-bottom: 40px;
+position: relative;
+top: 20px;
+right: 50px;
+}
+.grades-table {
+  margin: 20px auto;
+  width: 80%;
+  border-collapse: collapse;
+}
+
+.grades-table th,
+.grades-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.grades-table th {
+  background-color: #4caf50;
+  color: white;
+}
+
+.grade-input {
+  width: 60px;
+}
+
+.assignment-details {
+  width: 355px;
+  height: 404px;
+  border-radius:15px ;
+  background-color: #FFFFFF;
+position: absolute;
+right: 0;
+top:140px;
+margin: 15px;
+padding: 70px;
+}
+.assignment-details img{
+  width: 246px;
+  height: 238px;
+  position: relative;
+  bottom: 60px;
+}
+.assignment-details p{
+  position: relative;
+  bottom: 50px;
+}
+.assignment-details a {
+  text-decoration: none;
+  color: #007bff;
+}
+.assignment-details span {
+  font-size: 15px;
+  font-weight: 500;
+  color: #043B5C;
+  position: relative;
+  bottom: 50px;
+  right: 10;
+}
+
+.assignment-details p {
+  font-size: 13px;
+  color: #666;
+  margin: 10px 0;
+  display: flex;
+}
+
+.assignment-details a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #5296de;
+  /* background-color: #f2f8fc; */
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  position: relative;
+  bottom: 40px;
+  display: flex;
+}
+.download  span{
+  padding: 0;
+  position: relative;
+  top: 0px;
+  left: 10px;
+}
+.download  span:hover{
+  background-color: #043B5C;
+  color: #fff;
+}
+.assignment-details a:hover {
+  background-color: #043B5C;
+  color: #fff;
+}

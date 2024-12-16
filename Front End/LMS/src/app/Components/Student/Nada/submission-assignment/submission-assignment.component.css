@@ -1,0 +1,498 @@
+/* تخصيص الألوان والتنسيقات */
+.my-courses-container {
+  width: 100%; /* التأكد من أن الحاوية تستخدم العرض الكامل */
+  padding: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  color: #043B5C;
+  margin-bottom: 40px;
+  font-size: 40px;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: flex-start; /* محاذاة العناصر من اليسار */
+  align-items: flex-start;
+  width: 90%;
+  margin-left: 25px;
+}
+
+.course-modules {
+  width: 100%;
+  max-width: 100%;
+  transform: scale(1.1); /* زيادة الحجم قليلاً عند البداية */
+  transition: transform 0.3s ease;
+}
+
+.course-modules h2 {
+  font-size: 1.6em;
+  margin-bottom: 25px;
+  color: #043B5C;
+  text-align: center;
+  font-weight: 600;
+}
+
+.course-modules table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.course-modules th, .course-modules td {
+  padding: 10px;
+  text-align: center;
+  font-size: 1em;
+}
+
+.course-modules th {
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.course-modules td {
+  background-color: #f9f9f9;
+}
+
+.course-modules tr:hover {
+  background-color: #f1f1f1;
+}
+
+.view-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.view-btn {
+  background-color: #043B5C;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.95em;
+  transition: background-color 0.3s ease;
+}
+
+.view-btn:hover {
+  background-color: #195a83;
+}
+
+/* مودال */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #333;
+}
+
+.modal-header .close {
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.modal-header .close:hover {
+  color: #ff4d4d;
+}
+
+.modal-body label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.modal-body textarea,
+.modal-body input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.modal-footer .btn-submit {
+  background-color: #043B5C;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-footer .btn-submit:hover {
+  background-color: #1f6a98;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.modal-body ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.modal-body li {
+  margin-bottom: 10px;
+}
+
+.modal-body a {
+  color: #043B5C;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.modal-body a:hover {
+  text-decoration: underline;
+}
+
+.modal-body h4 {
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+.modal-body {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 15px;
+}
+
+/* تفاصيل الواجب */
+.assignment-details {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #f0f4f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.assignment-details h4 {
+  margin-bottom: 10px;
+  color: #043B5C;
+  font-weight: bold;
+}
+
+
+
+.description-text,  .subject-name {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 1em;
+  color: #333;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.attachments li {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 1em;
+  color: #333;
+  border: 1px solid  #043B5C;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.university-logo {
+  max-width: 4%;  /* يضمن أن الصورة لا تتجاوز عرض العنصر */
+  height: auto;    /* يحافظ على النسبة الأصلية للصورة */
+
+}
+
+/* المرفقات */
+.attachments {
+  margin-bottom: 20px;
+}
+
+.attachments h4 {
+  font-weight: 600;
+  color: #043B5C;
+}
+
+.attachments ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.attachments li {
+  margin-bottom: 10px;
+}
+
+.attachments a {
+  color: #043B5C;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.attachments a:hover {
+  border-bottom: 2px solid #043B5C;
+}
+
+/* قسم الإرسال */
+.submission-section {
+  margin-top: 20px;
+}
+
+.submission-section label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.submission-section textarea,
+.submission-section input[type="file"] {
+  width: 95%;
+  padding: 20px;
+  background-color: #f0f4f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.submission-section textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.modal-footer .btn-submit {
+  background-color: #043B5C;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.modal-footer .btn-submit:hover {
+  background-color: #1a4e74;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+
+.toast-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s, fadeOut 0.5s 2.5s;
+}
+
+
+/* Success Message Style */
+.toast-success {
+  background-color: #4CAF50; /* أخضر */
+  color: #fff;
+}
+
+/* Error Message Style */
+.toast-error {
+  background-color: #F44336; /* أحمر */
+  color: #fff;
+}
+
+/* Animation for Toast */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+}
+
+/* Global Adjustments for Small Screens */
+@media (max-width: 768px) {
+  /* Adjust the h1 for better readability on smaller screens */
+  h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  .my-courses-container {
+    padding: 20px;
+  }
+
+  .content-wrapper {
+    display: block;  /* Stack elements vertically on smaller screens */
+    margin-left: 0;
+  }
+
+  .course-modules {
+    transform: scale(1); /* Remove the scale effect */
+    width: 100%;
+  }
+
+  .course-modules h2 {
+    font-size: 1.4em;
+  }
+
+  /* Adjust table layout for mobile */
+  .course-modules table {
+    width: 100%;
+    font-size: 0.9em;  /* Smaller text for table */
+    border-spacing: 0;
+  }
+
+  .course-modules th,
+  .course-modules td {
+    padding: 8px; /* Reduce padding for smaller screens */
+  }
+
+  .view-btn {
+    padding: 8px 12px; /* Smaller button on mobile */
+    font-size: 0.9em;
+  }
+
+  /* Modal adjustments for small screens */
+  .modal-content {
+    width: 90%;
+    max-width: 400px;
+    padding: 15px;
+  }
+
+  .modal-body label {
+    font-size: 14px; /* Smaller font size for labels */
+  }
+
+  .modal-body textarea,
+  .modal-body input[type="file"] {
+    font-size: 12px; /* Smaller font size for inputs */
+    padding: 8px;
+  }
+
+  /* Adjust the error message font size */
+  .error-message {
+    font-size: 12px;
+  }
+
+  .attachments li {
+    font-size: 0.9em;
+  }
+
+  .modal-footer .btn-submit {
+    padding: 10px 20px; /* Adjust button padding */
+    font-size: 0.95em;
+  }
+
+  .toast-container {
+    padding: 10px 20px; /* Smaller padding for toast message */
+    font-size: 14px;
+  }
+
+  .toast-container {
+    top: 10px;
+  }
+
+  .upload {
+    width: 100%; /* Make file input responsive */
+    font-size: 14px;
+  }
+}
+
+/* Further adjust for extra small screens (phones) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .course-modules th, .course-modules td {
+    padding: 6px;  /* Even smaller padding for very small screens */
+  }
+
+  .view-btn {
+    padding: 6px 10px;  /* Further reduce button size */
+  }
+
+  .modal-body label,
+  .modal-body textarea,
+  .modal-body input[type="file"] {
+    font-size: 12px;
+  }
+
+  .modal-footer .btn-submit {
+    padding: 8px 18px; /* Adjust button size further */
+    font-size: 0.9em;
+  }
+
+  .attachments li {
+    font-size: 0.8em;  /* Further reduce font size for attachments */
+  }
+}

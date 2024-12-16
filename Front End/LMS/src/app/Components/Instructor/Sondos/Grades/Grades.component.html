@@ -1,3 +1,92 @@
-<p>
-  Grades works!
-</p>
+<div class="grades-container">
+  <div class="header">
+    <h1 style="color: #0f266c; font-weight: 500">Grades of Students</h1>
+    <p> Gives you insight into all student grades in the courses you teach.</p>
+  </div>
+  <div class="tabel-container" style="width: 1060px;">
+
+    <!-- <table class="grades-table">
+      <thead>
+        <tr>
+          <th>Student</th>
+          <th>Grade</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students; let i = index">
+          <td>{{ student.name }}</td>
+          <td>
+            <ng-container *ngIf="editingIndex !== i; else editTemplate">
+              {{ student.grade }}
+            </ng-container>
+            <ng-template #editTemplate>
+              <input
+              type="number"
+              [(ngModel)]="students[i].grade"
+              class="grade-input"
+              />
+            </ng-template>
+          </td>
+          <td>
+            <a *ngIf="editingIndex !== i" (click)="editGrade(i)">
+              ✏️
+            </a>
+            <a *ngIf="editingIndex === i" (click)="saveGrade(i)">
+              ✔️
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table> -->
+    <nz-table  #nestedTable [nzData]="listOfCourses" [nzBordered]="true" [nzPageSize]="5" [nzShowPagination]="false">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Course Title</th>
+          <th>Description</th>
+          <th>Number of Students</th>
+        </tr>
+      </thead>
+      <tbody>
+       @for (course of nestedTable.data; track $index) {
+
+         <tr >
+           <td [(nzExpand)]="course.expand"></td>
+           <td>{{ course.title }}</td>
+           <td>{{ course.description }}</td>
+           <td>{{course.students.length}}</td>
+          </tr>
+
+          <tr [nzExpand]="course.expand">
+            <td colspan="4">
+              <nz-table style="width: 1020px;" #innerTable [nzData]="getStudentsForCourse(course.id)" [nzBordered]="true" [nzShowPagination]="false">
+                <thead>
+                  <tr>
+                    <th>Student ID</th>
+                    <th>Name</th>
+                    <th>Grade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let student of innerTable.data">
+                    <td>{{ student.id }}</td>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.grade }}</td>
+                  </tr>
+                </tbody>
+              </nz-table>
+            </td>
+          </tr>
+
+        }
+        </tbody>
+      </nz-table>
+
+    <!-- <div class="assignment-details">
+      <img src="../../../../../assets/assigment.webp" alt="Assignment Icon" />
+      <p><b>Assignment 1:</b> Angular Course<br />Deadline: 27th OCT.</p>
+      <a href="Assignment1.pdf" download>Download Assignment</a>
+    </div> -->
+  </div>
+</div>

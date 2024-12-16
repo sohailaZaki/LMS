@@ -12,6 +12,6 @@ namespace LMS.Models
         public string filepath { get; set; }
         public DateTime DeadLine { get; set; }
         public int CourseID { get; set; }
-        public List<AssignmentSubmission> Submissions { get; set; }
+        //public List<AssignmentSubmission> Submissions { get; set; }
     }
 }

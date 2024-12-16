@@ -1,0 +1,16 @@
+<h1>My Courses</h1>
+
+<div class="courses-container">
+  <div class="course-card" *ngFor="let course of courses">
+    <div class="course-image">
+      <img [src]="course.image" alt="course image" />
+    </div>
+    <div class="course-info">
+      <h3>{{ course.title }}</h3>
+      <p>{{ course.description }}</p>
+    </div>
+    <div class="view-btn-container">
+      <button (click)="navigateToCourse(course)" class="view-btn">View ➤</button>
+    </div>
+  </div>
+</div>

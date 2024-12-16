@@ -2,7 +2,7 @@
   <div class="header">
     <h1 style="color: #0F266C; font-weight: 500;">Select Course</h1>
     <div class="nav-item">
-      <a class="btn btn-outline-success p-1" routerLink="/Instructor/Courses/New" >
+      <a class="btn btn-outline-success p-1" routerLink="/instructor/Courses/New" >
         <!-- Replace with your desired route -->
           Create
           <i class="material-icons create-icon p-1">add_circle_outline</i>
@@ -21,7 +21,7 @@
         <p>{{ course.description }}</p>
       </div>
       <div class="view-btn-container">
-       <a routerLink="/Instructor/Courses/:id">
+       <a routerLink="/instructor/Course/:id">
 
          <button (click)="navigateToCourse(course)" class="view-btn">
            View

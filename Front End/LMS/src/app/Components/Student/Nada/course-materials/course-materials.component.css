@@ -1,0 +1,109 @@
+.courses-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 كورسات في كل صف */
+  gap: 20px;
+  padding: 20px;
+}
+
+h1 {
+  color: #043B5C;
+  margin-bottom: 40px;
+  font-size: 40px;
+}
+
+.course-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row; /* استخدام flex لعرض الصورة والنص بجانب بعض */
+  height: auto; /* إزالة الارتفاع الثابت للبطاقة */
+  overflow: hidden;
+}
+
+.course-image {
+  width: 100px; /* عرض ثابت للصورة */
+  height: 100px; /* ارتفاع ثابت للصورة */
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.course-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* لضمان تناسق الصورة داخل الحيز دون تشويه */
+  border-radius: 10px 0 0 10px; /* جعل الزوايا دائرية */
+}
+
+.course-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.course-info h3 {
+  font-size: 18px;
+  color: #043B5C;
+  margin-bottom: 0.001px;
+}
+
+.course-info p {
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 1px;
+}
+
+.view-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px 20px 20px;
+}
+
+.view-btn {
+  color: #043B5C;
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 5px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+@media (max-width: 1024px) {
+  .courses-container {
+    grid-template-columns: repeat(2, 1fr); /* كورسين في كل صف على الشاشات المتوسطة */
+  }
+}
+
+@media (max-width: 768px) {
+  .courses-container {
+    grid-template-columns: 1fr; /* كورس واحد في كل صف على الشاشات الصغيرة */
+  }
+
+  .course-card {
+    flex-direction: column; /* تغيير الاتجاه ليكون عموديًا في الشاشات الصغيرة */
+    text-align: center; /* محاذاة النص في المنتصف */
+  }
+
+  .course-image {
+    width: 100%; /* جعل الصورة تأخذ عرض البطاقة بالكامل */
+    height: 300px; /* تكبير الصورة على الشاشات الصغيرة */
+  }
+
+  .course-info {
+    padding: 15px;
+  }
+
+  .view-btn-container {
+    justify-content: center; /* جعل الزر في المنتصف */
+    padding: 10px;
+  }
+
+  .view-btn {
+    width: 80%; /* تكبير الزر ليتناسب مع البطاقة */
+  }
+}
