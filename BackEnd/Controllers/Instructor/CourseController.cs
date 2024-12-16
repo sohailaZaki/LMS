@@ -21,6 +21,25 @@ namespace LMS.Controllers.Instructor
             return Ok(courses);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> createCourse(Course course,int CreatorId)
+        {
+            var C = new Course();
+            if (CreatorId == 2)  //if Course Created by Instructor
+            {
+                C.Name = course.Name;
+                C.Status = "Pending";
+                C.Description = course.Description;
+                C.InstructorID = CreatorId;
+                
+            }
+
+            _db.Courses.Add(C);
+            await _db.SaveChangesAsync();
+            return Ok();
+        }
+
+
         private readonly AppDbContext _db;
     }
 }
