@@ -1,6 +1,4 @@
-﻿using LMS.Data.Models;
-
-namespace LMS.Models
+﻿namespace LMS.Data.Models
 {
     public class AssignmentSubmissions
     {

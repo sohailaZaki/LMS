@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using LMS.Data.Models;
 
-namespace LMS.Models
+namespace LMS.Data.Models
 {
     public class StudentProgresses
     {

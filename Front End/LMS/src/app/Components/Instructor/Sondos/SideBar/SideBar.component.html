@@ -10,23 +10,23 @@
   <p claa="main-text" >Main</p>
   <ul class="nav">
     <li class="nav-item">
-      <a routerLink="/InstructorDashBoard">
+      <a routerLink="/instructor/InstructorDashBoard">
         <i class="material-icons">home</i> Home
       </a>
     </li>
     <li class="nav-item">
-      <a routerLink="/Instructor/Courses/New">
+      <a routerLink="/instructor/Courses/New">
         <i class="material-icons">my_library_add</i> Create Course
       </a>
     </li>
     <li class="nav-item">
-      <a routerLink="/Instructor/Assigments/AddNew">
+      <a routerLink="/instructor/Assigments/AddNew">
         <i class="material-icons">assignment</i> Create Assignment
       </a>
     </li>
     <li class="nav-item dropdown">
       <a href="javascript:void(0)" (click)="toggleDropdown()">
-        <a routerLink="Instructor/Courses" >
+        <a routerLink="/instructor/Courses" >
         <i class="material-icons">folder</i> My Courses
       </a>
         <i class="material-icons arrow-icon" [ngClass]="{'rotate': isDropdownOpen}">keyboard_arrow_down</i>
@@ -34,7 +34,7 @@
       <ul class="nav-submenu" *ngIf="isDropdownOpen">
         @for (item of courses; track $index) {
 
-          <li class="nav-subitem"><a routerLink="Instructor/Courses/:id">{{item.title}}</a></li>
+          <li class="nav-subitem"><a routerLink="/instructor/Courses/:id">{{item.title}}</a></li>
         }
       </ul>
     </li>
@@ -42,12 +42,12 @@
 
 
     <li class="nav-item">
-      <a routerLink="/Instructor/Assigments">
+      <a routerLink="/instructor/Assigments">
         <i class="material-icons">list</i> Assignments
       </a>
     </li>
     <li class="nav-item">
-      <a routerLink="/Instructor/Grades">
+      <a routerLink="/instructor/Grades">
         <i class="material-icons">grading</i> Grades
       </a>
     </li>
@@ -60,7 +60,7 @@
     <a routerLink="/help" class="help">
       <i class="material-icons">help_outline</i> Help
     </a>
-    <a routerLink="/logout" class="logout">
+    <a routerLink="/Login" class="logout">
       <i class="material-icons">logout</i> Logout Account
     </a>
   </div>
