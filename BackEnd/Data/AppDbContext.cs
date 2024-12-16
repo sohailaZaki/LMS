@@ -11,14 +11,14 @@ namespace LMS.Data
 
 
         }
-        DbSet<User> Users { get; set; }
+        public DbSet<User> Users { get; set; }
         DbSet<Assignment> Assignments { get; set; }
         DbSet<Material> Materials { get; set; }
         DbSet<AssessmentCriteria> AssessmentCriterias { get; set; }
       public  DbSet<Course> Courses { get; set; }
         DbSet<AssignmentSubmissions> AssignmentSubmissions { get; set; }
         DbSet<StudentProgresses> StudentProgresses { get; set; }
-        DbSet<Role> Roles { get; set; }
+        public DbSet<Role> Roles { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
