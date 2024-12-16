@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace LMS.Data.Models
 {
@@ -12,6 +13,8 @@ namespace LMS.Data.Models
         public string filepath { get; set; }
         public DateTime DeadLine { get; set; }
         public int CourseID { get; set; }
-        //public List<AssignmentSubmission> Submissions { get; set; }
+        public Course ?Course { get; set; }
+        [JsonIgnore]
+        public List<AssignmentSubmissions> ?Submissions { get; set; }
     }
 }

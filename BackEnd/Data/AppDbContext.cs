@@ -1,5 +1,4 @@
-﻿
-using LMS.Data.Models;
+﻿using LMS.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace LMS.Data
@@ -17,7 +16,7 @@ namespace LMS.Data
         public DbSet<AssessmentCriteria> AssessmentCriterias { get; set; }
         public  DbSet<Course> Courses { get; set; }
         public DbSet<AssignmentSubmissions> AssignmentSubmissions { get; set; }
-        public DbSet<StudentProgresses> StudentProgresses { get; set; }
+        public DbSet<StudentCourse> StudentCourse { get; set; }
         public DbSet<Role> Roles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -33,7 +32,12 @@ namespace LMS.Data
    new User { Id = 2, FirstName = "Admin", LastName="2",Email="Admin@cis.asu.edu.eg", CreatedAt = new DateTime(2024, 12, 16), Password="admin2",RoleID=3, RoleName = "Admin",Status ="Active",UserName="Admin_2" }
 
 );
-
+         modelBuilder.Entity<AssessmentCriteria>()
+        .HasOne(a => a.Course)
+        .WithOne(c => c.AssessmentCriteria)
+        .HasForeignKey<AssessmentCriteria>(a => a.CourseID)
+        .OnDelete(DeleteBehavior.Cascade);
+       
         }
     }
 }

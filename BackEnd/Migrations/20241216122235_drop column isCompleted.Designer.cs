@@ -4,6 +4,7 @@ using LMS.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LMS.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241216122235_drop column isCompleted")]
+    partial class dropcolumnisCompleted
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -103,51 +106,6 @@ namespace LMS.Migrations
                     b.Property<int?>("CourseID")
                         .HasColumnType("int");
 
-                    b.Property<int>("Evaluation")
-                        .HasColumnType("int");
-
-                    b.Property<string>("FilePath")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("StudentID")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("SubmittedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("studentName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AssignmentId");
-
-                    b.HasIndex("CourseID");
-
-                    b.HasIndex("StudentID");
-
-                    b.ToTable("AssignmentSubmissions");
-                });
-
-            modelBuilder.Entity("LMS.Data.Models.Course", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("AssignmentId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("AssignmnetID")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CourseID")
-                        .HasColumnType("int");
-
                     b.Property<string>("FilePath")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -194,6 +152,9 @@ namespace LMS.Migrations
                     b.Property<int>("InstructorID")
                         .HasColumnType("int");
 
+                    b.Property<int?>("InstructorId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("LectureDay")
                         .HasColumnType("int");
 
@@ -217,7 +178,7 @@ namespace LMS.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("InstructorID");
+                    b.HasIndex("InstructorId");
 
                     b.ToTable("Courses");
                 });
@@ -303,10 +264,6 @@ namespace LMS.Migrations
                     b.Property<int>("StudentID")
                         .HasColumnType("int");
 
-                    b.Property<string>("studentName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("ID");
 
                     b.HasIndex("CourseID");
@@ -323,6 +280,9 @@ namespace LMS.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("CourseID")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -442,9 +402,7 @@ namespace LMS.Migrations
                 {
                     b.HasOne("LMS.Data.Models.User", "Instructor")
                         .WithMany()
-                        .HasForeignKey("InstructorID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("InstructorId");
 
                     b.Navigation("Instructor");
                 });
@@ -465,13 +423,13 @@ namespace LMS.Migrations
                     b.HasOne("LMS.Data.Models.Course", "Course")
                         .WithMany("Students")
                         .HasForeignKey("CourseID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("LMS.Data.Models.User", "Student")
                         .WithMany("RegisteredCourses")
                         .HasForeignKey("StudentID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Course");
