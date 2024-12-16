@@ -1,4 +1,4 @@
-﻿namespace LMS.Models
+﻿namespace LMS.Data.Models
 {
     public class AssessmentCriteria
     {
