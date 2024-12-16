@@ -4,6 +4,7 @@ using LMS.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LMS.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241216022117_adding Admin Data to user")]
+    partial class addingAdminDatatouser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,7 +56,7 @@ namespace LMS.Migrations
                     b.HasIndex("CourseID")
                         .IsUnique();
 
-                    b.ToTable("AssessmentCriterias", (string)null);
+                    b.ToTable("AssessmentCriterias");
                 });
 
             modelBuilder.Entity("LMS.Data.Models.Assignment", b =>
@@ -81,7 +84,7 @@ namespace LMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Assignments", (string)null);
+                    b.ToTable("Assignments");
                 });
 
             modelBuilder.Entity("LMS.Data.Models.AssignmentSubmissions", b =>
@@ -154,7 +157,7 @@ namespace LMS.Migrations
 
                     b.HasIndex("InstructorID");
 
-                    b.ToTable("Courses", (string)null);
+                    b.ToTable("Courses");
                 });
 
             modelBuilder.Entity("LMS.Data.Models.Material", b =>
@@ -184,7 +187,7 @@ namespace LMS.Migrations
 
                     b.HasIndex("CourseID");
 
-                    b.ToTable("Materials", (string)null);
+                    b.ToTable("Materials");
                 });
 
             modelBuilder.Entity("LMS.Data.Models.Role", b =>
