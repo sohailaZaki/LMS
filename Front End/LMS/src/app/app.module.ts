@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, RouterOutlet, Routes } from '@angular/router';
-import { provideHttpClient } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 // Ng-Zorro Modules
@@ -36,7 +36,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Components
 import { AppComponent } from './app.component';
-import { SignupComponent } from './Components/Login & Reg/Rahma/signup/signup.component';
+import { SignupComponent } from './Components/Login & Reg/Rahma/SignUp/signup.component';
 import { LoginComponent } from './Components/Login & Reg/Rahma/Login/Login.component';
 import { InstructorDashBoardComponent } from './Components/Instructor/Sohaila/instructorDashBoard/instructorDashBoard.component';
 import { SideBarComponent } from './Components/Instructor/Sondos/SideBar/SideBar.component';
@@ -138,6 +138,7 @@ const routes: Routes = [
     CommonModule, // تم إضافته لتوفير التوجيهات الأساسية مثل ngIf و ngSwitch
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot(routes),
     MatCardModule,
     MatListModule,
