@@ -326,3 +326,173 @@ h1 {
   margin-top: 10px;
   font-weight: bold;
 }
+
+
+.toast-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s, fadeOut 0.5s 2.5s;
+}
+
+
+/* Success Message Style */
+.toast-success {
+  background-color: #4CAF50; /* أخضر */
+  color: #fff;
+}
+
+/* Error Message Style */
+.toast-error {
+  background-color: #F44336; /* أحمر */
+  color: #fff;
+}
+
+/* Animation for Toast */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+}
+
+/* Global Adjustments for Small Screens */
+@media (max-width: 768px) {
+  /* Adjust the h1 for better readability on smaller screens */
+  h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  .my-courses-container {
+    padding: 20px;
+  }
+
+  .content-wrapper {
+    display: block;  /* Stack elements vertically on smaller screens */
+    margin-left: 0;
+  }
+
+  .course-modules {
+    transform: scale(1); /* Remove the scale effect */
+    width: 100%;
+  }
+
+  .course-modules h2 {
+    font-size: 1.4em;
+  }
+
+  /* Adjust table layout for mobile */
+  .course-modules table {
+    width: 100%;
+    font-size: 0.9em;  /* Smaller text for table */
+    border-spacing: 0;
+  }
+
+  .course-modules th,
+  .course-modules td {
+    padding: 8px; /* Reduce padding for smaller screens */
+  }
+
+  .view-btn {
+    padding: 8px 12px; /* Smaller button on mobile */
+    font-size: 0.9em;
+  }
+
+  /* Modal adjustments for small screens */
+  .modal-content {
+    width: 90%;
+    max-width: 400px;
+    padding: 15px;
+  }
+
+  .modal-body label {
+    font-size: 14px; /* Smaller font size for labels */
+  }
+
+  .modal-body textarea,
+  .modal-body input[type="file"] {
+    font-size: 12px; /* Smaller font size for inputs */
+    padding: 8px;
+  }
+
+  /* Adjust the error message font size */
+  .error-message {
+    font-size: 12px;
+  }
+
+  .attachments li {
+    font-size: 0.9em;
+  }
+
+  .modal-footer .btn-submit {
+    padding: 10px 20px; /* Adjust button padding */
+    font-size: 0.95em;
+  }
+
+  .toast-container {
+    padding: 10px 20px; /* Smaller padding for toast message */
+    font-size: 14px;
+  }
+
+  .toast-container {
+    top: 10px;
+  }
+
+  .upload {
+    width: 100%; /* Make file input responsive */
+    font-size: 14px;
+  }
+}
+
+/* Further adjust for extra small screens (phones) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .course-modules th, .course-modules td {
+    padding: 6px;  /* Even smaller padding for very small screens */
+  }
+
+  .view-btn {
+    padding: 6px 10px;  /* Further reduce button size */
+  }
+
+  .modal-body label,
+  .modal-body textarea,
+  .modal-body input[type="file"] {
+    font-size: 12px;
+  }
+
+  .modal-footer .btn-submit {
+    padding: 8px 18px; /* Adjust button size further */
+    font-size: 0.9em;
+  }
+
+  .attachments li {
+    font-size: 0.8em;  /* Further reduce font size for attachments */
+  }
+}

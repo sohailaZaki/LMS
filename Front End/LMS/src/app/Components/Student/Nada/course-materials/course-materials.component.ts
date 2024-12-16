@@ -59,6 +59,6 @@ export class CourseMaterialsComponent {
 
 
   navigateToCourse(course: any) {
-    this.router.navigate(['/dashboard/course-detail', course.id], { state: { courseDetails: course } });
+    this.router.navigate(['/student-dashboard/course-detail', course.id], { state: { courseDetails: course } });
   }
 }
