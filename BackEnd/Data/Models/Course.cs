@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace LMS.Models
+namespace LMS.Data.Models
 {
     public class Course
     {
@@ -17,10 +17,12 @@ namespace LMS.Models
         [Required]
         public int InstructorID { get; set; } // Foreign key to User
 
+        public int AssesmentCriteriaId { get; set; }
         [Required]
         public string Status { get; set; } // Active, Archived
         public List<Material> CourseMaterial { get; set; }
 
         public User Instructor { get; set; }
+        public AssessmentCriteria assessmentCriteria { get; set; }
     }
 }
