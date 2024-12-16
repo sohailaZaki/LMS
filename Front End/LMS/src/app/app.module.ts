@@ -70,7 +70,7 @@ const routes: Routes = [
   {
     path: '',
     children: [
-      { path: '', redirectTo: '/signup', pathMatch: 'full' }, 
+      { path: '', redirectTo: '/signup', pathMatch: 'full' },
       { path: 'signup', component: SignupComponent },
       { path: 'Login', component: LoginComponent },
     ],
@@ -89,14 +89,14 @@ const routes: Routes = [
       { path: 'Assigments/:id', component: AssigmentSubmessionComponent },
       { path: 'Courses/New', component: CreateCourseComponent },
       { path: 'Course/:id', component: CourseViewComponent },
-     
+
 
     ],
   },
   // student route
   {
     path: 'student-dashboard',
-    component: studentDashboardComponent , 
+    component: studentDashboardComponent ,
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
@@ -130,7 +130,7 @@ const routes: Routes = [
     AssigmentSubmessionComponent,
     studentDashboardComponent,
     FirstKeyPipe,
-  
+
 
   ],
   imports: [
