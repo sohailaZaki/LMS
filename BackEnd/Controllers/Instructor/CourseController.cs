@@ -20,6 +20,7 @@ namespace LMS.Controllers.Instructor
             var courses = await _db.Courses.ToListAsync();
             return Ok(courses);
         }
+
         private readonly AppDbContext _db;
     }
 }
