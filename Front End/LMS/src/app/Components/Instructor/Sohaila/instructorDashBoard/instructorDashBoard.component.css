@@ -139,6 +139,7 @@
   width: 300px; /* Fixed width for each card */
   height: 550px;
   margin-left:50px ;
+  margin-bottom: 2.2%;
 }
 .card{
   border: none;
@@ -151,5 +152,5 @@
 }
 .page-content{
   overflow-y: hidden;
-scrollbar-width: 0;
+  scrollbar-width: 0;
 }

@@ -11,6 +11,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    width: 100%;
   }
 
   .personal-info h3 {
@@ -49,16 +50,17 @@
   .container {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* المسافة بين الكنتينرات */
+    gap: 20px;
     align-items: center;
   }
 
   .info-box {
+    
     display: flex;
     align-items: center;
     background-color: #f0f4f8;
     border-radius: 10px;
-    width: 100%;
+    width: 102%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color: #fff;

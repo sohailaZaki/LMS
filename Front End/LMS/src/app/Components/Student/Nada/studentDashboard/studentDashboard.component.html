@@ -1,15 +1,20 @@
 <div class="dashboard-container">
+  <!-- Toggle Button -->
+  <button
+    class="toggle-button"
+    (click)="toggleSidebar()"
+    [style.color]="isSidebarCollapsed ? 'black' : 'white'"
+  >
+    <i class="material-icons">sort</i>
+  </button>
+
   <!-- Sidebar -->
-  <nav class="sidebar">
+  <nav [class.collapsed]="isSidebarCollapsed" class="sidebar">
     <div class="welcome-section">
-      <!-- Welcome Message -->
       <p>WELCOME</p>
-      <p>{{username}}</p>
+      <p>{{ username }}</p>
     </div>
-
     <hr />
-
-    <!-- Menu Items -->
     <ul class="menu">
       <h6>MAIN</h6>
       <li (click)="navigateTo('home')" [class.active]="isActive('home')">
@@ -17,25 +22,30 @@
           <i class="material-icons">home</i> Home
         </a>
       </li>
-
-      <li (click)="navigateTo('courses')" [class.active]="isActive('courses')" ><a routerLink="/courses" routerLinkActive="active"><!-- إذا كنت تريد استخدام رمز مختلف مثل رمز الملفات المتعددة -->
-          <i class="material-icons">folder</i>        My Courses</a></li>
+      <li (click)="navigateTo('courses')" [class.active]="isActive('courses')">
+        <a routerLink="/courses" routerLinkActive="active">
+          <i class="material-icons">folder</i> My Courses
+        </a>
+      </li>
       <li (click)="navigateTo('assignments')" [class.active]="isActive('assignments')">
-          <a routerLink="/assignments" routerLinkActive="active">
-              <i class="material-icons">assignment</i> Assignments</a></li>
+        <a routerLink="/assignments" routerLinkActive="active">
+          <i class="material-icons">assignment</i> Assignments
+        </a>
+      </li>
     </ul>
-
     <hr />
-
-    <!-- Extra Menu -->
     <div class="extra-menu">
-      <a routerLink="/help" class="help"> <i class="material-icons">help_outline</i> Help</a>
-      <a routerLink="/logout" class="logout"><i class="material-icons">logout</i>  Logout Account</a>
+      <a routerLink="/help" class="help">
+        <i class="material-icons">help_outline</i> Help
+      </a>
+      <a routerLink="/Login" class="logout">
+        <i class="material-icons">logout</i> Logout Account
+      </a>
     </div>
   </nav>
 
   <!-- Content Area -->
-  <main class="content">
+  <main class="content" [class.full-width]="isSidebarCollapsed">
     <router-outlet></router-outlet>
   </main>
 </div>

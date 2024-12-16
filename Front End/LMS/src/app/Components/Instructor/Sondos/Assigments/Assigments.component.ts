@@ -14,7 +14,7 @@ export class AssigmentsComponent implements OnInit {
   ) {}
 
   navigateToAssignment(assignment: any) {
-    this.router.navigate(['/Instructor/Assigments', assignment.id], {
+    this.router.navigate(['/instructor/Assigments', assignment.id], {
       state: { assignment: assignment },
     });
   }
