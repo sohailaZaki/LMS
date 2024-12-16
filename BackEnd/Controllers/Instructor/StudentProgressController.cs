@@ -1,5 +1,9 @@
+
 ﻿using LMS.Data;
 using Microsoft.AspNetCore.Http;
+
+﻿using Microsoft.AspNetCore.Http;
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace LMS.Controllers.Instructor
@@ -7,6 +11,7 @@ namespace LMS.Controllers.Instructor
     [Route("api/[controller]")]
     [ApiController]
     public class StudentProgressController : ControllerBase
+
         
     {
         public StudentProgressController(AppDbContext db)
@@ -43,5 +48,10 @@ namespace LMS.Controllers.Instructor
         // عدد مرات ظهور الستيودنت اي دي ده في الجدول بتاع السبميشنز 
         
         private readonly AppDbContext _db;
+
+    {
+
+
+
     }
 }
