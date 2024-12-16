@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, RouterOutlet, Routes } from '@angular/router';
-import { provideHttpClient } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 // Ng-Zorro Modules
@@ -36,7 +36,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Components
 import { AppComponent } from './app.component';
-import { SignupComponent } from './Components/Login & Reg/Rahma/signup/signup.component';
+import { SignupComponent } from './Components/Login & Reg/Rahma/SignUp/signup.component';
 import { LoginComponent } from './Components/Login & Reg/Rahma/Login/Login.component';
 import { InstructorDashBoardComponent } from './Components/Instructor/Sohaila/instructorDashBoard/instructorDashBoard.component';
 import { SideBarComponent } from './Components/Instructor/Sondos/SideBar/SideBar.component';
@@ -62,42 +62,52 @@ import { FirstKeyPipe } from './Components/Login & Reg/Rahma/pipes/firstKey.pipe
 
 // Locale
 import en from '@angular/common/locales/en';
+
 registerLocaleData(en);
 
-// Routes
 const routes: Routes = [
+
   {
     path: '',
-    component: LayoutComponent,
     children: [
-      { path: 'InstructorDashBoard', component: InstructorDashBoardComponent },
-      { path: 'Instructor/Courses', component: CoursesComponent },
-      // { path: 'Instructor/Courses/:id', component: CourseViewComponent },
-      { path: 'Instructor/Grades', component: GradesComponent },
-      { path: 'Instructor/Assigments', component: AssigmentsComponent },
-      {
-        path: 'Instructor/Assigments/AddNew',
-        component: CreateAssignmentComponent,
-      },
-      // {
-      //   path: 'Instructor/Assigment/:id',
-      //   component: AssignmentDetailsComponent,
-      // },
-    {
-      path:'Instructor/Assigments/:id',component:AssigmentSubmessionComponent
-    },
-      { path: 'Instructor/Courses/New', component: CreateCourseComponent },
-      { path: 'Instructor/Course/:id', component: CourseViewComponent },
-      { path: 'courses', component: CourseMaterialsComponent },
-      { path: 'assignments', component: SubmissionAssignmentComponent },
-      { path: 'home', component: HomeComponent },
-      { path: 'course-detail/:id', component: CourseDetailsComponent },
+      { path: '', redirectTo: '/signup', pathMatch: 'full' },
       { path: 'signup', component: SignupComponent },
       { path: 'Login', component: LoginComponent },
-      { path: '', redirectTo: '/signup', pathMatch: 'full' },
+    ],
+  },
+  // instructor route
+  {
+    path: 'instructor',
+    component: LayoutComponent,
+    children: [
+      {path:'' ,redirectTo:'InstructorDashBoard',pathMatch:'full'},
+      { path: 'InstructorDashBoard', component: InstructorDashBoardComponent },
+      { path: 'Courses', component: CoursesComponent },
+      { path: 'Grades', component: GradesComponent },
+      { path: 'Assigments', component: AssigmentsComponent },
+      { path: 'Assigments/AddNew', component: CreateAssignmentComponent },
+      { path: 'Assigments/:id', component: AssigmentSubmessionComponent },
+      { path: 'Courses/New', component: CreateCourseComponent },
+      { path: 'Course/:id', component: CourseViewComponent },
+
+
+    ],
+  },
+  // student route
+  {
+    path: 'student-dashboard',
+    component: studentDashboardComponent ,
+    children: [
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
+      { path: 'courses', component: CourseMaterialsComponent },
+      { path: 'assignments', component: SubmissionAssignmentComponent },
+      { path: 'course-detail/:id', component: CourseDetailsComponent },
     ],
   },
 ];
+
+
 
 @NgModule({
   declarations: [
@@ -119,7 +129,8 @@ const routes: Routes = [
     CourseDetailsComponent,
     AssigmentSubmessionComponent,
     studentDashboardComponent,
-    FirstKeyPipe, // التأكد من وجود الأنابيب هنا
+    FirstKeyPipe,
+
 
   ],
   imports: [
@@ -127,6 +138,7 @@ const routes: Routes = [
     CommonModule, // تم إضافته لتوفير التوجيهات الأساسية مثل ngIf و ngSwitch
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot(routes),
     MatCardModule,
     MatListModule,

@@ -5,9 +5,10 @@
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-top: -40px;
-  margin-left: -10px;
+  margin-top: 0;
+  margin-left: 0;
 }
+
 .open-pdf-btn {
   background-color: transparent; /* اللون الأخضر */
   color: rgb(106, 106, 117);
@@ -21,7 +22,6 @@
 .open-pdf-btn:hover {
   background-color: #d5d5d5; /* تأثير عند التمرير فوق الزر */
 }
-
 
 .course-title {
   font-size: 28px;
@@ -45,35 +45,33 @@
 .course-info-box, .course-progress-box {
   flex: 1;
   padding: 20px;
-
 }
 
 .progress-container {
     display: flex;
     align-items: center;
     gap: 10px;
-  }
+}
 
-  .progress-bar {
+.progress-bar {
     flex: 1;
     background-color: #e0e0e0;
     height: 10px;
     border-radius: 5px;
     overflow: hidden;
     position: relative;
-  }
+}
 
-  .progress-bar-fill {
+.progress-bar-fill {
     background-color: #043b5c;
     height: 100%;
-  }
+}
 
-  .progress-percentage {
+.progress-percentage {
     font-size: 14px;
     color: #666;
     font-weight: bold;
-  }
-
+}
 
 /* Materials and Grades Section */
 .materials-grades-section {
@@ -83,15 +81,12 @@
   margin-bottom: 30px;
 }
 
-.materials-box, .grades-box , .assessments-section{
+.materials-box, .grades-box, .assessments-section {
   flex: 1;
   padding: 20px;
-
   border-radius: 8px;
   border: 1px solid #ddd;
 }
-
-
 
 .select-container select {
   padding: 10px;
@@ -112,15 +107,14 @@
   transition: background-color 0.3s ease;
 }
 
-
 .button-container .open-btn:hover {
   background-color: #0e5b8c;
 }
+
 .button-container .open-btn:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
-
 
 .grades-grid {
   display: grid;
@@ -135,14 +129,12 @@
   border: 1px solid #f7d5c4;
 }
 
-
 .select-label {
   font-size: 14px;
   color: #666;
   margin-bottom: 5px;
   display: block; /* لضمان ظهور النص فوق الحقل */
 }
-
 
 .assessments-box {
   border: 2px solid rgb(178, 163, 163); /* لون وسمك الحدود */
@@ -164,7 +156,6 @@
   margin: 0;          /* إزالة المسافة حول القائمة */
 }
 
-
 .assessments-box li {
   margin-bottom: 8px; /* مسافة بين العناصر */
 }
@@ -176,4 +167,59 @@
 
 .assessments-box a:hover {
   text-decoration: underline; /* خط تحت النص عند التمرير */
+}
+
+/* Media Queries for Small Screens */
+@media (max-width: 768px) {
+  .course-content-container {
+    flex-direction: column; /* جعل العناصر تكدس عموديًا */
+    gap: 10px;
+  }
+
+  .materials-grades-section {
+    flex-direction: column; /* تكدس العناصر عموديًا */
+    gap: 20px;
+  }
+
+  .materials-box, .grades-box, .assessments-section {
+    width: 100%; /* التأكد من أن العناصر تأخذ العرض الكامل */
+  }
+
+  .grades-grid {
+    grid-template-columns: 1fr; /* جعل الأعمدة تكدس عموديًا */
+  }
+
+  .course-title {
+    font-size: 24px; /* تصغير حجم العنوان */
+  }
+
+  .course-subtitle {
+    font-size: 14px; /* تصغير حجم الوصف */
+  }
+
+  .button-container .open-btn {
+    font-size: 14px; /* تصغير حجم الخط */
+    padding: 8px 16px;
+  }
+
+  .select-container select {
+    font-size: 12px; /* تصغير حجم حقل الاختيار */
+    padding: 8px;
+  }
+  
+  .assessments-box {
+    padding: 12px;
+  }
+
+  .assessments-box h3 {
+    font-size: 16px; /* تصغير حجم العنوان */
+  }
+
+  .assessments-box li {
+    font-size: 12px; /* تصغير حجم العناصر في القائمة */
+  }
+
+  .progress-percentage {
+    font-size: 12px; /* تصغير حجم النسبة المئوية للتقدم */
+  }
 }
