@@ -36,8 +36,13 @@ namespace LMS.Data
         .HasOne(a => a.Course)
         .WithOne()
         .HasForeignKey<AssessmentCriteria>(a => a.CourseID)
-        .OnDelete(DeleteBehavior.Cascade);
-       
+        .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Course>()
+                .HasOne(c => c.AssessmentCriteria)
+                .WithOne()
+                .HasForeignKey<Course>(c => c.AssessmentCriteriaId)
+                .OnDelete(DeleteBehavior.Restrict);
+             
         }
     }
 }

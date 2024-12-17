@@ -14,7 +14,7 @@ namespace LMS.Data.Models
         public int CourseID { get; set; }
         public int ?Quizzes { get; set; }
 
-        //[JsonIgnore] // لتجنب الدوران في البيانات عند الإرجاع
+        [JsonIgnore] // لتجنب الدوران في البيانات عند الإرجاع
         public Course? Course { get; set; }
     }
 }

@@ -2,20 +2,29 @@ import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs';
 
+import { UserService } from '../../../Login & Reg/Rahma/services/user.service';
+
+
 @Component({
   selector: 'app-studentDashboard',
   templateUrl: './studentDashboard.component.html',
   styleUrls: ['./studentDashboard.component.css'],
 })
 export class studentDashboardComponent implements OnInit, OnDestroy {
-  username: string = 'Nada'; // اسم المستخدم
+  username: string = ''; // اسم المستخدم
   activeRoute: string = '';
   isSidebarCollapsed = false; // حالة الشريط الجانبي
   private routerSub: Subscription = new Subscription();
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute ,private userService: UserService) {}
 
   ngOnInit(): void {
+     // Fetch the username from the UserService
+     const userData = this.userService.getUserData();
+     if (userData) {
+       this.username = userData.userName;  // Set the username from userData
+     }
+     
     // تحديث المسار النشط
     this.routerSub = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {

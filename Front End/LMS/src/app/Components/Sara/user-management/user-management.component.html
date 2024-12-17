@@ -1,0 +1,84 @@
+<div class="container user-management-container">
+  <!-- Header Section -->
+  <div class="row align-items-center">
+    <!-- Title -->
+    <div class="col-6 col-md-6">
+      <h2>Manage Users</h2>
+    </div>
+
+    <!-- Filters Section -->
+    <div class="col-6 col-md-6 d-flex justify-content-end gap-3 filters-container">
+      <!-- Role Filter -->
+      <mat-form-field appearance="outline" class="filter">
+        <mat-label>Filter by Role</mat-label>
+        <mat-select [(value)]="selectedRole" (selectionChange)="applyFilters()">
+          <mat-option value="">All Roles</mat-option>
+          <mat-option *ngFor="let role of roles" [value]="role">{{ role }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Status Filter -->
+      <mat-form-field appearance="outline" class="filter">
+        <mat-label>Filter by Status</mat-label>
+        <mat-select [(value)]="selectedStatus" (selectionChange)="applyFilters()">
+          <mat-option value="">All Status</mat-option>
+          <mat-option *ngFor="let status of statuses" [value]="status">{{ status }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <!-- Table Section -->
+  <div class="table-container">
+    <table mat-table [dataSource]="filteredUsers" class="mat-elevation-z8">
+      <!-- Full Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Full Name </th>
+        <td mat-cell *matCellDef="let user">{{ user.name }}</td>
+      </ng-container>
+
+      <!-- Student ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Student ID </th>
+        <td mat-cell *matCellDef="let user">{{ user.id }}</td>
+      </ng-container>
+
+      <!-- Email Address Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email Address </th>
+        <td mat-cell *matCellDef="let user">{{ user.email }}</td>
+      </ng-container>
+
+      <!-- Status Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let user">
+          <span [ngClass]="user.status === 'Pending' ? 'status-pending' : 'status-contributor'">
+            {{ user.status }}
+          </span>
+        </td>
+      </ng-container>
+
+      <!-- Role Column -->
+      <ng-container matColumnDef="role">
+        <th mat-header-cell *matHeaderCellDef> Role </th>
+        <td mat-cell *matCellDef="let user">{{ user.role }}</td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let user" class="actions">
+          <button mat-button color="primary" *ngIf="user.status === 'Pending'" (click)="approveUser(user)">Approve</button>
+          <button mat-icon-button color="warn" (click)="deleteUser(user)">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button mat-button class="assign-btn" (click)="assignCourse()">Assign Course</button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>
