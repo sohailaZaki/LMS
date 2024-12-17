@@ -33,7 +33,7 @@ namespace LMS.Data
 
 );
          modelBuilder.Entity<AssessmentCriteria>()
-        .HasOne(a => a.Courses)
+        .HasOne(a => a.Course)
         .WithOne()
         .HasForeignKey<AssessmentCriteria>(a => a.CourseID)
         .OnDelete(DeleteBehavior.Cascade);
