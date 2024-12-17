@@ -22,7 +22,7 @@ namespace LMS.Data.Models
             public int? InstructorID { get; set; } // Foreign key to User
      
             [Required]
-            public string? Status { get; set; } // Active, Archived
+            public string? Status { get; set; } // Active, Archived , Pending
         //[JsonIgnore]
             public List<Material>? CourseMaterial { get; set; }
         public List<AssignmentSubmissions> AssignmentSubmissions { get; set; }
