@@ -83,7 +83,7 @@ namespace LMS.Migrations
 
                     b.HasIndex("CourseID");
 
-                    b.ToTable("Assignments");
+                    b.ToTable("Assignments", (string)null);
                 });
 
             modelBuilder.Entity("LMS.Data.Models.AssignmentSubmissions", b =>
@@ -128,7 +128,7 @@ namespace LMS.Migrations
 
                     b.HasIndex("StudentID");
 
-                    b.ToTable("AssignmentSubmissions");
+                    b.ToTable("AssignmentSubmissions", (string)null);
                 });
 
             modelBuilder.Entity("LMS.Data.Models.Course", b =>
@@ -233,7 +233,7 @@ namespace LMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Roles");
+                    b.ToTable("Roles", (string)null);
 
                     b.HasData(
                         new
@@ -280,7 +280,7 @@ namespace LMS.Migrations
 
                     b.HasIndex("StudentID");
 
-                    b.ToTable("StudentCourse");
+                    b.ToTable("StudentCourse", (string)null);
                 });
 
             modelBuilder.Entity("LMS.Data.Models.User", b =>
@@ -329,7 +329,7 @@ namespace LMS.Migrations
 
                     b.HasIndex("RoleID");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
 
                     b.HasData(
                         new
