@@ -4,6 +4,7 @@ using LMS.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LMS.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241217024728_new")]
+    partial class @new
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -139,6 +142,9 @@ namespace LMS.Migrations
                     b.Property<int>("AssessmentCriteriaId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("AssessmentCriteriaId1")
+                        .HasColumnType("int");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasMaxLength(500)
@@ -176,8 +182,7 @@ namespace LMS.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("AssessmentCriteriaId")
-                        .IsUnique();
+                    b.HasIndex("AssessmentCriteriaId1");
 
                     b.HasIndex("InstructorID");
 
@@ -348,7 +353,7 @@ namespace LMS.Migrations
                     b.HasOne("LMS.Data.Models.Course", "Course")
                         .WithOne()
                         .HasForeignKey("LMS.Data.Models.AssessmentCriteria", "CourseID")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Course");
@@ -389,10 +394,8 @@ namespace LMS.Migrations
             modelBuilder.Entity("LMS.Data.Models.Course", b =>
                 {
                     b.HasOne("LMS.Data.Models.AssessmentCriteria", "AssessmentCriteria")
-                        .WithOne()
-                        .HasForeignKey("LMS.Data.Models.Course", "AssessmentCriteriaId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .WithMany()
+                        .HasForeignKey("AssessmentCriteriaId1");
 
                     b.HasOne("LMS.Data.Models.User", "Instructor")
                         .WithMany()

@@ -1,0 +1,113 @@
+/* Main Container */
+.assign-courses-container {
+  padding: 20px;
+  border-radius: 30px;
+  width: auto;
+  margin-top: 50px;
+  margin-left: 250px;
+  height: 88vh;
+  background-color: #f4f6f9;
+  text-align: center;
+  
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 400;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+/* Table Styling */
+.courses-table {
+  width: 100%; /* Adjust table to take up more width */
+  max-width: 1200px; /* Increase the max width of the table */
+  margin: 0 auto 40px; /* Center the table and add spacing at the bottom */
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+
+.courses-table th,
+.courses-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.courses-table th {
+  background-color: #e8f1fa;
+  font-weight: bold;
+  color: #2d3e50;
+}
+
+.courses-table td {
+  font-size: 14px;
+}
+
+.status-completed {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.status-ongoing {
+  color: #f44336;
+  font-weight: bold;
+}
+
+/* Assign New Course Section */
+
+.assign-new-course {
+  width: 100%; /* Same as the table */
+  max-width: 1200px; /* Match the table's max-width */
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 0 auto; /* Center the section */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.assign-new-course h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.assign-course-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.course-dropdown {
+  width: 70%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+  font-size: 14px;
+}
+
+.assign-btn {
+  padding: 8px 16px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.assign-btn:hover {
+  background-color: #43a047;
+}
