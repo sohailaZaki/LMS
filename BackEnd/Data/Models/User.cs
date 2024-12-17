@@ -1,5 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
+<<<<<<<< HEAD:BackEnd/Models/User.cs
+========
 using System.Text.Json.Serialization;
+>>>>>>>> origin/main:BackEnd/Data/Models/User.cs
 using LMS.Data.Models;
 
 namespace LMS.Data.Models

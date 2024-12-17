@@ -53,7 +53,7 @@ namespace LMS.Migrations
                     b.HasIndex("CourseID")
                         .IsUnique();
 
-                    b.ToTable("AssessmentCriterias");
+                    b.ToTable("AssessmentCriterias", (string)null);
                 });
 
             modelBuilder.Entity("LMS.Data.Models.Assignment", b =>
@@ -186,7 +186,7 @@ namespace LMS.Migrations
 
                     b.HasIndex("InstructorID");
 
-                    b.ToTable("Courses");
+                    b.ToTable("Courses", (string)null);
                 });
 
             modelBuilder.Entity("LMS.Data.Models.Material", b =>
@@ -216,7 +216,7 @@ namespace LMS.Migrations
 
                     b.HasIndex("CourseID");
 
-                    b.ToTable("Materials");
+                    b.ToTable("Materials", (string)null);
                 });
 
             modelBuilder.Entity("LMS.Data.Models.Role", b =>
