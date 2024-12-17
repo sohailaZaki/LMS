@@ -2,22 +2,24 @@
 .assign-courses-container {
   padding: 20px;
   border-radius: 30px;
-  width: auto;
+  width: 140%;
   margin-top: 50px;
-  margin-left: 250px;
+  margin-left: 80px;
   height: 88vh;
-  background-color: #f4f6f9;
+  background-color: #ffffff;
   text-align: center;
   
 }
 
 h1 {
-  font-size: 28px;
+  font-size: 1.8rem;
+  color: #0F266C;
   font-weight: bold;
   margin-bottom: 8px;
 }
 
 h2 {
+  
   font-size: 22px;
   font-weight: 400;
   color: #6c757d;
@@ -30,7 +32,7 @@ h2 {
   max-width: 1200px; /* Increase the max width of the table */
   margin: 0 auto 40px; /* Center the table and add spacing at the bottom */
   border-collapse: collapse;
-  background: white;
+  background:#EEF4FF ;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -60,7 +62,7 @@ h2 {
 }
 
 .status-ongoing {
-  color: #f44336;
+  color: #666666;
   font-weight: bold;
 }
 
@@ -79,6 +81,7 @@ h2 {
 
 .assign-new-course h3 {
   font-size: 18px;
+  color: #0F266C;
   font-weight: bold;
   margin-bottom: 16px;
 }

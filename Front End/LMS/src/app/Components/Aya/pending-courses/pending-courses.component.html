@@ -1,0 +1,36 @@
+<section>
+    <div class="container">
+        <h2 class="mb-4">Pending Courses</h2>
+        <div *ngFor="let course of courses" class="card mb-3">
+            <div class="card-body row align-items-center">
+               
+                <div class="col-md-3 text-center">
+                    <h5>{{ course.name }}</h5>
+                    <p>Dr. {{ course.instructor }}</p>
+                </div>
+
+             
+                <div class="col-md-1 text-center">
+                    <span class="text-muted">{{ course.status }}</span>
+                </div>
+
+               
+                <div class="col-md-3 more-details">
+                    <span class="more-details" (click)="navigateToDetails()">
+                        <u>More Details</u>
+                    </span>
+                </div>
+
+               
+                <div class="col-md-4 text-center">
+                    <button class="btn complete-data-button" (click)="completeData(course.id)">Complete Data</button>
+                </div>
+
+                
+                <div class="col-md-1 text-center">
+                    <span class="material-icons delete-icon" (click)="deleteCourse(course.id)">delete</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

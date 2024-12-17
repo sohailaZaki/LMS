@@ -14,23 +14,24 @@
 } */
 
 .user-management-container {
-  margin-left: 270px; /* Ensures content doesn’t overlap sidebar */
+  margin-left: 40px; /* Ensures content doesn’t overlap sidebar */
   margin-top: 70px;
   padding: 20px;
   border-radius: 30px;
-  background-color: #f4f6f9;
+  background-color: #ffffff;
   height: 100%;
   box-sizing: border-box;
   overflow: auto;
- width:auto;
+  width:120%;
 }
 
 /* Title Styling */
 h2 {
-  font-size: 24px;
+  font-size: 1.8rem;
+  color: #0F266C;
   font-weight: bold;
   margin-bottom: 0;
-  color: #2d3e50;
+  
 }
 
 /* Filters Container */
@@ -49,7 +50,7 @@ h2 {
 table {
   width: 100%;
   border-collapse: collapse;
-  background: white;
+  background:#EEF4FF;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
