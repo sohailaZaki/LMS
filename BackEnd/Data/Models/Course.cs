@@ -25,7 +25,7 @@ namespace LMS.Data.Models
             public string? Status { get; set; } // Active, Archived
         //[JsonIgnore]
             public List<Material>? CourseMaterial { get; set; }
-        
+        public List<AssignmentSubmissions> AssignmentSubmissions { get; set; }
 
         public User? Instructor { get; set; }
 

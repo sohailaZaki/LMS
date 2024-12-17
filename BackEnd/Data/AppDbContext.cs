@@ -42,7 +42,15 @@ namespace LMS.Data
                 .WithOne()
                 .HasForeignKey<Course>(c => c.AssessmentCriteriaId)
                 .OnDelete(DeleteBehavior.Restrict);
-             
+       //     modelBuilder.Entity<AssignmentSubmissions>()
+       //.HasOne(a => a.Course)   // يشير إلى أنه هناك علاقة واحد إلى متعدد
+       //.WithMany(c => c.AssignmentSubmissions)   // مع Course يحتوي على مجموعة من AssignmentSubmissions
+       //.HasForeignKey(a => a.CourseID);   // يحدد المفتاح الخارجي
+
+       //     modelBuilder.Entity<Course>()
+       //             .HasMany(c => c.AssignmentSubmissions)
+       //             .WithOne()
+       //             .HasForeignKey(Courses => Courses.CourseID);
         }
     }
 }
