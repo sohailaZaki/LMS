@@ -1,13 +1,9 @@
-﻿<<<<<<<< HEAD:BackEnd/Models/AssignmentSubmissions.cs
+﻿
 ﻿using LMS.Data.Models;
 
-namespace LMS.Models
-{
-========
 
 ﻿namespace LMS.Data.Models;
 
->>>>>>>> origin/main:BackEnd/Data/Models/AssignmentSubmissions.cs
     public class AssignmentSubmissions
     {
         public int Id { get; set; }
