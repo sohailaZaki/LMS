@@ -33,7 +33,7 @@ namespace LMS.Data.Models
             public List<Assignment> ?Assignments { get; set; }
             public List<StudentCourse> ?Students { get; set; }
             public int AssessmentCriteriaId { get; set; }
-            public DateOnly? StartDate { get; set; }
+        public DateOnly? StartDate { get; set; }
             public DateOnly? EndDate { get; set; }
             public DayOfWeek? LectureDay { get; set; }
             public TimeSpan? LectureTime { get; set; }

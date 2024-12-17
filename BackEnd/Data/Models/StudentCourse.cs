@@ -14,7 +14,7 @@ namespace LMS.Data.Models
         [Required]
         public int? CourseID { get; set; }
 
-        public string studentName { get; set; }
+        public string ?studentName { get; set; }
 
         [Range(0, 100)]
         public int? Grade { get; set; } = 0;

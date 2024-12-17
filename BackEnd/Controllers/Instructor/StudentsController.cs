@@ -26,7 +26,7 @@ namespace LMS.Controllers.Instructor
                 if (item.CourseID == courseId)                    //this student registered in this course 
                 {
                      studentsinCourse =  studentsinSystem.Where(u => u.Id == item.StudentID).ToList().First() ;
-                    item.studentName = studentsinCourse.FirstName + " " + studentsinCourse.LastName;
+                    //item.studentName = studentsinCourse.FirstName + " " + studentsinCourse.LastName;
                     _db.Update(item);
                     _db.SaveChanges();
                     studentsGrades.Add((item));
