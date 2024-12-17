@@ -1,0 +1,119 @@
+<section>
+  <div class="container-fluid">
+    <h2>Manage Courses</h2>
+    <div *ngFor="let course of courses" class="card mb-3">
+      <div class="card-body">
+        <!-- Course Name -->
+        <div class="course-column course-info">
+          <ng-container *ngIf="editingCourseId !== course.id; else editName">
+            <h5>{{ course.name }}</h5>
+          </ng-container>
+          <ng-template #editName>
+            <input type="text" [(ngModel)]="course.name" class="form-control" />
+          </ng-template>
+          <p>Instructor: 
+            <ng-container *ngIf="editingCourseId !== course.id; else editInstructor">
+              {{ course.instructor }}
+            </ng-container>
+            <ng-template #editInstructor>
+              <input
+                type="text"
+                [(ngModel)]="course.instructor"
+                class="form-control"
+              />
+            </ng-template>
+          </p>
+        </div>
+
+        <!-- Course Dates -->
+        <div class="course-column course-dates">
+          <ng-container *ngIf="editingCourseId !== course.id; else editStartDate">
+            <p><strong>Start Date:</strong> {{ course.startDate }}</p>
+            <p><strong>End Date:</strong> {{ course.endDate }}</p>
+          </ng-container>
+          <ng-template #editStartDate>
+            <input type="date" [(ngModel)]="course.startDate" class="form-control" />
+            <input type="date" [(ngModel)]="course.endDate" class="form-control" />
+          </ng-template>
+        </div>
+
+        <!-- Course Description -->
+        <div class="course-column course-description">
+          <ng-container *ngIf="editingCourseId !== course.id; else editDescription">
+            <p>{{ course.description }}</p>
+          </ng-container>
+          <ng-template #editDescription>
+            <textarea [(ngModel)]="course.description" class="form-control"></textarea>
+          </ng-template>
+        </div>
+
+        <!-- Course Status -->
+        <div class="course-column course-status">
+          <ng-container *ngIf="editingCourseId !== course.id; else editStatus">
+            <span
+              [class]="
+                course.status === 'in progress'
+                  ? 'text-success'
+                  : course.status === 'completed'
+                  ? 'text-primary'
+                  : 'text-muted'
+              "
+            >
+              {{ course.status }}
+            </span>
+          </ng-container>
+          <ng-template #editStatus>
+            <select [(ngModel)]="course.status" class="form-select">
+              <option value="in progress">In Progress</option>
+              <option value="completed">Completed</option>
+              <option value="archived">Archived</option>
+            </select>
+          </ng-template>
+        </div>
+
+        <!-- More Details -->
+        <div class="course-column course-details">
+          <span (click)="navigateToDetails()">
+            <u>More Details</u>
+          </span>
+        </div>
+
+        <!-- Edit / Save Button -->
+        <div class="course-column course-edit">
+          <ng-container *ngIf="editingCourseId !== course.id">
+            <span
+              class="edit-icon material-icons"
+              (click)="viewCourseDetails(course.id)"
+            >
+              edit
+            </span>
+          </ng-container>
+          <ng-container *ngIf="editingCourseId === course.id">
+            <span
+              class="save-icon material-icons"
+              (click)="saveCourse(course)"
+            >
+              save
+            </span>
+          </ng-container>
+        </div>
+
+        <!-- Delete Button -->
+        <div class="course-column course-delete">
+          <span
+            class="delete-icon material-icons"
+            (click)="deleteCourse(course.id)"
+          >
+            delete
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add New Course -->
+    <div class="add-course-container" (click)="goToCreateNewCourse()">
+      <span class="material-icons">add_circle</span>
+      <span class="add-new-course">Add New Course</span>
+    </div>
+  </div>
+</section>

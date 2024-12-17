@@ -1,0 +1,172 @@
+section {
+  margin-left: 200px;
+  flex: 1;
+  padding: 20px;
+  background-color: #EEF4FF;
+}
+h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #0F266C;
+  margin-bottom: 20px;
+}
+.container-fluid {
+  max-width: 1400px;
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 15px;
+  background-color: #EEF4FF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  flex-wrap: nowrap; 
+}
+
+
+.course-column {
+  flex: 1; 
+  text-align: center; 
+}
+
+.course-info h5 {
+  font-size: 1.2rem;
+  color: #043B5C;
+  font-weight: bold;
+}
+
+.course-info p {
+  margin-top: 5px;
+  font-size: 1rem;
+  color: #666666;
+}
+
+.course-dates p,
+.course-status span,
+.course-details span {
+  font-size: 1rem;
+  color: #666666;
+}
+.course-description{
+  font-size: 1rem;
+  color: #666666;
+}
+.course-status .text-success {
+  color: #1E9D19;
+  font-weight: bold;
+}
+
+.course-status .text-muted {
+  color: #666666;
+  font-weight: bold;
+}
+
+.course-details span {
+  cursor: pointer;
+  font-weight: bold;
+  color: #043B5C;
+}
+
+.course-details span:hover {
+  color: #0F266C;
+  transform: scale(1.1);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.delete-icon {
+    color: #EE1414;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  
+}
+.edit-icon {
+  display: inline-flex;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 3px solid #043B5C; 
+  border-radius: 5px; 
+  background-color: #EEF4FF; 
+  cursor: pointer;
+  
+}
+.edit-icon:hover {
+  color: #043B5C;
+  transform: scale(1.1);
+}
+.save-icon{
+  font-size: 1.5rem;
+  color: #28a745;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.save-icon:hover {
+  color: #28a745; 
+  transform: scale(1.2);
+}
+.delete-icon:hover {
+  transform: scale(1.3);
+}
+
+
+.add-course-container {
+  text-align: left;
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.add-course-container .material-icons {
+  font-size: 1.5rem;
+  color: #2ecc71;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.add-course-container .material-icons:hover {
+  color: #2CC669;
+  transform: scale(1.3);
+}
+
+.add-new-course {
+  font-size: 1.5rem;
+  color: #2ecc71;
+  cursor: pointer;
+}
+
+.add-new-course:hover {
+  color: #2CC669;
+}
+
+
+@media (max-width: 768px) {
+  .card-body {
+    flex-wrap: wrap; 
+  }
+
+  .course-column {
+    flex: 1 1 100%; 
+    margin-bottom: 10px;
+    text-align: left; 
+  }
+}

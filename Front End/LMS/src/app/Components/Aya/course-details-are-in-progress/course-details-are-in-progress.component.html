@@ -1,0 +1,72 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<section>
+  <h1 class="text-center">Human Computer Interaction</h1>
+  <h4 class="text-center text-secondary">[INF 416]</h4>
+  <div class="container">
+    <div class="row mt-4">
+      <!-- Lecture Details Card -->
+      <div class="col-md-4">
+        <div class="card-header">
+          Lecture Details 
+          <i class="far fa-pen-to-square" (click)="toggleEdit('lectureDetails')"></i>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <ul *ngIf="!isEditing['lectureDetails']" class="list-unstyled">
+              <li><span class="big-dot">&#8226;</span> Time: {{ lectureDetails.time }}</li>
+              <li><span class="big-dot">&#8226;</span> Location: {{ lectureDetails.location }}</li>
+            </ul>
+            <div *ngIf="isEditing['lectureDetails']">
+              <input type="text" [(ngModel)]="lectureDetails.time" />
+              <input type="text" [(ngModel)]="lectureDetails.location" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Assessment Criteria Card -->
+      <div class="col-md-4">
+        <div class="card-header">
+          Assessment Criteria
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <ul *ngIf="!isEditing['assessmentCriteria']" class="list-unstyled">
+              <li><span class="big-dot">&#8226;</span> Theoretical: {{ assessmentCriteria.theoretical | number:'1.2-2' }}</li>
+              <li><span class="big-dot">&#8226;</span> Practical: {{ assessmentCriteria.practical | number:'1.2-2' }}</li>
+              <li><span class="big-dot">&#8226;</span> Yearwork: {{ assessmentCriteria.yearwork | number:'1.2-2' }}</li>
+              <li><span class="big-dot">&#8226;</span> Midterm: {{ assessmentCriteria.midterm | number:'1.2-2' }}</li>
+              <li><span class="big-dot">&#8226;</span> Quizzes: {{ assessmentCriteria.quizzes | number:'1.2-2' }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course Enrollment Stats Card -->
+      <div class="col-md-4">
+        <div class="card-header">
+          Course Enrollment Stats 
+          <i class="far fa-pen-to-square" (click)="toggleEdit('courseStats')"></i>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <ul *ngIf="!isEditing['courseStats']" class="list-unstyled">
+              <li><span class="big-dot">&#8226;</span> Assigned: {{ courseStats.assigned }} Students</li>
+              <li><span class="big-dot">&#8226;</span> Dropped: {{ courseStats.dropped }} Students</li>
+            </ul>
+            <div *ngIf="isEditing['courseStats']">
+              <input type="number" [(ngModel)]="courseStats.assigned" />
+              <input type="number" [(ngModel)]="courseStats.dropped" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Save Button -->
+    <button class="save-button btn btn-success position-fixed top-200 Right-270" (click)="saveChanges()">
+      Save
+    </button>
+  </div>
+</section>
+
