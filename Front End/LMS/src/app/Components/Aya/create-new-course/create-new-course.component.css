@@ -1,0 +1,182 @@
+
+section{
+  
+  flex: 1;
+  padding: 20px;
+  margin-left: 80px;
+  background-color: #EEF4FF; 
+  
+  
+}
+.d-flex{
+  background-color: #EEF4FF; 
+  height: 100vh;
+}
+nav{
+  background-color: #EEF4FF;
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px; 
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .header h1 {
+    font-size: 28px;
+    color: #0F266C;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .header::after {
+    content: "";
+    display: block;
+    width: 90%; 
+    
+    height: 1.6px;
+    background-color: #0F266C;
+    margin-bottom: 50px;
+  }
+.form-content {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+.form-section {
+    position: relative;
+    flex: 1;
+    top:-40px;
+    width: 300px; 
+    border: 2px dashed #9747FF;
+    padding: 10px; 
+    border-radius: 15px; 
+    background-color:  #EEF4FF;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2px; 
+  }
+  
+  
+.form-section h2 {
+    position: absolute;
+    top: -35px;
+    margin-left: 130px;
+    
+    background-color: transparent; 
+    padding: 0 10px; 
+    color: #0F266C;
+    font-size: 17px; 
+   
+    text-align: center;
+    border-radius: 0; 
+    box-shadow: none;
+  }
+  .form-fields{
+    margin-right: 20px;
+  }
+ 
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 12px; 
+    color: #606060;
+  }
+  
+  input,
+  select {
+    width: 100%;
+    padding: 6px; 
+    font-size: 12px;
+    border: 1px solid #606060;
+    border-radius: 5px;
+    margin-top: 4px;
+    position: relative;
+  }
+  
+ 
+  input[type="text"] {
+    padding-left: 10px; 
+  }
+  
+  input[type="text"]::before {
+    content: "Course name"; 
+    position: absolute;
+    top: 0;
+    left: 10px;
+    color: #606060;
+    font-size: 12px;
+    font-weight: normal;
+    pointer-events: none; 
+    transform: translateY(50%);
+  }
+  
+   h3{
+    color:#043B5C;
+   }
+  
+  .image-upload {
+    flex: 1;
+    top:-40px;
+    max-width: 300px;
+    text-align: center;
+    background-color: #EEF4FF;
+    border: 2px dashed #9747FF;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .image-drop {
+    padding: 20px;
+    font-size: 14px;
+    color: #416072;
+    border-radius: 8px;
+    background-color: #EEF4FF;
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  .image-drop p {
+    margin: 0;
+    color: #6A8C8D;
+    font-size: 14px;
+  }
+  
+  .image-preview img {
+    margin-top: 10px;
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px #043B5C(0, 0, 0, 0.1);
+  }
+  
+  .btn-success:hover{
+    background-color: #27B05C;
+    transform: scale(1.05);
+  }
+  
+  
+  @media (max-width: 768px) {
+    .form-content {
+      flex-direction: column;
+    }
+  
+    .form-section,
+    .image-upload {
+      max-width: 100%; 
+    }
+    .save-button {
+        position: static;
+        margin-top: 20px;
+        align-self: center;
+      }
+    
+  }
+  

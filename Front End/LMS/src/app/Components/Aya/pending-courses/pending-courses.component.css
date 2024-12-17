@@ -1,0 +1,104 @@
+section {
+  margin-left: 160px;
+  flex: 1;
+  padding: 20px;
+  background-color: #EEF4FF;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #0F266C;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #EEF4FF;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  display: flex;
+  gap: 90px;
+  justify-content: space-between;
+}
+
+.card-body > div {
+  flex: 1;
+  text-align: center;
+}
+
+h5 {
+  font-size: 1.2rem;
+  color: #043B5C;
+  font-weight: bold;
+}
+
+.text-muted {
+  font-size: 1rem;
+  color: #666666;
+  font-weight: bold;
+}
+
+.more-details span {
+  font-size: 1rem;
+  color: #043B5C;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.more-details span:hover {
+  transform: scale(1.1);
+  color: #0F266C;
+}
+
+.complete-data-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.complete-data-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.delete-icon {
+  color: #EE1414;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.delete-icon:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .card-body {
+    flex-wrap: wrap; 
+  }
+
+  .course-column {
+    flex: 1 1 100%; 
+    margin-bottom: 10px;
+    text-align: left;
+  }
+}
