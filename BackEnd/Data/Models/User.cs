@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using LMS.Data.Models;
 
 namespace LMS.Data.Models
 {

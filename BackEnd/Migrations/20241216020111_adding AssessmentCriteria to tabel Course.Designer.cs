@@ -4,6 +4,7 @@ using LMS.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LMS.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241216020111_adding AssessmentCriteria to tabel Course")]
+    partial class addingAssessmentCriteriatotabelCourse
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -82,44 +85,6 @@ namespace LMS.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Assignments");
-                });
-
-            modelBuilder.Entity("LMS.Data.Models.AssignmentSubmissions", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("AssignmentId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("AssignmnetID")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CourseID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("FilePath")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("StudentID")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("SubmittedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AssignmentId");
-
-                    b.HasIndex("CourseID");
-
-                    b.HasIndex("StudentID");
-
-                    b.ToTable("AssignmentSubmissions");
                 });
 
             modelBuilder.Entity("LMS.Data.Models.AssignmentSubmissions", b =>
@@ -273,9 +238,6 @@ namespace LMS.Migrations
                     b.Property<int?>("Grade")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Grade")
-                        .HasColumnType("int");
-
                     b.Property<bool>("IsCompleted")
                         .HasColumnType("bit");
 
@@ -341,36 +303,6 @@ namespace LMS.Migrations
                     b.HasIndex("RoleID");
 
                     b.ToTable("Users");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CourseID = 0,
-                            CreatedAt = new DateTime(2024, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "Admin@cis.asu.edu.eg",
-                            FirstName = "Admin",
-                            LastName = "1",
-                            Password = "admin1",
-                            RoleID = 3,
-                            RoleName = "Admin",
-                            Status = "Active",
-                            UserName = "Admin_1"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CourseID = 0,
-                            CreatedAt = new DateTime(2024, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "Admin@cis.asu.edu.eg",
-                            FirstName = "Admin",
-                            LastName = "2",
-                            Password = "admin2",
-                            RoleID = 3,
-                            RoleName = "Admin",
-                            Status = "Active",
-                            UserName = "Admin_2"
-                        });
                 });
 
             modelBuilder.Entity("LMS.Data.Models.AssessmentCriteria", b =>
@@ -427,25 +359,6 @@ namespace LMS.Migrations
                         .IsRequired();
 
                     b.Navigation("Course");
-                });
-
-            modelBuilder.Entity("LMS.Data.Models.StudentProgresses", b =>
-                {
-                    b.HasOne("LMS.Data.Models.Course", "Course")
-                        .WithMany()
-                        .HasForeignKey("CourseID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("LMS.Data.Models.User", "Student")
-                        .WithMany()
-                        .HasForeignKey("StudentID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Course");
-
-                    b.Navigation("Student");
                 });
 
             modelBuilder.Entity("LMS.Data.Models.StudentProgresses", b =>
