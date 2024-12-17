@@ -13,7 +13,9 @@ namespace LMS.Data.Models
         public string UserName { get; set; }
         public string Status { get; set; }
         public int RoleID { get; set; }
-        //public int ?CourseID { get; set; }
+        //public int ?
+        //
+        //{ get; set; }
 
         public string Email { get; set; }
         public string RoleName { get; set; }
