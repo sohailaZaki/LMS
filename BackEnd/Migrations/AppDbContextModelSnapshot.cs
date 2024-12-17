@@ -139,9 +139,6 @@ namespace LMS.Migrations
                     b.Property<int>("AssessmentCriteriaId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("AssessmentCriteriaId1")
-                        .HasColumnType("int");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasMaxLength(500)
@@ -179,7 +176,8 @@ namespace LMS.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("AssessmentCriteriaId1");
+                    b.HasIndex("AssessmentCriteriaId")
+                        .IsUnique();
 
                     b.HasIndex("InstructorID");
 
@@ -350,7 +348,7 @@ namespace LMS.Migrations
                     b.HasOne("LMS.Data.Models.Course", "Course")
                         .WithOne()
                         .HasForeignKey("LMS.Data.Models.AssessmentCriteria", "CourseID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Course");
@@ -391,8 +389,10 @@ namespace LMS.Migrations
             modelBuilder.Entity("LMS.Data.Models.Course", b =>
                 {
                     b.HasOne("LMS.Data.Models.AssessmentCriteria", "AssessmentCriteria")
-                        .WithMany()
-                        .HasForeignKey("AssessmentCriteriaId1");
+                        .WithOne()
+                        .HasForeignKey("LMS.Data.Models.Course", "AssessmentCriteriaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("LMS.Data.Models.User", "Instructor")
                         .WithMany()
