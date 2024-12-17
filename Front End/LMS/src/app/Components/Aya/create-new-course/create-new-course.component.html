@@ -1,0 +1,88 @@
+<!-- Bootstrap Version of the Course Form with Original Design -->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<div class="d-flex">
+  <!-- Sidebar -->
+  <nav id="sidebar" class="bg-light border-end" style="width: 250px; height: 100vh;background-color: #EEF4FF;">
+    <div class="p-3">
+      <!-- Add sidebar content here -->
+    </div>
+  </nav>
+  <!-- Main Content -->
+  <section>
+    <div class="sec">
+    <div class="header">
+      <h1>Create New Course</h1>
+    </div>
+
+    <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+      <div class="form-content">
+        <!-- Left Section: Form Inputs -->
+        <div class="form-section">
+          <h2>Course information</h2>
+          <div class="form-fields">
+            <label>
+              Course name
+              <input type="text" formControlName="courseName" />
+            </label>
+
+            <label>
+              Description
+              <input type="text" formControlName="courseDescription" />
+            </label>
+        
+            <label>
+              Start date
+              <input type="date" formControlName="startDate" />
+            </label>
+        
+            <label>
+              End date
+              <input type="date" formControlName="endDate" />
+            </label>
+        
+            <label>
+              Instructor
+              <select formControlName="instructor">
+                <option *ngFor="let instructor of instructors" [value]="instructor">
+                  {{ instructor }}
+                </option>
+              </select>
+            </label>
+        
+            <label>
+              Lecture Time
+              <input type="text" formControlName="lectureTime" />
+            </label>
+        
+            <label>
+              Lecture Location
+              <input type="text" formControlName="lectureLocation" />
+            </label>
+          </div>
+        </div>
+
+        <!-- Right Section: Image Upload -->
+        <div class="image-upload" (dragover)="onDragOver($event)" (drop)="onDrop($event)">
+          <h3>Course Image (optional)</h3>
+          <div class="image-drop">
+            <p>Drag and drop or choose a file to upload your image.</p>
+            <input type="file" id="courseImage" (change)="onImageUpload($event)" style="display: none;" />
+          </div>
+          <div *ngIf="previewImage" class="image-preview">
+            <img [src]="previewImage" alt="Preview" />
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-success px-4 py-2" style="background-color: #2CC669;">
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+  </section>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
