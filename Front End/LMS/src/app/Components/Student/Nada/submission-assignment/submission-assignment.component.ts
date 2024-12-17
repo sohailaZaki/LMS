@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./submission-assignment.component.css']
 })
 export class SubmissionAssignmentComponent {
+
+    // رسائل الخطأ والنجاح
+    toastMessage: string = '';
+    toastType: string = '';
+
   assignments = [
     {
       subject: 'Mathematics',
@@ -106,6 +111,14 @@ export class SubmissionAssignmentComponent {
       this.uploadedFile = file;
     }
   }
+  showToast(message: string, type: 'success' | 'error') {
+    this.toastMessage = message;
+    this.toastType = type;
+
+    setTimeout(() => {
+      this.toastMessage = '';
+    }, 3000);
+  }
 
   submitAssignment() {
     if (!this.comment && !this.uploadedFile) {
@@ -116,7 +129,7 @@ export class SubmissionAssignmentComponent {
     if (this.selectedAssignment) {
       // Update the assignment status to "Submitted"
       this.selectedAssignment.status = 'Submitted';
-      alert(`Assignment for ${this.selectedAssignment.subject} submitted successfully!`);
+      this.showToast(`Assignment for ${this.selectedAssignment.subject} submitted successfully!`, 'success');
       this.closeModal();
     }
   }

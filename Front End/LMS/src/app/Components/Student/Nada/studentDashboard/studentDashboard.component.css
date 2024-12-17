@@ -1,58 +1,53 @@
 .dashboard-container {
   display: flex;
+  flex-wrap: wrap;
   min-height: 98vh;
   background-color: #f0f4f8;
 }
 
 .sidebar {
-  position: fixed; /* يجعل السايد بار ثابتًا */
+  position: fixed;
   top: 0;
   left: 0;
   background-color: #043B5C;
   color: #fff;
-  width: 220px; /* زيادة العرض */
+  width: 220px;
   height: 100%;
-  padding: 25px; /* زيادة التباعد الداخلي */
+  padding: 25px;
   display: flex;
   flex-direction: column;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
+  border-radius: 0 20px 0 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 10;
+  transition: transform 0.3s ease-in-out;
 }
 
-.welcome-section {
-  text-align: left;
-  margin-bottom: 1px;
-  padding: 0px 10px;
-}
-h6{
-  padding: 0px 10px;
+.sidebar.collapsed {
+  transform: translateX(-100%); /* إخفاء الشريط الجانبي عند التصغير */
 }
 
-.welcome-section h3 {
-  margin: 5px 0;
-  font-size: 15px;
-  color: #ffcc00;
-}
-
-.welcome-section p {
-  margin: 0;
-  font-size: 15px;
-  color: #ffffff;
-}
+/* .toggle-button {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background-color:transparent;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 11;
+  margin-left: -1.2%;
+} */
 
 .menu {
   list-style: none;
   padding: 0;
 }
 
-.menu li  {
-  margin: 18px 0; /* تقليل المسافة بين العناصر */
+.menu li {
+  margin: 18px 0;
 }
-
 
 .menu a {
   text-decoration: none;
@@ -61,8 +56,8 @@ h6{
   display: flex;
   align-items: center;
   gap: 15px;
-  padding: 10px 10px;
-  transition: background-color 0.3s, color 0.3s; /* فقط تغيير اللون والخلفية */
+  padding: 10px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .menu a.active,
@@ -72,17 +67,57 @@ h6{
   border-radius: 8px;
 }
 
+.content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 15%;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.content.full-width {
+  margin-left: 2%; /* استخدام العرض الكامل عند إخفاء الشريط الجانبي */
+}
+.welcome-section
+{
+margin-top: 20%;
+}
+.toggle-button {
+  position: fixed;
+  top: 1.8%;
+  left: 0.8%; 
+  background-color: transparent; 
+  color: rgb(0, 0, 0); 
+  border: none;
+  padding: 10px; 
+  font-size: 18px; 
+  cursor: pointer;
+  z-index: 11;
+}
+
+@media (max-width: 768px) {
+  .toggle-button {
+    top: 10px;
+    left: 10px; 
+    position: fixed;
+  }
+
+  .sidebar.collapsed + .content {
+    margin-top: 50px; 
+  }
+
+}
+
 
 .extra-menu a {
   text-decoration: none;
   color: white;
-  font-size: 15px; /* زيادة حجم الخط */
+  font-size: 15px;
   display: flex;
   align-items: center;
   gap: 15px;
   transition: 0.3s;
-  margin-bottom: 4px; /* زيادة المسافة بين روابط extra-menu */
-  padding: 10px 10px;
+  margin-bottom: 4px;
+  padding: 10px;
 }
 
 .extra-menu a.help {
@@ -95,23 +130,4 @@ h6{
 
 .extra-menu a:hover {
   color: #000000;
-}
-
-
-hr {
-  border: none;
-  height: 1px;
-  background-color: #ffffff;
-  margin: 15px 0; /* تقليل المسافة بين الأقسام */
-}
-
-.content {
-  flex: 1;
-  padding: 20px;
-  margin-left: 110px; /* تعديل المسافة لتتناسب مع عرض السايد بار */
-  margin-top: 10px;
-}
-
-.fa {
-  font-size: 18px; /* زيادة حجم الأيقونات */
 }

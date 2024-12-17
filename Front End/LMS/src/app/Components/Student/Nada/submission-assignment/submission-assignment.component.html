@@ -1,4 +1,7 @@
-
+<!-- Toast Message Container -->
+<div *ngIf="toastMessage" [ngClass]="{'toast-success': toastType === 'success', 'toast-error': toastType === 'error'}" class="toast-container">
+  {{ toastMessage }}
+</div>
 <h1>Assignments</h1>
 <div class="my-courses-container">
 

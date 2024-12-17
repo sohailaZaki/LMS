@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using LMS.Data.Models;
 
-namespace LMS.Models
+namespace LMS.Data.Models
 {
-    public class StudentProgresses
+    public class StudentCourse
     {
         [Key]
         public int ID { get; set; }
@@ -14,13 +14,13 @@ namespace LMS.Models
         [Required]
         public int? CourseID { get; set; }
 
-        public bool IsCompleted { get; set; }
+        public string studentName { get; set; }
 
         [Range(0, 100)]
-        public int? Grade { get; set; }
+        public int? Grade { get; set; } = 0;
 
-        public User Student { get; set; } // Navigation property
+        public User ?Student { get; set; } // Navigation property
 
-        public Course Course { get; set; } // Navigation property
+        public Course ?Course { get; set; } // Navigation property
     }
 }
