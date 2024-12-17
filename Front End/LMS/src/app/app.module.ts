@@ -116,7 +116,7 @@ const routes: Routes = [
   },
    // Admin route
    {
-    path: 'Admin',
+    path: '',
     component: LayoutComponent,
     children: [
       {path:'' ,redirectTo:'admin-dashboard',pathMatch:'full'},
@@ -138,6 +138,7 @@ const routes: Routes = [
     ],
   },
   {
+    //Aya
     path: '',
     children: [
       {path:'Aya/pending-courses',component:PendingCoursesComponent},
