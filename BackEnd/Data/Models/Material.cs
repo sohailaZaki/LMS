@@ -1,4 +1,6 @@
-﻿namespace LMS.Data.Models
+﻿using System.Text.Json.Serialization;
+
+namespace LMS.Data.Models
 {
     public class Material
     {
@@ -7,6 +9,7 @@
         public string Category { get; set; }
         public string FilePath { get; set; }
         public int CourseID { get; set; }
-        public Course Course { get; set; }
+        [JsonIgnore]
+        public Course ?Course { get; set; }
     }
 }

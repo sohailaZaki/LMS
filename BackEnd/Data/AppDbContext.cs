@@ -42,7 +42,7 @@ namespace LMS.Data
                 .WithOne()
                 .HasForeignKey<Course>(c => c.AssessmentCriteriaId)
                 .OnDelete(DeleteBehavior.Restrict);
-                ;
+             
         }
     }
 }
