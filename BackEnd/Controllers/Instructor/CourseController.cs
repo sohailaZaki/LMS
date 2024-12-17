@@ -4,7 +4,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LMS.Services;
+
 using LMS.Handelrs;
+
 namespace LMS.Controllers.Instructor
 {
     [Route("api/[controller]")]
@@ -113,6 +115,7 @@ namespace LMS.Controllers.Instructor
             }
             else return BadRequest("there is no course with this id");
         }
+
         [HttpPost("{courseId}")]
         public async Task<IActionResult> UploadFiles(int courseId,int fileType,IFormFile formFile)
         {
@@ -120,6 +123,7 @@ namespace LMS.Controllers.Instructor
 
           return Ok(new UploadHandelr().Uploadfile(formFile,fileType));
         }
+
         private readonly AppDbContext _db;
     }
 }
