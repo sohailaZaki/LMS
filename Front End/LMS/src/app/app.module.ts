@@ -55,6 +55,16 @@ import { AssigmentsComponent } from './Components/Instructor/Sondos/Assigments/A
 import { AssignmentDetailsComponent } from './Components/Instructor/Sohaila/AssignmentDetails/AssignmentDetails.component';
 import { AssigmentSubmessionComponent } from './Components/Instructor/Sondos/AssigmentSubmession/AssigmentSubmessionComponent';
 
+//Aya
+import { ManageCoursesComponent } from './Components/Aya/manage-courses/manage-courses.component';
+import { AdminSideBarComponent } from './Components/Aya/admin-side-bar/admin-side-bar.component';
+import { PendingCoursesComponent } from './Components/Aya/pending-courses/pending-courses.component';
+import { CreateNewCourseComponent } from './Components/Aya/create-new-course/create-new-course.component';
+import { CourseDetailsAreInProgressComponent } from './Components/Aya/course-details-are-in-progress/course-details-are-in-progress.component';
+import { DetailsForPendingCourseComponent } from './Components/Aya/details-for-pending-course/details-for-pending-course.component';
+import { EmptyAssessmentCriteriaComponent } from './Components/Aya/empty-assessment-criteria/empty-assessment-criteria.component';
+
+
 //Sara
 import { MatFormFieldModule } from '@angular/material/form-field';  
 import { MatSelectModule } from '@angular/material/select';
@@ -65,6 +75,7 @@ import { AdminDashboardComponent } from './Components/Sara/admin-dashboard/admin
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input'; 
 import { MatButtonModule } from '@angular/material/button'; // Optional: For buttons
+
 
 
 // Pipes
@@ -105,7 +116,7 @@ const routes: Routes = [
   },
    // Admin route
    {
-    path: 'Admin',
+    path: '',
     component: LayoutComponent,
     children: [
       {path:'' ,redirectTo:'admin-dashboard',pathMatch:'full'},
@@ -124,6 +135,17 @@ const routes: Routes = [
       { path: 'courses', component: CourseMaterialsComponent },
       { path: 'assignments', component: SubmissionAssignmentComponent },
       { path: 'course-detail/:id', component: CourseDetailsComponent },
+    ],
+  },
+  {
+    //Aya
+    path: '',
+    children: [
+      {path:'Aya/pending-courses',component:PendingCoursesComponent},
+      {path:'Aya/manage-courses',component:ManageCoursesComponent},
+      {path:'Aya/create-new-course', component: CreateNewCourseComponent },
+      {path:'Aya/course-details-are-in-progress', component: CourseDetailsAreInProgressComponent },
+      {path:'Aya/details-for-pending-course.component', component: DetailsForPendingCourseComponent },
     ],
   },
 ];
@@ -151,10 +173,20 @@ const routes: Routes = [
     AssigmentSubmessionComponent,
     studentDashboardComponent,
     FirstKeyPipe,
+
+    ManageCoursesComponent, 
+    AdminSideBarComponent, 
+    PendingCoursesComponent, 
+    CreateNewCourseComponent, 
+    CourseDetailsAreInProgressComponent, 
+    DetailsForPendingCourseComponent, 
+    EmptyAssessmentCriteriaComponent,
+
     //Sara admin
     UserManagementComponent, 
     AssignCourseComponent, 
     AdminDashboardComponent
+
 
 
   ],

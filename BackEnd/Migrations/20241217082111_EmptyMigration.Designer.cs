@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LMS.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241216152347_adding column studentName to AssignmentSubmissions ")]
-    partial class addingcolumnstudentNametoAssignmentSubmissions
+    [Migration("20241217082111_EmptyMigration")]
+    partial class EmptyMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -182,6 +182,9 @@ namespace LMS.Migrations
 
                     b.HasKey("ID");
 
+                    b.HasIndex("AssessmentCriteriaId")
+                        .IsUnique();
+
                     b.HasIndex("InstructorID");
 
                     b.ToTable("Courses");
@@ -269,7 +272,6 @@ namespace LMS.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("studentName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
@@ -361,9 +363,9 @@ namespace LMS.Migrations
             modelBuilder.Entity("LMS.Data.Models.AssessmentCriteria", b =>
                 {
                     b.HasOne("LMS.Data.Models.Course", "Course")
-                        .WithOne("AssessmentCriteria")
+                        .WithOne()
                         .HasForeignKey("LMS.Data.Models.AssessmentCriteria", "CourseID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Course");
@@ -405,11 +407,19 @@ namespace LMS.Migrations
 
             modelBuilder.Entity("LMS.Data.Models.Course", b =>
                 {
+                    b.HasOne("LMS.Data.Models.AssessmentCriteria", "AssessmentCriteria")
+                        .WithOne()
+                        .HasForeignKey("LMS.Data.Models.Course", "AssessmentCriteriaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("LMS.Data.Models.User", "Instructor")
                         .WithMany()
                         .HasForeignKey("InstructorID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("AssessmentCriteria");
 
                     b.Navigation("Instructor");
                 });
@@ -462,8 +472,6 @@ namespace LMS.Migrations
 
             modelBuilder.Entity("LMS.Data.Models.Course", b =>
                 {
-                    b.Navigation("AssessmentCriteria");
-
                     b.Navigation("Assignments");
 
                     b.Navigation("CourseMaterial");

@@ -96,8 +96,8 @@ namespace LMS.Controllers.Instructor
             _db.AssessmentCriterias.Add(assessmentCriteria);
             await _db.SaveChangesAsync();
             //var cri = _db.AssessmentCriterias.FirstOrDefaultAsync(As => As.CourseID ==C.ID);
-            C.AssessmentCriteriaId = assessmentCriteria.Id ;
-            _db.Courses.Update(C);
+            //C.AssessmentCriteria. = assessmentCriteria.Id;                    فكي الكومنت
+             _db.Courses.Update(C);
             await _db.SaveChangesAsync();
             return Ok();
         }
@@ -108,8 +108,8 @@ namespace LMS.Controllers.Instructor
             
             if (course != null)
             {
-                var criateria = await _db.AssessmentCriterias.FirstOrDefaultAsync(c => c.Id == course.AssessmentCriteriaId);
-                Console.WriteLine(criateria?.Midterm + " " + criateria?.Practical + " " + criateria?.Theoretical+ " " + criateria?.Quizzes);
+                //var criateria = await _db.AssessmentCriterias.FirstOrDefaultAsync(c => c.Id == course.AssessmentCriteriaId); فكي الكومنت 
+                //Console.WriteLine(criateria?.Midterm + " " + criateria?.Practical + " " + criateria?.Theoretical+ " " + criateria?.Quizzes);
                 Console.WriteLine(course?.Assignments?[0].Name);
                 return Ok(course);
             }
