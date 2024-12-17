@@ -1,278 +1,136 @@
 .navbar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 250px;
-    background-color: #043B5C;
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px;
-    z-index: 1000;
-    color: #ecf0f1;
-    flex-wrap: wrap; 
-  }
-  
-  .admin-info {
-    text-align: center;
-    padding-bottom: 20px;
-    color: #FFFEFE;
-    margin-left: 20px;
-  }
-  
-  .divider {
-    height: 2px;
-    background-color: #FFFFFF;
-    width: 90%;
-    margin: 0 auto;
-  }
-  
-  .admin-info h1 {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    color:#FFFFFF;
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: left;
-    margin-right: 85px;
-  }
-  
-  .profile-role {
-    color: #B9BBBD;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: 0;
-    text-align: left;
-  }
-  
-  h6 {
-    color:#FFFFFF;
-    margin-top:10px;
-    margin-left: 20px;
-    margin-bottom: 0px;
-  }
-  
-  .navbar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .navbar ul li {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .navbar ul li a {
-    margin-top: 5px;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #FFFEFE;
-    font-weight: bold;
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    border-radius: 5px;
-    white-space: nowrap;
-  }
-  
-  .navbar ul li a .material-icons {
-    margin-right: 15px;
-    font-size: 1.5rem;
-  }
-  
-  .navbar ul li a:hover {
-    background-color: #fff;
-    color: #043B5C;
-  }
-  
-  hr {
-    border: 1px solid #7f8c8d;
-    margin: 10px 0;
-  }
-  
-  .fa-angle-down {
-    margin-left: 80px;
-  }
-  
-  .help-logout ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-top: 120px;
-  }
-  
-  .help-logout ul li {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .help-logout ul li a {
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    border-radius: 5px;
-    white-space: nowrap;
-  }
-  
-  .help-logout ul li a .material-icons {
-    margin-right: 8px;
-    font-size: 20px;
-  }
-  
-  #first {
-    color: gray;
-  }
-  
-  #last {
-    color: #D55F5A;
-  }
-  
-  .help-logout ul li a:hover {
-    background-color: #fff;
-    opacity: 0.7;
-  }
-  
-  .card .material-icons {
-    font-size: 1.5rem;
-    color: #0F266C;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .card .material-icons:hover {
-    transform: scale(1.2);
-  }
-  
-  .add-course-container {
-    text-align: left;
-    margin-left: 50px;
-  }
-  
-  .add-course-container .material-icons {
-    font-size: 1.5rem;
-    color: #2ecc71;
-    cursor: pointer;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .add-course-container .material-icons:hover {
-    color: #2CC669;
-    transform: scale(1.2);
-  }
-  
-  .container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    position: relative;
-  }
-  
-  h2 {
-    font-size: 300%;
-    font-weight: bold;
-    color: #043B5C;
-    margin-bottom: 20px;
-  }
-  .settings{
-    margin-right: 50px;
-  }
-  .card {
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    padding: 15px;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    width: 1100px;
-    height: 100px;
-    background-color: #EEF4FF;
-  }
-  
-  .card-body {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    gap: 30px;
-  }
-  
-  .card-body > div {
-    flex: 1;
-    min-width: 150px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  h5 {
-    margin: 5px 0;
-    font-size: 1rem;
-    color: #043B5C;
-    font-size: 150%;
-  }
-  
-  .card-body, .card-body p {
-    margin: 5px 0;
-    font-size: 1rem;
-    color: #666666;
-  }
-  
-  .card-body .text-success {
-    color: #1E9D19;
-    font-weight: bold;
-    font-size: 20px;
-  }
-  
-  .card-body .text-muted {
-    color: #666666;
-    font-weight: bold;
-    font-size: 20px;
-  }
-  @media (max-width: 991px) {
-    #sidebar {
-      position: static;
-      height: auto;
-      width: 100%;
-    }
-  
-    #sidebarNav {
-      display: none; 
-    }
-  
-    .navbar-toggler {
-      display: block;
-      margin: 10px auto;
-      color: #043B5C;
-      background-color: white;
-    }
-  
-    #sidebarNav.collapse {
-      display: flex;
-      flex-direction: column;
-    }
-  }
-  
-  @media (max-width: 767px) {
-    .pages ul li a, .help-logout ul li a {
-      font-size: 1rem;
-      padding: 8px 15px;
-    }
-  
-    .pages ul li a .material-icons, .help-logout ul li a .material-icons {
-      font-size: 1.2rem;
-    }
-  
-    .admin-info h1 {
-      font-size: 2rem;
-    }
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;  /* لضمان تغطيته لكامل الشاشة */
+  width: 250px;
+  background-color: #043B5C;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  z-index: 1000;
+  color: #ecf0f1;
+  box-sizing: border-box;
+}
+
+.admin-info {
+  text-align: center;
+  padding-bottom: 15px;
+  color: #FFFEFE;
+  margin-left: 20px;
+}
+
+.admin-info h1 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: left;
+  margin-right: 85px;
+}
+
+.profile-role {
+  color: #B9BBBD;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  text-align: left;
+}
+
+.divider {
+  height: 2px;
+  background-color: #FFFFFF;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* قائمة الروابط في الـ sidebar */
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;  /* لإعطاء المساحة لبقية العناصر */
+}
+
+.navbar ul li {
+  text-align: center;
+  margin-bottom: 15px; /* تقليل المسافة بين العناصر */
+}
+
+.navbar ul li a {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #FFFEFE;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.navbar ul li a .material-icons {
+  margin-right: 15px;
+  font-size: 1.5rem;
+}
+
+.navbar ul li a:hover {
+  background-color: #fff;
+  color: #043B5C;
+}
+
+/* قسم help-logout */
+.help-logout {
+  margin-top: auto;
+}
+
+.help-logout ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.help-logout ul li {
+  text-align: center;
+}
+
+.help-logout ul li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.help-logout ul li a .material-icons {
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+#first {
+  color: gray;
+}
+
+#last {
+  color: #D55F5A;
+}
+
+.help-logout ul li a:hover {
+  background-color: #fff;
+  opacity: 0.7;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 10%;
+  transition: margin-left 0.3s ease-in-out;
+}
+

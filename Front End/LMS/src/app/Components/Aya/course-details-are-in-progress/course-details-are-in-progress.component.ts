@@ -3,7 +3,9 @@ type Section = 'lectureDetails' | 'assessmentCriteria' | 'courseStats';
 @Component({
   selector: 'app-course-details-are-in-progress',
   templateUrl: './course-details-are-in-progress.component.html',
-  styleUrl: './course-details-are-in-progress.component.css'
+  standalone:false,
+  styleUrl: './course-details-are-in-progress.component.css',
+ 
 })
 
 export class CourseDetailsAreInProgressComponent {

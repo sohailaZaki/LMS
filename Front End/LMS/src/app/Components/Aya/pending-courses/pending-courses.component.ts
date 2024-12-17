@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-pending-courses',
   templateUrl: './pending-courses.component.html',
+  standalone:false,
   styleUrl: './pending-courses.component.css'
 })
 export class PendingCoursesComponent {
@@ -27,7 +28,7 @@ export class PendingCoursesComponent {
   viewCourseDetails(courseId: number): void {
     console.log(`Viewing details for course ID: ${courseId}`);
   
-    this.router.navigate([`/Aya/details-for-pending-course/${courseId}`]);
+    this.router.navigate([`/admin/details-for-pending-course/${courseId}`]);
   }
 
   /**
@@ -56,6 +57,6 @@ export class PendingCoursesComponent {
     }
   }
   navigateToDetails() {
-    this.router.navigate(['/Aya/details-for-pending-course.component']); 
+    this.router.navigate(['/admin/details-for-pending-course']); 
   }
 }

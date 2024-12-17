@@ -38,6 +38,7 @@ interface TableRow {
 @Component({
   selector: 'app-courseView',
   templateUrl: './courseView.component.html',
+  standalone:false,
   styleUrls: ['./courseView.component.css']
 })
 

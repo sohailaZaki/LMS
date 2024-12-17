@@ -3,6 +3,7 @@ type Section = 'lectureDetails' | 'assessmentCriteria' | 'courseStats';
 @Component({
   selector: 'app-details-for-pending-course',
   templateUrl: './details-for-pending-course.component.html',
+  standalone:false,
   styleUrl: './details-for-pending-course.component.css'
 })
 export class DetailsForPendingCourseComponent{

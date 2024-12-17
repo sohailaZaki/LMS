@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-Courses',
   templateUrl: './Courses.component.html',
+  standalone:false,
   styleUrls: ['./Courses.component.css']
 })
 export class CoursesComponent implements OnInit {

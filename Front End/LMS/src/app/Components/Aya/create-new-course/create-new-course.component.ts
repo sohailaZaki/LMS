@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-create-new-course',
   templateUrl: './create-new-course.component.html',
+  standalone:false,
   styleUrl: './create-new-course.component.css'
 })
 export class CreateNewCourseComponent {

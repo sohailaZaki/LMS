@@ -8,6 +8,7 @@ import { UserService } from '../../../Login & Reg/Rahma/services/user.service';
 @Component({
   selector: 'app-studentDashboard',
   templateUrl: './studentDashboard.component.html',
+  standalone:false,
   styleUrls: ['./studentDashboard.component.css'],
 })
 export class studentDashboardComponent implements OnInit, OnDestroy {

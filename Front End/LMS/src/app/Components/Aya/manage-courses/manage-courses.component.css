@@ -1,5 +1,4 @@
 section {
-  margin-left: 200px;
   flex: 1;
   padding: 20px;
   background-color: #EEF4FF;
@@ -11,8 +10,7 @@ h2 {
   margin-bottom: 20px;
 }
 .container-fluid {
-  max-width: 1400px;
-  width: 90%;
+  width: 87%;
   margin: auto;
   padding: 20px;
   background-color: white;

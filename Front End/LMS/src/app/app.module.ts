@@ -114,17 +114,22 @@ const routes: Routes = [
 
     ],
   },
-   // Admin route
-   {
-    path: '',
-    component: LayoutComponent,
-    children: [
-      {path:'' ,redirectTo:'admin-dashboard',pathMatch:'full'},
-      {path:'Sara/admin-dashboard',component:AdminDashboardComponent},
-      {path:'Sara/user-management',component:UserManagementComponent},
-      {path:'Sara/assign-course',component:AssignCourseComponent},
-    ],
-  },
+    {
+      path: 'admin',
+      component: AdminSideBarComponent,
+      children: [
+        { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+        { path: 'dashboard', component: AdminDashboardComponent },
+        { path: 'user-management', component: UserManagementComponent },
+        { path: 'assign-course', component: AssignCourseComponent },
+        { path: 'pending-courses', component: PendingCoursesComponent },
+        { path: 'manage-courses', component: ManageCoursesComponent },
+        { path: 'create-new-course', component: CreateNewCourseComponent },
+        { path: 'course-details-are-in-progress', component: CourseDetailsAreInProgressComponent },
+        { path: 'details-for-pending-course', component: DetailsForPendingCourseComponent },
+      ],
+    },
+  
   // student route
   {
     path: 'student-dashboard',
@@ -136,18 +141,18 @@ const routes: Routes = [
       { path: 'assignments', component: SubmissionAssignmentComponent },
       { path: 'course-detail/:id', component: CourseDetailsComponent },
     ],
-  },
-  {
-    //Aya
-    path: '',
-    children: [
-      {path:'Aya/pending-courses',component:PendingCoursesComponent},
-      {path:'Aya/manage-courses',component:ManageCoursesComponent},
-      {path:'Aya/create-new-course', component: CreateNewCourseComponent },
-      {path:'Aya/course-details-are-in-progress', component: CourseDetailsAreInProgressComponent },
-      {path:'Aya/details-for-pending-course.component', component: DetailsForPendingCourseComponent },
-    ],
-  },
+   },
+  // {
+  //   //Aya
+  //   path: '',
+  //   children: [
+  //     {path:'Aya/pending-courses',component:PendingCoursesComponent},
+  //     {path:'Aya/manage-courses',component:ManageCoursesComponent},
+  //     {path:'Aya/create-new-course', component: CreateNewCourseComponent },
+  //     {path:'Aya/course-details-are-in-progress', component: CourseDetailsAreInProgressComponent },
+  //     {path:'Aya/details-for-pending-course.component', component: DetailsForPendingCourseComponent },
+  //   ],
+  // },
 ];
 
 

@@ -8,6 +8,7 @@ import { filter } from 'rxjs';
 @Component({
   selector: 'app-Layout',
   templateUrl: './Layout.component.html',
+  standalone:false,
   styleUrls: ['./Layout.component.css'],
 })
 export class LayoutComponent implements OnInit {

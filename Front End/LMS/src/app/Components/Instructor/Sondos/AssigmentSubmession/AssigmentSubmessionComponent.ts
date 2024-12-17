@@ -12,6 +12,7 @@ interface ItemData {
 @Component({
   selector: 'app-AssigmentSubmession',
   templateUrl: './AssigmentSubmessionComponent.html',
+  standalone:false,
   styleUrls: ['./AssigmentSubmessionComponent.css']
 })
 
