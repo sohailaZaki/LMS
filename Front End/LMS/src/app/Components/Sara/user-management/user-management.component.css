@@ -1,0 +1,107 @@
+/* Sidebar */
+/* .navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #043B5C;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  z-index: 1000;
+  color: #ecf0f1;
+} */
+
+.user-management-container {
+  margin-left: 270px; /* Ensures content doesn’t overlap sidebar */
+  margin-top: 70px;
+  padding: 20px;
+  border-radius: 30px;
+  background-color: #f4f6f9;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+ width:auto;
+}
+
+/* Title Styling */
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 0;
+  color: #2d3e50;
+}
+
+/* Filters Container */
+.filters-container {
+  gap: 16px;
+}
+
+/* Table Container */
+.table-container {
+  border-radius: 30px;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: auto; /* Ensures table scrolls if content overflows */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 12px 16px;
+  text-align: left;
+}
+
+th {
+  background-color: #e8f1fa;
+  font-weight: 600;
+}
+
+td {
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* Responsive Sidebar Behavior */
+@media (max-width: 991px) {
+  .navbar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .user-management-container {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .filters-container {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 18px;
+  }
+
+  .filters-container {
+    flex-wrap: wrap;
+  }
+
+  table {
+    font-size: 12px;
+  }
+}

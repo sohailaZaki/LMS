@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule, registerLocaleData } from '@angular/common';
@@ -56,6 +55,17 @@ import { AssigmentsComponent } from './Components/Instructor/Sondos/Assigments/A
 import { AssignmentDetailsComponent } from './Components/Instructor/Sohaila/AssignmentDetails/AssignmentDetails.component';
 import { AssigmentSubmessionComponent } from './Components/Instructor/Sondos/AssigmentSubmession/AssigmentSubmessionComponent';
 
+//Sara
+import { MatFormFieldModule } from '@angular/material/form-field';  
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
+import { UserManagementComponent } from './Components/Sara/user-management/user-management.component';
+import { AssignCourseComponent } from './Components/Sara/assign-course/assign-course.component';
+import { AdminDashboardComponent } from './Components/Sara/admin-dashboard/admin-dashboard.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input'; 
+import { MatButtonModule } from '@angular/material/button'; // Optional: For buttons
+
 
 // Pipes
 import { FirstKeyPipe } from './Components/Login & Reg/Rahma/pipes/firstKey.pipe';
@@ -91,6 +101,17 @@ const routes: Routes = [
       { path: 'Course/:id', component: CourseViewComponent },
 
 
+    ],
+  },
+   // Admin route
+   {
+    path: 'Admin',
+    component: LayoutComponent,
+    children: [
+      {path:'' ,redirectTo:'admin-dashboard',pathMatch:'full'},
+      {path:'Sara/admin-dashboard',component:AdminDashboardComponent},
+      {path:'Sara/user-management',component:UserManagementComponent},
+      {path:'Sara/assign-course',component:AssignCourseComponent},
     ],
   },
   // student route
@@ -130,6 +151,10 @@ const routes: Routes = [
     AssigmentSubmessionComponent,
     studentDashboardComponent,
     FirstKeyPipe,
+    //Sara admin
+    UserManagementComponent, 
+    AssignCourseComponent, 
+    AdminDashboardComponent
 
 
   ],
@@ -159,6 +184,13 @@ const routes: Routes = [
     NzUploadModule,
     NzSelectModule,
     NzInputNumberModule,
+    //sara
+    MatFormFieldModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatTableModule,
+    MatInputModule,
+    MatButtonModule
 
   ],
   providers: [

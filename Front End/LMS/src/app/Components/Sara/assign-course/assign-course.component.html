@@ -1,0 +1,39 @@
+<div class="assign-courses-container">
+    <!-- Page Title -->
+    <h1>Assigned Courses For</h1>
+    <h2>Mike Dean</h2>
+  
+    <!-- Assigned Courses Table -->
+    <table class="courses-table">
+      <thead>
+        <tr>
+          <th>Course name</th>
+          <th>Course Code</th>
+          <th>Start-end date</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let course of assignedCourses">
+          <td>{{ course.name }}</td>
+          <td>{{ course.code }}</td>
+          <td>{{ course.date }}</td>
+          <td [ngClass]="course.status === 'Completed' ? 'status-completed' : 'status-ongoing'">
+            {{ course.status }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Assign New Course -->
+    <div class="assign-new-course">
+      <h3>Assign New Course</h3>
+      <div class="assign-course-row">
+        <select [(ngModel)]="selectedCourse" class="course-dropdown">
+          <option *ngFor="let course of availableCourses" [value]="course">{{ course }}</option>
+        </select>
+        <button class="assign-btn" (click)="assignCourse()">Assign</button>
+      </div>
+    </div>
+  </div>
+  
