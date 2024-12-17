@@ -53,7 +53,7 @@ namespace LMS.Migrations
                     b.HasIndex("CourseID")
                         .IsUnique();
 
-                    b.ToTable("AssessmentCriterias");
+                    b.ToTable("AssessmentCriterias", (string)null);
                 });
 
             modelBuilder.Entity("LMS.Data.Models.Assignment", b =>
@@ -83,7 +83,7 @@ namespace LMS.Migrations
 
                     b.HasIndex("CourseID");
 
-                    b.ToTable("Assignments");
+                    b.ToTable("Assignments", (string)null);
                 });
 
             modelBuilder.Entity("LMS.Data.Models.AssignmentSubmissions", b =>
@@ -128,45 +128,7 @@ namespace LMS.Migrations
 
                     b.HasIndex("StudentID");
 
-                    b.ToTable("AssignmentSubmissions");
-                });
-
-            modelBuilder.Entity("LMS.Data.Models.Course", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("AssignmentId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("AssignmnetID")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CourseID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("FilePath")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("StudentID")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("SubmittedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AssignmentId");
-
-                    b.HasIndex("CourseID");
-
-                    b.HasIndex("StudentID");
-
-                    b.ToTable("AssignmentSubmissions");
+                    b.ToTable("AssignmentSubmissions", (string)null);
                 });
 
             modelBuilder.Entity("LMS.Data.Models.Course", b =>
@@ -219,7 +181,7 @@ namespace LMS.Migrations
 
                     b.HasIndex("InstructorID");
 
-                    b.ToTable("Courses");
+                    b.ToTable("Courses", (string)null);
                 });
 
             modelBuilder.Entity("LMS.Data.Models.Material", b =>
@@ -249,7 +211,7 @@ namespace LMS.Migrations
 
                     b.HasIndex("CourseID");
 
-                    b.ToTable("Materials");
+                    b.ToTable("Materials", (string)null);
                 });
 
             modelBuilder.Entity("LMS.Data.Models.Role", b =>
@@ -266,7 +228,7 @@ namespace LMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Roles");
+                    b.ToTable("Roles", (string)null);
 
                     b.HasData(
                         new
@@ -313,7 +275,7 @@ namespace LMS.Migrations
 
                     b.HasIndex("StudentID");
 
-                    b.ToTable("StudentCourse");
+                    b.ToTable("StudentCourse", (string)null);
                 });
 
             modelBuilder.Entity("LMS.Data.Models.User", b =>
@@ -362,7 +324,7 @@ namespace LMS.Migrations
 
                     b.HasIndex("RoleID");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
 
                     b.HasData(
                         new
