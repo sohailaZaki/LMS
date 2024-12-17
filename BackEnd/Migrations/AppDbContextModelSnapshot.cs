@@ -389,8 +389,8 @@ namespace LMS.Migrations
                         .WithMany("Submissions")
                         .HasForeignKey("AssignmentId");
 
-                    b.HasOne("LMS.Data.Models.Course", "Course")
-                        .WithMany()
+                    b.HasOne("LMS.Data.Models.Course", null)
+                        .WithMany("AssignmentSubmissions")
                         .HasForeignKey("CourseID");
 
                     b.HasOne("LMS.Data.Models.User", "Student")
@@ -398,8 +398,6 @@ namespace LMS.Migrations
                         .HasForeignKey("StudentID");
 
                     b.Navigation("Assignment");
-
-                    b.Navigation("Course");
 
                     b.Navigation("Student");
                 });
@@ -470,6 +468,8 @@ namespace LMS.Migrations
 
             modelBuilder.Entity("LMS.Data.Models.Course", b =>
                 {
+                    b.Navigation("AssignmentSubmissions");
+
                     b.Navigation("Assignments");
 
                     b.Navigation("CourseMaterial");

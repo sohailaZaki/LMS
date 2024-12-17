@@ -6,8 +6,8 @@
         public int Id { get; set; }
         public int? StudentID { get; set; }
         public User Student { get; set; }
-        public int? CourseID { get; set; }
-        public Course Course { get; set; }
+        //public int CourseID { get; set; }
+        //public Course Course { get; set; }
         public string FilePath { get; set; }
         public string studentName { get; set; }
         public DateTime SubmittedAt { get; set; } = DateTime.UtcNow;

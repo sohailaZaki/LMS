@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LMS.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241216102548_Adding AssessmentCriteriaId to Course")]
-    partial class AddingAssessmentCriteriaIdtoCourse
+    [Migration("20241217143741_Create Database")]
+    partial class CreateDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -79,7 +79,6 @@ namespace LMS.Migrations
                         .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("filepath")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -97,7 +96,7 @@ namespace LMS.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AssignmentId")
+                    b.Property<int?>("AssignmentId")
                         .HasColumnType("int");
 
                     b.Property<int?>("AssignmnetID")
@@ -106,8 +105,10 @@ namespace LMS.Migrations
                     b.Property<int?>("CourseID")
                         .HasColumnType("int");
 
+                    b.Property<int>("Evaluation")
+                        .HasColumnType("int");
+
                     b.Property<string>("FilePath")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("StudentID")
@@ -115,6 +116,9 @@ namespace LMS.Migrations
 
                     b.Property<DateTime>("SubmittedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("studentName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -135,7 +139,7 @@ namespace LMS.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<int>("AssessmentCriteriaId")
+                    b.Property<int?>("AssessmentCriteriaId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
@@ -175,6 +179,10 @@ namespace LMS.Migrations
 
                     b.HasKey("ID");
 
+                    b.HasIndex("AssessmentCriteriaId")
+                        .IsUnique()
+                        .HasFilter("[AssessmentCriteriaId] IS NOT NULL");
+
                     b.HasIndex("InstructorID");
 
                     b.ToTable("Courses");
@@ -189,18 +197,15 @@ namespace LMS.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
                     b.Property<string>("Category")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CourseID")
                         .HasColumnType("int");
 
                     b.Property<string>("FilePath")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
@@ -219,7 +224,6 @@ namespace LMS.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -244,7 +248,7 @@ namespace LMS.Migrations
                         });
                 });
 
-            modelBuilder.Entity("LMS.Data.Models.StudentProgresses", b =>
+            modelBuilder.Entity("LMS.Data.Models.StudentCourse", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -258,11 +262,11 @@ namespace LMS.Migrations
                     b.Property<int?>("Grade")
                         .HasColumnType("int");
 
-                    b.Property<bool>("IsCompleted")
-                        .HasColumnType("bit");
-
                     b.Property<int>("StudentID")
                         .HasColumnType("int");
+
+                    b.Property<string>("studentName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 
@@ -270,7 +274,7 @@ namespace LMS.Migrations
 
                     b.HasIndex("StudentID");
 
-                    b.ToTable("StudentProgresses");
+                    b.ToTable("StudentCourse");
                 });
 
             modelBuilder.Entity("LMS.Data.Models.User", b =>
@@ -281,41 +285,31 @@ namespace LMS.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("CourseID")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("RoleID")
                         .HasColumnType("int");
 
                     b.Property<string>("RoleName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Status")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -356,9 +350,9 @@ namespace LMS.Migrations
             modelBuilder.Entity("LMS.Data.Models.AssessmentCriteria", b =>
                 {
                     b.HasOne("LMS.Data.Models.Course", "Course")
-                        .WithOne("AssessmentCriteria")
+                        .WithOne()
                         .HasForeignKey("LMS.Data.Models.AssessmentCriteria", "CourseID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Course");
@@ -379,12 +373,10 @@ namespace LMS.Migrations
                 {
                     b.HasOne("LMS.Data.Models.Assignment", "Assignment")
                         .WithMany("Submissions")
-                        .HasForeignKey("AssignmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AssignmentId");
 
-                    b.HasOne("LMS.Data.Models.Course", "Course")
-                        .WithMany()
+                    b.HasOne("LMS.Data.Models.Course", null)
+                        .WithMany("AssignmentSubmissions")
                         .HasForeignKey("CourseID");
 
                     b.HasOne("LMS.Data.Models.User", "Student")
@@ -393,18 +385,23 @@ namespace LMS.Migrations
 
                     b.Navigation("Assignment");
 
-                    b.Navigation("Course");
-
                     b.Navigation("Student");
                 });
 
             modelBuilder.Entity("LMS.Data.Models.Course", b =>
                 {
+                    b.HasOne("LMS.Data.Models.AssessmentCriteria", "AssessmentCriteria")
+                        .WithOne()
+                        .HasForeignKey("LMS.Data.Models.Course", "AssessmentCriteriaId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.HasOne("LMS.Data.Models.User", "Instructor")
-                        .WithMany("RegisteredCourses")
+                        .WithMany()
                         .HasForeignKey("InstructorID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("AssessmentCriteria");
 
                     b.Navigation("Instructor");
                 });
@@ -420,18 +417,18 @@ namespace LMS.Migrations
                     b.Navigation("Course");
                 });
 
-            modelBuilder.Entity("LMS.Data.Models.StudentProgresses", b =>
+            modelBuilder.Entity("LMS.Data.Models.StudentCourse", b =>
                 {
                     b.HasOne("LMS.Data.Models.Course", "Course")
-                        .WithMany()
+                        .WithMany("Students")
                         .HasForeignKey("CourseID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("LMS.Data.Models.User", "Student")
-                        .WithMany()
+                        .WithMany("RegisteredCourses")
                         .HasForeignKey("StudentID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Course");
@@ -457,11 +454,13 @@ namespace LMS.Migrations
 
             modelBuilder.Entity("LMS.Data.Models.Course", b =>
                 {
-                    b.Navigation("AssessmentCriteria");
+                    b.Navigation("AssignmentSubmissions");
 
                     b.Navigation("Assignments");
 
                     b.Navigation("CourseMaterial");
+
+                    b.Navigation("Students");
                 });
 
             modelBuilder.Entity("LMS.Data.Models.Role", b =>
