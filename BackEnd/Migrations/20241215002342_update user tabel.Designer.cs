@@ -313,7 +313,7 @@ namespace LMS.Migrations
 
                     b.Navigation("Assignment");
 
-                    b.Navigation("Course");
+                    //b.Navigation("Course");
 
                     b.Navigation("Student");
                 });

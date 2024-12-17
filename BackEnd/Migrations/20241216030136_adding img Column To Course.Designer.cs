@@ -328,7 +328,6 @@ namespace LMS.Migrations
                         new
                         {
                             Id = 1,
-                            CourseID = 0,
                             CreatedAt = new DateTime(2024, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "Admin@cis.asu.edu.eg",
                             FirstName = "Admin",
@@ -342,7 +341,6 @@ namespace LMS.Migrations
                         new
                         {
                             Id = 2,
-                            CourseID = 0,
                             CreatedAt = new DateTime(2024, 12, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "Admin@cis.asu.edu.eg",
                             FirstName = "Admin",
