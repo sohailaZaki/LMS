@@ -17,34 +17,35 @@ namespace LMS.Controllers
         {
             _context = context;
         }
-
-        // 1. Get all courses assigned to a specific user
-        [HttpGet("{userId}/courses")]
-        public IActionResult GetAssignedCourses(int userId)
+        // 1. Get all users with optional filters
+        [HttpGet]
+        public IActionResult GetUsers([FromQuery] string role, [FromQuery] string status)
         {
-            // Validate the user exists
-            var user = _context.Users
-                .Include(u => u.RegisteredCourses)
-                .FirstOrDefault(u => u.Id == userId);
+            var users = _context.Users
+                .Include(u => u.Role) // Include Role for filtering
+                .AsQueryable();
 
-            if (user == null)
-                return NotFound(new { message = $"User with ID {userId} not found." });
+            if (!string.IsNullOrEmpty(role))
+                users = users.Where(u => u.Role.Name == role);
 
-            // Retrieve assigned courses for the user
-            var assignedCourses = _context.StudentCourse
-                .Include(sc => sc.Course)
-                .Where(sc => sc.StudentID == userId)
-                .Select(sc => new
-                {
-                    CourseName = sc.Course.Name,
-                    CourseCode = sc.Course.ID,
-                    StartDate = sc.Course.StartDate,
-                    EndDate = sc.Course.EndDate,
-                    Status = sc.Course.Status
-                }).ToList();
+            if (!string.IsNullOrEmpty(status))
+                users = users.Where(u => u.Status == status);
 
-            return Ok(assignedCourses);
+            // Project only required fields to avoid circular references
+            var result = users.Select(u => new
+            {
+                u.Id,
+                u.FirstName,
+                u.LastName,
+                u.UserName,
+                u.Status,
+                u.Email,
+                RoleName = u.Role.Name // Project RoleName only, not the full Role object
+            }).ToList();
+
+            return Ok(result);
         }
+
 
         // 2. Assign a new course to a specific user
         [HttpPost("assign")]
