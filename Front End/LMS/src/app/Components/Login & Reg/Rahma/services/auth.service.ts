@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthService {
 
-  private baseUrl:string ="http://localhost:7240/api/RegisterAndLogin/"
+  private baseUrl:string ="http://localhost:5137/api/RegisterAndLogin/"
   constructor(private http :HttpClient) { }
 
   signUp(userobj:any){

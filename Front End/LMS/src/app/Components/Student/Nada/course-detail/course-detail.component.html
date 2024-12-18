@@ -1,12 +1,12 @@
 <div class="course-container">
-  <h1 class="course-title">{{ courseDetails.title }}</h1>
-  <p class="course-subtitle">{{ courseDetails.description }}</p>
+  <h1 class="course-title">{{ courseDetails.courseName }}</h1>
+  <p class="course-subtitle">{{ courseDetails.courseDescription }}</p>
 
   <div class="course-content-container">
     <div class="course-info-box">
       <h3>In this course, you will learn how to:</h3>
       <p>
-          {{ courseDetails.description }}
+        {{ courseDetails.courseDescription }}
       </p>
     </div>
 
@@ -14,9 +14,9 @@
       <h3>Progress:</h3>
       <div class="progress-container">
         <div class="progress-bar">
-          <div class="progress-bar-fill" [style.width]="courseDetails.progress + '%'"></div>
+          <div class="progress-bar-fill" [style.width]="progress + '%'"></div>
         </div>
-        <span class="progress-percentage">{{ courseDetails.progress }}%</span>
+        <span class="progress-percentage">75%</span>
       </div>
     </div>
   </div>
@@ -25,66 +25,43 @@
   <div class="materials-grades-section">
       <div class="materials-box">
           <h3>Material</h3>
-
-          <!-- Lectures Section -->
-          <div class="select-container">
-            <label for="lecture-select" class="select-label">Lectures:</label>
-            <select id="lecture-select" [(ngModel)]="selectedLecture">
-              <option value="" disabled selected>Select a Lecture</option>
-              <option *ngFor="let lecture of courseDetails.lectures" [ngValue]="lecture">
-                {{ lecture.name }}
-              </option>
-            </select>
-            <div class="button-container">
-              <button *ngIf="selectedLecture" (click)="openLecture(selectedLecture)" class="open-btn">
-                Open PDF
-              </button>
+          
+            <!-- Material Selection -->
+            <div class="select-container">
+              <label for="material-select" class="select-label">Select a Material:</label>
+              <select id="material-select" [(ngModel)]="selectedLecture">
+                <option value="" disabled selected>Select a Material</option>
+                <option *ngFor="let material of courseDetails.courseMaterials" [ngValue]="material">
+                  {{ material.materialName }}
+                </option>
+              </select>
+              <div class="button-container">
+                <button *ngIf="selectedLecture" (click)="openMaterial(selectedLecture)" class="open-btn">
+                  Open PDF
+                </button>
+              </div>
             </div>
           </div>
+          
 
-          <!-- Labs Section -->
-          <div class="select-container">
-            <label for="lab-select" class="select-label">Labs:</label>
-            <select id="lab-select" [(ngModel)]="selectedLabs">
-              <option value="" disabled selected>Select a Lab</option>
-              <option *ngFor="let lab of courseDetails.labs" [ngValue]="lab">
-                {{ lab.name }}
-              </option>
-            </select>
-            <div class="button-container">
-              <button *ngIf="selectedLabs" (click)="openLabs(selectedLabs)" class="open-btn">
-                Open PDF
-              </button>
-            </div>
-          </div>
-        </div>
-
-
-
-    <div class="grades-box">
-      <h3>Grades</h3>
-      <div class="grades-grid">
-        <div class="grade-item">Quizzes: <span>5</span></div>
-        <div class="grade-item">Assignments: <span>5</span></div>
-        <div class="grade-item">Practical: <span>5</span></div>
-        <div class="grade-item">Theoretical: <span>5</span></div>
-        <div class="grade-item">Yearwork: <span>5</span></div>
-        <div class="grade-item">Midterm: <span>5</span></div>
-      </div>
+<!-- Grades Section -->
+<div class="grades-box">
+  <h3>Grades</h3>
+  <div *ngIf="courseDetails.assessmentCriteria; else noGrades">
+    <div class="grades-grid">
+      <div class="grade-item">Theoretical: <span>{{ courseDetails.assessmentCriteria.theoretical }}</span></div>
+      <div class="grade-item">Practical: <span>{{ courseDetails.assessmentCriteria.practical }}</span></div>
+      <div class="grade-item">Yearwork: <span>{{ courseDetails.assessmentCriteria.yearwork }}</span></div>
+      <div class="grade-item">Midterm: <span>{{ courseDetails.assessmentCriteria.midterm }}</span></div>
+      <div class="grade-item">Quizzes: <span>{{ courseDetails.assessmentCriteria.quizzes }}</span></div>
+    </div>
+  </div>
+  <ng-template #noGrades>
+    <p>No grades available for this course.</p>
+  </ng-template>
     </div>
   </div>
 
-  <div class="assessments-section">
-      <h3>Assessments</h3>
-      <ul>  <!-- هنا تم إضافة الـ <ul> -->
-        <li *ngFor="let assessment of courseDetails.assessment">
-          <button (click)="openass(assessment)" class="open-pdf-btn">
-            <span class="material-icons">file_open</span>
-            Open PDF - {{ assessment.name }}
-          </button>
-        </li>
-      </ul>
-    </div>
 
 
 

@@ -1,64 +1,44 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CourseService } from '../../../../services/course.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../Login & Reg/Rahma/services/auth.service';
+import { UserService } from '../../../Login & Reg/Rahma/services/user.service';
+
 
 @Component({
   selector: 'app-course-materials',
-  standalone: false,
   templateUrl: './course-materials.component.html',
   styleUrls: ['./course-materials.component.css']
 })
-export class CourseMaterialsComponent {
-  selectedLecture: any; // سيتم تخزين المحاضرة المختارة هنا
-  selectedLabs: any = null;
+export class CourseMaterialsComponent implements OnInit {
+  courses: any[] = [];
+  studentId = 4;
 
-  courses = [
-    {
-      id: '1',
-      title: 'Angular Course',
-      description: 'Detailed description about Angular course',
-      image: 'assets/channels4_profile.jpg',
-      progress: 5,
-      lectures: [
-        { name: "Angular Basics", pdfUrl: "assets/A01.pdf" },
-        { name: "Angular Directives", pdfUrl: "assets/A01.pdf" },
-        { name: "Angular Components", pdfUrl: "assets/A01.pdf" }
-      ],
-      labs: [
-        { name: "Node Basics", pdfUrl: "assets/A01.pdf" },
-        { name: "Node.js API", pdfUrl: "assets/A01.pdf" }
-      ],
-      assessment: [
-        { name: "Node Basics", pdfUrl: "assets/A01.pdf" },
-        { name: "Node.js API", pdfUrl: "assets/A01.pdf" }
-      ]
-    },
-    {
-      id: '2',
-      title: 'Node.js',
-      description: 'Detailed description about Node course',
-      image: 'assets/channels4_profile.jpg',
-      progress: 75,
-      lectures: [
-        { name: "Node Basics", pdfUrl: "assets/A01.pdf" },
-        { name: "Node.js API", pdfUrl: "assets/A01.pdf" }
-      ],
-      labs: [
-        { name: "Node Basics", pdfUrl: "assets/A01.pdf" },
-        { name: "Node.js API", pdfUrl: "assets/A01.pdf" }
-      ],
-      assessment: [
-        { name: "Node Basics", pdfUrl: "assets/A01.pdf" },
-        { name: "Node.js API", pdfUrl: "assets/A01.pdf" }
-      ]
+  constructor(private courseService: CourseService, private router: Router,private userService: UserService) {}
 
-    },
-    // باقي الكورسات هنا
-  ];
+  ngOnInit(): void {
+    this.fetchStudentCourses();
+    
+  }
 
-  constructor(private router: Router) {}
+  fetchStudentCourses(): void {
+    this.courseService.getStudentCourses(this.studentId).subscribe({
+      next: (data) => {
+        console.log('Courses:', data);
+        if (Array.isArray(data)) {
+          this.courses = data;
+        } else {
+          console.error('Invalid data structure:', data);
+        }
+      },
+      error: (err) => {
+        console.error('Error fetching courses:', err);
+      }
+    });
+  }
 
-
-  navigateToCourse(course: any) {
-    this.router.navigate(['/student-dashboard/course-detail', course.id], { state: { courseDetails: course } });
+  navigateToCourse(course: any): void {
+    console.log(course); // تأكد من البيانات هنا
+    this.router.navigate(['/student-dashboard/course-detail', course.courseID], { state: { courseDetails: course } });
   }
 }

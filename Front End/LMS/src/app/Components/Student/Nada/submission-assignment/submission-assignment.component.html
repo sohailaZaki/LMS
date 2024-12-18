@@ -2,81 +2,84 @@
 <div *ngIf="toastMessage" [ngClass]="{'toast-success': toastType === 'success', 'toast-error': toastType === 'error'}" class="toast-container">
   {{ toastMessage }}
 </div>
+
 <h1>Assignments</h1>
 <div class="my-courses-container">
+  <div class="content-wrapper">
+    <div class="course-modules">
+      <table>
+        <thead>
+          <tr>
+            <th>Assignment Name</th>
+            <th>Course Name</th>
+            <th>Deadline</th>
+            <!-- <th>Statues</th> -->
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let assignment of assignments">
+            <td>{{ assignment.assignmentName }}</td>
+            <td>{{ assignment.courseName }}</td>
+            <td>{{ assignment.deadline | date: 'shortDate' }}</td>
+            <!-- <td>
+              <span [ngClass]="{
+                'status-pending': assignment.status === 'Pending',
+                'status-submitted': assignment.status === 'Submitted'
+              }">
+                pending 
+              </span>
+            </td> -->
+            <td>
+              <button
+                class="view-btn"
+                [disabled]="assignment.status === 'Submitted'"
+                (click)="openModal(assignment)">
+                {{ assignment.status === 'Submitted' ? 'Already Submitted' : 'View / Submit' }}
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-    <div class="content-wrapper">
-      <div class="course-modules">
-        <table>
-          <thead>
-            <tr>
-              <th>Subject</th>
-              <th>Deadline</th>
-              <th>Status</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let assignment of assignments">
-              <td>{{ assignment.subject }}</td>
-              <td>{{ assignment.deadline }}</td>
-              <td>
-                <span [ngClass]="{
-                  'status-pending': assignment.status === 'Pending',
-                  'status-submitted': assignment.status === 'Submitted'
-                }">
-                  {{ assignment.status }}
-                </span>
-              </td>
-              <td>
-                <!-- Disable button if assignment is already submitted -->
-                <button
-                  class="view-btn"
-                  [disabled]="assignment.status === 'Submitted'"
-                  (click)="openModal(assignment)">
-                  {{ assignment.status === 'Submitted' ? 'Already Submitted' : 'View / Submit' }}
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Modal -->
-      <div class="modal" *ngIf="showModal">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3>Submit Assignment</h3>
-            <span class="close" (click)="closeModal()">&times;</span>
-          </div>
-          <div class="modal-body">
-            <div class="assignment-details">
-              <h4><strong>Subject:</strong></h4>
-              <p class="subject-name">{{ selectedAssignment?.subject }}</p>
-
-
-
+    <!-- Modal -->
+    <div class="modal" *ngIf="showModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Submit Assignment</h3>
+          <span class="close" (click)="closeModal()">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div class="assignment-details">
+            <h4><strong>Subject:</strong></h4>
+            <p class="subject-name">{{ selectedAssignment?.assignmentName }}</p>
             <div class="attachments">
               <h4>Attachments</h4>
+              <!-- عرض المرفقات -->
               <ul>
-                <li class="atta" *ngFor="let attachment of selectedAssignment?.attachments">
-                  <a [href]="attachment.url" download><img src="assets/file.png"  class="university-logo"> {{ attachment.name }}</a>
+                <li class="atta">
+                 <!-- إذا كان المسار يحتوي على ملف، سيتم عرضه كـ رابط -->
+                  <a [href]="selectedAssignment?.filepath" target="_blank">
+                    <img src="assets/file.png" class="university-logo"> {{ selectedAssignment?.assignmentName }}
+                  </a>
+
                 </li>
               </ul>
             </div>
-          </div>
-            <div class="submission-section">
+            
 
-              <label for="fileUpload">Upload Assignment:</label>
-              <input class="upload" type="file" id="fileUpload" (change)="handleFileUpload($event)" />
-              <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
-            </div>
+          <div class="submission-section">
+            <label for="fileUpload">Upload Assignment:</label>
+            <input class="upload" type="file" id="fileUpload" (change)="handleFileUpload($event)" />
+            <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
           </div>
+        </div>
 
-          <div class="modal-footer">
-            <button class="btn-submit" (click)="submitAssignment()">Submit</button>
-          </div>
+        <div class="modal-footer">
+          <button class="btn-submit" (click)="submitAssignment()">Submit</button>
         </div>
       </div>
     </div>
   </div>
+</div>

@@ -33,7 +33,7 @@ namespace LMS.Controllers.Rahma
 
             if (existingUserWithEmail != null)
             {
-                return BadRequest("Email is already taken.");
+                return BadRequest(new { Message = "Email is already taken." });
             }
 
             // Check if the username already exists in the database
@@ -42,7 +42,7 @@ namespace LMS.Controllers.Rahma
 
             if (existingUserWithUsername != null)
             {
-                return BadRequest("Username is already taken.");
+                return BadRequest(new { Message = "Username is already taken." });
             }
             // Ensure role exists (case-insensitive comparison)
             var role = await _context.Roles
@@ -91,27 +91,26 @@ namespace LMS.Controllers.Rahma
             {
                 return BadRequest("Email and password are required.");
             }
-
-            // Find the user by email
+            //var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
             var user = await _context.Users
-                                     .FirstOrDefaultAsync(u => u.Email == request.Email);
+            .FirstOrDefaultAsync(u => EF.Functions.Collate(u.Email, "SQL_Latin1_General_CP1_CS_AS") == request.Email);
 
             // Check if the user exists
             if (user == null)
             {
-                return Unauthorized("Invalid email or password.");
+                return Unauthorized(new { message = "Invalid email or password." });
             }
 
             // Compare entered password with stored password (no encryption)
             if (user.Password != request.Password)  // This compares plain text passwords (not recommended)
             {
-                return Unauthorized("Invalid email or password.");
+                return Unauthorized(new { message = "Invalid email or password." });
             }
 
             // Check if the user's status is pending or deactivated
             if (user.Status.ToLower() == "pending" || user.Status.ToLower() == "deactivated")
             {
-                return Unauthorized($"Account status '{user.Status}' does not allow login.");
+                return Unauthorized(new { message = $"Account status '{user.Status}' does not allow login." });
             }
 
             // If valid, return success message

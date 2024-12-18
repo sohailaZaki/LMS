@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { AuthService } from '../../Login & Reg/Rahma/services/auth.service';
+import { UserService } from '../../Login & Reg/Rahma/services/user.service';
+
 @Component({
   selector: 'app-course-materials',
   standalone: false,

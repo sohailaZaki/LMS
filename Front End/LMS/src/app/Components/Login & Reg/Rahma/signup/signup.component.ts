@@ -45,7 +45,7 @@ export class SignupComponent {
   )
   }
 
-   onSubmit() {
+  onSubmit() {
     this.isSubmitted = true;
   
     if (this.signupForm.valid) {
@@ -69,7 +69,6 @@ export class SignupComponent {
           roleName = 'Student';
           break;
         default:
-          console.warn(`Unexpected role value: ${formValues.role}`);
           roleID = 1; // Defaulting to Student
           roleName = 'Student';
           break;
@@ -99,6 +98,7 @@ export class SignupComponent {
           // Show success message
           this.showMessage('Successfully Registered! Wait for your approval', 'success');
           this.signupForm.reset();
+          this.router.navigate(['/Login']);
         },
         error: (err) => {
           // Show error message
@@ -111,10 +111,9 @@ export class SignupComponent {
   
     } else {
       console.error('Form is invalid');
+      this.showMessage('Please fill out the form correctly.', 'error');
     }
   }
-  
-
   /*onSubmit() {
     this.isSubmitted =true;
    if (this.signupForm.valid) {
