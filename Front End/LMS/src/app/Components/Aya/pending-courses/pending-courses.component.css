@@ -1,17 +1,18 @@
 section {
-  margin-left: 160px;
   flex: 1;
   padding: 20px;
   background-color: #EEF4FF;
+  
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 93%;
   margin: auto;
   padding: 20px;
   background-color: white;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 7%;
 }
 
 h2 {

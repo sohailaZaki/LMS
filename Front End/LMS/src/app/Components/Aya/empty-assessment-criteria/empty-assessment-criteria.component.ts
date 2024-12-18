@@ -3,6 +3,7 @@ type Section = 'lectureDetails' | 'assessmentCriteria' | 'courseStats';
 @Component({
   selector: 'app-empty-assessment-criteria',
   templateUrl: './empty-assessment-criteria.component.html',
+  standalone:false,
   styleUrl: './empty-assessment-criteria.component.css'
 })
 export class EmptyAssessmentCriteriaComponent {

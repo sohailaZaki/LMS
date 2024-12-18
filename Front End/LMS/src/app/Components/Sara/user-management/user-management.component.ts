@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-user-management',
   templateUrl: './user-management.component.html',
+  standalone:false,
   styleUrls: ['./user-management.component.css'],
 })
 export class UserManagementComponent {

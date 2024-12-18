@@ -14,7 +14,7 @@
 } */
 
 .user-management-container {
-  margin-left: 40px; /* Ensures content doesn’t overlap sidebar */
+  margin-left: 8%; /* Ensures content doesn’t overlap sidebar */
   margin-top: 70px;
   padding: 20px;
   border-radius: 30px;
@@ -22,7 +22,7 @@
   height: 100%;
   box-sizing: border-box;
   overflow: auto;
-  width:120%;
+  width:90%;
 }
 
 /* Title Styling */

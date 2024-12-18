@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-manage-courses',
   templateUrl: './manage-courses.component.html',
+  standalone:false,
   styleUrls: ['./manage-courses.component.css']
 })
 export class ManageCoursesComponent {
@@ -78,10 +79,10 @@ export class ManageCoursesComponent {
   }
 
   goToCreateNewCourse() {
-    this.router.navigate(['/Aya/create-new-course']);
+    this.router.navigate(['/admin/create-new-course']);
   }
 
   navigateToDetails() {
-    this.router.navigate(['/Aya/course-details-are-in-progress']);
+    this.router.navigate(['/admin/course-details-are-in-progress']);
   }
 }

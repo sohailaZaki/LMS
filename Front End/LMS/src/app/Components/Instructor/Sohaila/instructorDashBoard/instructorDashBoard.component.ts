@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild ,ElementRef } from '@angular/core';
 @Component({
   selector: 'app-instructorDashBoard',
   templateUrl: './instructorDashBoard.component.html',
+  standalone:false, 
   styleUrls: ['./instructorDashBoard.component.css']
 })
 export class InstructorDashBoardComponent implements OnInit {

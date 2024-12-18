@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-Assigments',
   templateUrl: './Assigments.component.html',
+  standalone:false,
   styleUrls: ['./Assigments.component.css'],
 })
 export class AssigmentsComponent implements OnInit {

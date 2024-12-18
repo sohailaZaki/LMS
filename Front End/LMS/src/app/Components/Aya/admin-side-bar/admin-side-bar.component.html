@@ -8,22 +8,25 @@
     <div class="divider"></div>
     <div class="Pages">
       <ul>
-        <li><a routerLink="/Sara/admin-dashboard" routerLinkActive="active"><span class="material-icons">assessment</span> Dashboard</a></li> 
-        <li><a routerLink="/Sara/user-management" routerLinkActive="active"><span class="material-icons">person_add</span> Manage Users</a></li> 
-        <li><a routerLink="/Aya/manage-courses" routerLinkActive="active"><span class="material-icons">book</span> Manage Courses</a></li> 
-        <li><a routerLink="/Aya/pending-courses" routerLinkActive="active"><span class="material-icons">history</span> Pending Courses</a></li> 
+        <li><a routerLink="/admin/dashboard" routerLinkActive="active"><span class="material-icons">assessment</span> Dashboard</a></li> 
+        <li><a routerLink="/admin/user-management" routerLinkActive="active"><span class="material-icons">person_add</span> Manage Users</a></li> 
+        <li><a routerLink="/admin/manage-courses" routerLinkActive="active"><span class="material-icons">book</span> Manage Courses</a></li> 
+        <li><a routerLink="/admin/pending-courses" routerLinkActive="active"><span class="material-icons">history</span> Pending Courses</a></li> 
         <div class="divider"></div>
-        <h6>SETTINGS</h6>
-        <li><a href="#"><span class="material-icons">settings</span><div class="settings">Settings</div><span class="material-icons">expand_more</span></a></li> 
       </ul>
     </div>
     <div class="help-logout">
       <ul>
         <li><a href="#"><div id="first"><span class="material-icons">help_outline</span> Help</div></a></li> 
-        <li><a href="#"><div id="last"><span class="material-icons">exit_to_app</span> Logout Account</div></a></li> 
+        <li><a href="#"><div id="last">  <a routerLink="/Login" class="logout"></a><span class="material-icons">exit_to_app</span> Logout Account</div></a></li> 
       </ul>
     </div>
   </div>
+  <!-- Content Area -->
+  <main class="content" >
+    <router-outlet></router-outlet>
+  </main>
+
 </nav>
 
 

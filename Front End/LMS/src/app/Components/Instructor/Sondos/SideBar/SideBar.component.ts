@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-SideBar',
   templateUrl: './SideBar.component.html',
+  standalone:false,
   styleUrls: ['./SideBar.component.css']
 })
 export class SideBarComponent implements OnInit {
